@@ -1,15 +1,16 @@
 #ERD Conceptual Model
 
-##User
-- PK: userID
-- userEmail
-- userLoginID
-- userPassword
+##Profile
+- PK: profileID
+- profileEmail
+- profileLoginID
+- profilePassword
 
-##UserPlant (weak entity)
-- FK: userPlantUserID
-- FK: userPlantPlantID
-- userPlantPicture
+##profilePlant (weak entity)
+- FK: profilePlantProfileID
+- FK: profilePlantPlantID
+- profilePlantNotes
+- profilePlantPicture
 
 ##Plant
 - PK: plantID
@@ -19,23 +20,17 @@
 - plantDroughtTolerance
 - plantGrowthHabit
 - plantGrowthPeriod
-- plantInvasive
 - plantMatureHeight
 - plantMinFrostFreeDays
 - plantPrecipitationRange
 - plantRootDepthMinimum
 - plantScientificName
 - plantShadeTolerance
-- plantStateNoxiousStatus
-- plantStateNoxiousCommonName
-- plantStates
-- plantStateThreatStatus
-- plantStateThreatCommonName
 - plantToxicity
 
 ##Reminder
 - PK: reminderID
-- FK: reminderUserPlantID
+- FK: reminderProfilePlantID
 - reminderDescription
 - reminderMethod
 - reminderRecurrence
