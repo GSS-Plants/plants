@@ -1,22 +1,12 @@
 import React from "react"
 import {Button, Col, Container, Form, Image, Navbar, Row} from "react-bootstrap";
 import logo from "../assets/logo-filler.png"
+import {PlantrNav} from "./PlantrNav";
 
 export const Reminder = () => {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
-                    <img
-                        alt=""
-                        src={logo}
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />{' '}
-                    Replace me with the real Navbar
-                </Navbar.Brand>
-            </Navbar>
+            <PlantrNav/>
             <Container className="text-center">
                 <Row>
                     <Col>
