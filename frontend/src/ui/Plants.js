@@ -34,17 +34,7 @@ export const Plants= () => {
                 </Navbar.Collapse>
 
             </Navbar>
-            <Row>
-                <Col>
-                    <Container>
-                        <Row>
-                            <Col xs={6} md={4}>
-                                <Image src="https://images.unsplash.com/photo-1464820453369-31d2c0b651af?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGZsb3dlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" rounded />
-                            </Col>
-                        </Row>
-                    </Container>
-                </Col>
-            </Row>
+
             <Row>
                 <Col id="Pcol" lg={{span:10,offset:1}}>
                     <h1>More Info</h1>
@@ -53,22 +43,12 @@ export const Plants= () => {
             </Row>
             <Row>
                 <Col id="buttcall">
-                    <Button id="Butt">Link</Button>
-                    <Button id="Butt2">Add to Greenhouse</Button>
+                    <Button id="Butt" class="btn btn-success">Link</Button>
+                    <Button id="Butt2" class="btn btn-success">Add to Greenhouse</Button>
                   <hr/>
                 </Col>
             </Row>
-            <Row>
-                <Col>
-                    <Container>
-                        <Row>
-                            <Col xs={6} md={4}>
-                                <Image src="https://images.unsplash.com/photo-1482772933081-0f28cb6bf426?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" rounded />
-                            </Col>
-                        </Row>
-                    </Container>
-                </Col>
-            </Row>
+
             <Row>
                 <Col id="Pcol" lg={{span:10,offset:1}}>
                     <h1>More Info</h1>
