@@ -1,0 +1,61 @@
+#jumone {
+
+    background-image: url("https://images.unsplash.com/photo-1515472379677-6c0ad8823829?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80");
+    background-size: cover;
+    height: 28rem;
+}
+
+
+
+#photoplants {
+    max-width: 100%;
+    text-align: center;
+    background: no-repeat;
+}
+#buttcall{
+    text-align: center;
+}
+#cardA{
+    text-align: center;
+
+}
+#cardd{
+    display: flex;
+    margin: 3rem auto 5rem auto;
+}
+ #Butt{
+
+     margin-right: 2rem;
+     margin-bottom: 6rem;
+
+ }
+ #Butt2{
+
+     margin-bottom: 6rem;
+
+ }
+ Pcol{
+     text-align: right;
+ }
+h1{
+    text-align: center;
+}
+#search{
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-top: 2rem;
+
+}
+#thejum {
+    background-color: brown;
+    height: 10rem;
+    opacity: 78%;
+
+
+}
+#logo{
+    color: aquamarine;
+
+}
+
+
