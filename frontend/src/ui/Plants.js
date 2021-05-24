@@ -1,12 +1,12 @@
 import React from 'react'
-import {Row, Col, Button, Form, Navbar, Image, Container,} from 'react-bootstrap'
+import {Row, Col, Button, Form, Navbar, Image, Container, Nav, InputGroup,} from 'react-bootstrap'
 import "./Styles.css"
 import logo from "../assets/logo-filler.png";
 
 export const Plants= () => {
     return (
         <div id="container">
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="light" variant="light" expand="xl">
                 <Navbar.Brand href="#home">
                     <img
                         alt=""
@@ -15,8 +15,24 @@ export const Plants= () => {
                         height="30"
                         className="d-inline-block align-top"
                     />{' '}
-                    Replace me with the real Navbar
+                    plant.r
                 </Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbar-links"/>
+                <Navbar.Collapse id="navbar-links" className="justify-content-between">
+                    <Nav className="justify-content-between">
+                        <Nav.Link href="/reminder">Reminder</Nav.Link>
+                        <Nav.Link href="#search">Search</Nav.Link>
+                        <Nav.Link href="#plant">Plant</Nav.Link>
+                        <Nav.Link href="#greenhouse">Greenhouse</Nav.Link>
+                        <Nav.Link href="#contact">Contact Team Plants</Nav.Link>
+                        <Nav.Link href="#loginModal" className="text-success">Sign up / Sign in</Nav.Link>
+                    </Nav>
+                    <Form inline as={InputGroup} className="w-50">
+                        <Form.Control type="text" placeholder="Search for plants"/>
+                        <InputGroup.Append><Button variant="outline-success">Go</Button></InputGroup.Append>
+                    </Form>
+                </Navbar.Collapse>
+
             </Navbar>
             <Row>
                 <Col>
