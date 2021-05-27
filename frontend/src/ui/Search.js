@@ -11,7 +11,6 @@ export const Search = () => {
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="https://www.calloways.com/wp-content/uploads/grafted-cactus.jpg" />
                 <Card.Body>
-                    <img src="https://miro.medium.com/max/1106/1*tAZ0DsBYgXTsn2BBLxlIIg.png" className={'img-fluid'} />
                     <Card.Title>Search</Card.Title>
                     <Card.Text>
                         Some quick example text to build on the card title and make up the bulk of
@@ -24,8 +23,8 @@ export const Search = () => {
                     <ListGroupItem>Vestibulum at eros</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
+                    <Card.Link href="#">More Details</Card.Link>
+                    <Card.Link href="#">Another Search</Card.Link>
                 </Card.Body>
             </Card>
             </Container>
