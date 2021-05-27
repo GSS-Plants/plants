@@ -40,7 +40,7 @@ CREATE TABLE plant (
                        INDEX (plantScientificName),
                        PRIMARY KEY(plantId)
 );
--- create the tweetImage entity
+
 CREATE TABLE profilePlant (
                               profilePlantPlantId BINARY(16) NOT NULL,
                               profilePlantProfileId BINARY(16) NOT NULL,
@@ -60,3 +60,4 @@ CREATE TABLE reminder (
                         FOREIGN KEY(reminderProfilePlantId) REFERENCES profilePlant(profilePlantPlantId),
                         PRIMARY KEY(reminderId)
 );
+
