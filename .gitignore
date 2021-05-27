@@ -1,2 +1,6 @@
+/plantr.env
+*/.pnp
+*/.pnp.js
+
 ./DS_Store
 .idea
