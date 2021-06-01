@@ -10,7 +10,10 @@ SELECT profilePlantPlantId, profilePlantProfileId, profilePlantNotes
 FROM profilePlant
 WHERE profilePlantProfileId = UUID_TO_BIN('');
 
-SELECT profilePlant.profilePlantNotes,
+SELECT profilePlant.profilePlantPlantId,
+       profilePlant.profilePlantProfileId,
+       profilePlant.profilePlantNotes,
+       plant.plantId,
        plant.plantBloomPeriod,
        plant.plantCommonName,
        plant.plantDuration,
@@ -29,7 +32,10 @@ FROM profilePlant
          INNER JOIN plant on profilePlant.profilePlantPlantId = plant.plantId
 WHERE profilePlant.profilePlantProfileId = UUID_TO_BIN('');
 
-SELECT profilePlant.profilePlantNotes,
+SELECT profilePlant.profilePlantPlantId,
+       profilePlant.profilePlantProfileId,
+       profilePlant.profilePlantNotes,
+       plant.plantId,
        plant.plantBloomPeriod,
        plant.plantCommonName,
        plant.plantDuration,
