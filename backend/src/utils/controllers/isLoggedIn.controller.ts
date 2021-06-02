@@ -20,16 +20,14 @@ export function isLoggedIn(request: Request, response: Response, next: NextFunct
     const unverifiedJwtToken: string = getJwtTokenFromHeader(request.headers);
 
     const isJwtValid: any = unverifiedJwtToken
-      ? verify(
+        ? verify(
             unverifiedJwtToken,
             signature(request),
             {maxAge: "3hr"},
             (error: any, decoded: any) => error ? false : true
         )
-      : false;
+        : false;
 
     return isJwtValid && isSessionActive(sessionProfile(request)) ? next() : response.json(status);
 
 }
-
-
