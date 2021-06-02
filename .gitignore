@@ -3,7 +3,7 @@
 .idea
 */.Ds_Store
 
-/sql/plantr.env
+/plantr.env
 plantr.env
 */.pnp
 */.pnp.js
