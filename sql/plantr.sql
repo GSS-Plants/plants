@@ -10,60 +10,60 @@ DROP TABLE IF EXISTS profile;
 
 CREATE TABLE profile
 (
-                         profileId BINARY(16) NOT NULL,
-                         profileActivationToken CHAR(32),
-                         profileLoginId VARCHAR(16) NOT NULL,
-                         profileEmail VARCHAR(128) NOT NULL,
-                         profileHash CHAR(97) NOT NULL,
-                         INDEX(profileEmail),
-                         INDEX (profileLoginId),
-                         UNIQUE(profileEmail),
-                         UNIQUE(profileLoginId),
-                         PRIMARY KEY(profileId)
+    profileId              BINARY(16)   NOT NULL,
+    profileActivationToken CHAR(32),
+    profileLoginId         VARCHAR(16)  NOT NULL,
+    profileEmail           VARCHAR(128) NOT NULL,
+    profileHash            CHAR(97)     NOT NULL,
+    INDEX (profileEmail),
+    INDEX (profileLoginId),
+    UNIQUE (profileEmail),
+    UNIQUE (profileLoginId),
+    PRIMARY KEY (profileId)
 );
 CREATE TABLE plant
 (
-                       plantId BINARY(16) NOT NULL,
-                       plantBloomPeriod VARCHAR(64),
-                       plantCommonName VARCHAR(32),
-                       plantDuration VARCHAR(16),
-                       plantDroughtTolerance CHAR(1),
-                       plantGrowthHabit VARCHAR(16),
-                       plantGrowthPeriod VARCHAR(64),
-                       plantMatureHeight INT,
-                       plantMinFrostFreeDays INT,
-                       plantPrecipitationMax INT,
-                       plantPrecipitationMin INT,
-                       plantRootDepthMinimum INT,
-                       plantScientificName VARCHAR(32),
-                       plantShadeTolerance VARCHAR(8),
-                       plantToxicity INT,
-                       INDEX (plantCommonName),
-                       INDEX (plantScientificName),
-                       PRIMARY KEY(plantId)
+    plantId               BINARY(16) NOT NULL,
+    plantBloomPeriod      VARCHAR(64),
+    plantCommonName       VARCHAR(32),
+    plantDuration         VARCHAR(16),
+    plantDroughtTolerance CHAR(1),
+    plantGrowthHabit      VARCHAR(16),
+    plantGrowthPeriod     VARCHAR(64),
+    plantMatureHeight     INT,
+    plantMinFrostFreeDays INT,
+    plantPrecipitationMax INT,
+    plantPrecipitationMin INT,
+    plantRootDepthMinimum INT,
+    plantScientificName   VARCHAR(32),
+    plantShadeTolerance   VARCHAR(8),
+    plantToxicity         INT,
+    INDEX (plantCommonName),
+    INDEX (plantScientificName),
+    PRIMARY KEY (plantId)
 );
 
 CREATE TABLE profilePlant
 (
     profilePlantId        BINARY(16)   NOT NULL,
-                              profilePlantPlantId BINARY(16) NOT NULL,
-                              profilePlantProfileId BINARY(16) NOT NULL,
-                              profilePlantNotes VARCHAR(255) NOT NULL,
-                              INDEX(profilePlantProfileId),
-                              INDEX(profilePlantPlantId),
-                              FOREIGN KEY(profilePlantPlantId) REFERENCES plant(plantId),
-                              FOREIGN KEY(profilePlantProfileId) REFERENCES profile(profileId),
+    profilePlantPlantId   BINARY(16)   NOT NULL,
+    profilePlantProfileId BINARY(16)   NOT NULL,
+    profilePlantNotes     VARCHAR(255) NOT NULL,
+    INDEX (profilePlantProfileId),
+    INDEX (profilePlantPlantId),
+    FOREIGN KEY (profilePlantPlantId) REFERENCES plant (plantId),
+    FOREIGN KEY (profilePlantProfileId) REFERENCES profile (profileId),
     PRIMARY KEY (profilePlantId)
 );
 CREATE TABLE reminder
 (
-                        reminderId BINARY(16) NOT NULL,
-                        reminderProfilePlantId BINARY(16) NOT NULL,
-                        reminderDescription VARCHAR(255),
-                        reminderRecurrence INT NOT NULL,
-                        reminderStartDate DATETIME(6) NOT NULL,
+    reminderId             BINARY(16)  NOT NULL,
+    reminderProfilePlantId BINARY(16)  NOT NULL,
+    reminderDescription    VARCHAR(255),
+    reminderRecurrence     INT         NOT NULL,
+    reminderStartDate      DATETIME(6) NOT NULL,
     FOREIGN KEY (reminderProfilePlantId) REFERENCES profilePlant (profilePlantId),
-                        PRIMARY KEY(reminderId)
+    PRIMARY KEY (reminderId)
 );
 
 -- Create a profile and three plants, then three profilePlants and three reminders.
