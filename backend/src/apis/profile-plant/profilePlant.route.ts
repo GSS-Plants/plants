@@ -1,23 +1,21 @@
-/*
 
 
 import {Router} from "express";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {check, checkSchema} from "express-validator";
 import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
-import {profileValidator} from "./profile.validator";
-import {getProfileByProfileId, putProfileController} from "./profile.controller";
+import {getProfilePlantByProfilePlantIdController, postProfilePlantController, putProfilePlantController} from "./profilePlant.controller";
+import {profileValidator} from "../profile/profile.validator";
 
 export const ProfilePlantRoute = Router();
-ProfilePlantRoute.route('/')
-    .post();
-ProfilePlantRoute.route('/:profileId&:plantId')
+ProfilePlantRoute.route('/:plantId')
+    .post(postProfilePlantController);
+
+ProfilePlantRoute.route('/:profilePlantId')
     .get(
         asyncValidatorController([
-            check("profileId", "profile is invalid").isUUID(),
-            check("plantId", "plant is invalid").isUUID
+            check("profilePlantId", "not a valid id").isUUID()
         ])
-        , getProfilePlantByWhateverIsClever
+        , getProfilePlantByProfilePlantIdController
     )
-
-*/
+    .put(isLoggedIn, asyncValidatorController(checkSchema(profileValidator)), putProfilePlantController)
