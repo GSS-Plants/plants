@@ -5,7 +5,6 @@ import {PlantrNav} from "./PlantrNav";
 export const Reminder = () => {
     return (
         <>
-            <PlantrNav/>
             <Container className="text-center">
                 <Row>
                     <Col>
