@@ -12,13 +12,13 @@ CREATE TABLE profile
 (
                          profileId BINARY(16) NOT NULL,
                          profileActivationToken CHAR(32),
-                         profileLoginId VARCHAR(16) NOT NULL,
+                         profileLogin VARCHAR(32) NOT NULL,
                          profileEmail VARCHAR(128) NOT NULL,
                          profileHash CHAR(97) NOT NULL,
                          INDEX(profileEmail),
-                         INDEX (profileLoginId),
+                         INDEX (profileLogin),
                          UNIQUE(profileEmail),
-                         UNIQUE(profileLoginId),
+                         UNIQUE(profileLogin),
                          PRIMARY KEY(profileId)
 );
 CREATE TABLE plant
@@ -68,7 +68,7 @@ CREATE TABLE reminder
 
 -- Create a profile and three plants, then three profilePlants and three reminders.
 
-INSERT INTO profile(profileId, profileActivationToken, profileLoginId, profileEmail, profileHash)
+INSERT INTO profile(profileId, profileActivationToken, profileLogin, profileEmail, profileHash)
 VALUES (UUID_TO_BIN('718de089e7a945caa0338113e502555a'), '12345678901234567890123456789012', 'MrPotatoHead', '1hotspud@idaho.gov', '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567');
 
 INSERT INTO plant(plantId, plantBloomPeriod, plantCommonName, plantDuration, plantDroughtTolerance, plantGrowthHabit, plantGrowthPeriod, plantMatureHeight, plantMinFrostFreeDays, plantPrecipitationMax, plantPrecipitationMin, plantRootDepthMinimum, plantScientificName, plantShadeTolerance, plantToxicity)

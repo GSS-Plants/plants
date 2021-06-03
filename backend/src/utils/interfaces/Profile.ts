@@ -1,7 +1,7 @@
 export interface PartialProfile {
     profileId : string|null,
     profileEmail: string,
-
+    profileLogin: string,
 }
 
 export interface Profile {
@@ -9,5 +9,6 @@ export interface Profile {
     profileActivationToken : string|null,
     profileEmail: string,
     profileHash: string,
+    profileLogin: string,
 
 }
