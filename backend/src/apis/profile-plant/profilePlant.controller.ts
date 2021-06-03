@@ -24,7 +24,7 @@ export async function postProfilePlantController(request: Request, response: Res
             profilePlantNotes
         }
 
-        const post = async(newProfilePlant: ProfilePlant): Promise<Response> => {
+        const post = async (newProfilePlant: ProfilePlant): Promise<Response> => {
             await insertProfilePlant(newProfilePlant)
             return response.json({status: 200, data: null, message: "Plant successfully added to Greenhouse"})
         }
@@ -68,10 +68,18 @@ export async function putProfilePlantController(request: Request, response: Resp
 export async function getProfilePlantByProfilePlantIdController(request: Request, response: Response): Promise<Response> {
     try {
         const {profilePlantId} = request.params;
+        const {profileId} = request.params;
+        const profileIdFromSession: string = <string>request.session?.profile.profileId
         const result = await selectProfilePlantByProfilePlantId(profilePlantId);
         const data = result ?? null;
         const status: Status = {status: 200, data, message: null}
-        return response.json(status)
+
+        const updateFailed = (message: string): Response => {
+            return response.json({status: 400, data: null, message})
+        }
+
+        return profileId === profileIdFromSession ? response.json(status) : updateFailed("you are not authorized to perform this action")
+
     } catch (error) {
         return (response.json({status: 400, data: null, message: error.message}))
     }
@@ -99,6 +107,18 @@ export async function getProfilePlantWithDetailsByProfileIdController(request: R
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
     } catch (error) {
+        return (response.json({status: 400, data: null, message: error.message}))
+    }
+}
+
+export async function deleteProfilePlantController(request: Request, response: Response): Promise<Response> {
+    try {
+        const {profilePlantId} = request.params;
+        const result = await deleteProfilePlant(profilePlantId);
+        const data = result ?? null;
+        const status: Status = {status: 200, data, message: 'plant deleted successfully'}
+        return response.json(status)
+    }catch (error) {
         return (response.json({status: 400, data: null, message: error.message}))
     }
 }
