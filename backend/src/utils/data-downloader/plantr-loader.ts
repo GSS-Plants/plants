@@ -1,4 +1,6 @@
 import axios from "axios";
+import {Profile} from "../interfaces/Profile";
+import uuid from "uuid";
 
 function plantrLoader() : Promise<any> {
     async function main() {
@@ -12,10 +14,15 @@ function plantrLoader() : Promise<any> {
     return main();
 
     async function downloadUsers() {
+        const results: any = []
         try {
             const userRequest = await axios.get("https://jsonplaceholder.typicode.com/users")
             for (const user of userRequest.data) {
-                console.log(user.userName)
+                const profile: Profile = {
+                    profileId: uuid(),
+                    profileEmail: user.email,
+                    profileLogin: user.username,
+                }
             }
         } catch (error) {
             throw error;
