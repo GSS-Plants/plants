@@ -3,6 +3,7 @@ version: "3"
 services:
   node:
     build: ./backend
+    user: node
     depends_on:
       - sql
     env_file:

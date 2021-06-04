@@ -21,6 +21,6 @@ export interface Plant {
     plantPrecipitationMin:number|null,
     plantRootDepthMinimum:number|null,
     plantScientificName: string|null,
-    plantShadeTolerance: string|null,
+    plantShadeTolerance: number|null,
     plantToxicity:number|null
 }
