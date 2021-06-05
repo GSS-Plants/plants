@@ -4,7 +4,7 @@ import {v1 as uuid} from 'uuid';
 import {setHash} from "../auth.utils";
 import {Plant} from "../interfaces/Plant";
 import {insertProfile} from "../profile/insertProfile";
-import {insertPlant} from "../plant/insertPlant";
+import {insertAllPlants} from "../plant/insertAllPlants";
 
 const fs = require('fs')
 const csv = require('csv-parser')
@@ -46,6 +46,7 @@ function plantrLoader(): Promise<any> {
 async function downloadPlants() {
     try {
         const results: any = []
+        const plants: any = []
         // headers had to be removed from .csv and added to pipe() to prevent first header being read incorrectly.
         fs.createReadStream('./plant-data.csv')
             .pipe(csv(['plantBloomPeriod','plantCommonName','plantDuration','plantDroughtTolerance','plantGrowthHabit','plantGrowthPeriod','plantMatureHeight','plantMinFrostFreeDays','plantPrecipitationMax','plantPrecipitationMin','plantRootDepthMinimum','plantScientificName','plantShadeTolerance','plantToxicity']))
@@ -53,40 +54,6 @@ async function downloadPlants() {
                 results.push(data);
             })
             .on('end', async () => {
-/*                const {plantBloomPeriod,
-                    plantCommonName,
-                    plantDuration,
-                    plantDroughtTolerance,
-                    plantGrowthHabit,
-                    plantGrowthPeriod,
-                    plantMatureHeight,
-                    plantMinFrostFreeDays,
-                    plantPrecipitationMax,
-                    plantPrecipitationMin,
-                    plantRootDepthMinimum,
-                    plantScientificName,
-                    plantShadeTolerance,
-                    plantToxicity
-                } = results[0]
-
-                const plant: Plant = {
-                    plantId: uuid(),
-                    plantBloomPeriod,
-                    plantCommonName,
-                    plantDroughtTolerance,
-                    plantDuration,
-                    plantGrowthHabit,
-                    plantGrowthPeriod,
-                    plantMatureHeight,
-                    plantMinFrostFreeDays,
-                    plantPrecipitationMax,
-                    plantPrecipitationMin,
-                    plantRootDepthMinimum,
-                    plantScientificName,
-                    plantShadeTolerance,
-                    plantToxicity
-                }
-                console.log(plant)*/
                 for (let result of results) {
 
                     const {
@@ -123,8 +90,9 @@ async function downloadPlants() {
                         plantShadeTolerance,
                         plantToxicity
                     }
-                    console.log(await insertPlant(plant))
+                    plants.push(plant)
                 }
+                console.log(await insertAllPlants(plants))
 
             })
 
