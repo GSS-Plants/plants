@@ -35,6 +35,7 @@ export async function putProfileController(request: Request, response: Response)
 export async function getProfileByProfileId(request: Request, response: Response) : Promise<Response> {
     try {
         const {profileId} = request.params;
+        console.log (profileId)
         const mySqlResult = await selectPartialProfileByProfileId(profileId);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}

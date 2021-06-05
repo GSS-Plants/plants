@@ -55,6 +55,7 @@ export class App {
         this.app.use('/apis/profile', ProfileRoute)
         this.app.use('/apis/sign-up', signUpRoute)
         this.app.use('/apis/sign-in', SignInRouter)
+        this.app.use('/apis/profile/:profileId', ProfileRoute)
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port
