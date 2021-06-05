@@ -67,7 +67,7 @@ CREATE TABLE reminder
 );
 
 -- Create a profile and three plants, then three profilePlants and three reminders.
-
+/*
 INSERT INTO profile(profileId, profileActivationToken, profileLogin, profileEmail, profileHash)
 VALUES (UUID_TO_BIN('718de089e7a945caa0338113e502555a'), '12345678901234567890123456789012', 'MrPotatoHead', '1hotspud@idaho.gov', '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567');
 
@@ -97,3 +97,4 @@ VALUES (UUID_TO_BIN('9a09860fbefc4680b2091a36ee35f48c'), UUID_TO_BIN('ba6195cdd3
 
 INSERT INTO reminder(reminderId, reminderProfilePlantId, reminderDescription, reminderRecurrence, reminderStartDate)
 VALUES (UUID_TO_BIN('749e20a8916a46eeac84af3ae1569f2c'), UUID_TO_BIN('1b6169ace2cf48ba960d2ce78f75dd40'), 'douse it like a tropical storm!', 7, NOW());
+*/
