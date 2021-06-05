@@ -8,8 +8,9 @@ import {updateProfile} from "../../utils/profile/updateProfile";
 export async function putProfileController(request: Request, response: Response) : Promise<Response>{
     try {
         const {profileId} = request.params
-        const {profileEmail} = request.body
-        const profileIdFromSession: string = <string>request.session?.profile.profileId
+        const {profileEmail, profileLogin} = request.body
+        const profile: Profile = <Profile>request.session?.profile
+        const profileIdFromSession: string = profile.profileId as string
 
         const preformUpdate = async (partialProfile: PartialProfile) : Promise<Response> => {
             const previousProfile: Profile = await selectWholeProfileByProfileId(<string>partialProfile.profileId)
@@ -23,7 +24,7 @@ export async function putProfileController(request: Request, response: Response)
         }
 
         return profileId === profileIdFromSession
-            ? preformUpdate({profileId, profileEmail})
+            ? preformUpdate({profileId, profileEmail, profileLogin})
             : updateFailed("you are not allowed to preform this action")
     } catch (error) {
         return response.json( {status:400, data: null, message: error.message})
@@ -34,6 +35,7 @@ export async function putProfileController(request: Request, response: Response)
 export async function getProfileByProfileId(request: Request, response: Response) : Promise<Response> {
     try {
         const {profileId} = request.params;
+        console.log (profileId)
         const mySqlResult = await selectPartialProfileByProfileId(profileId);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}

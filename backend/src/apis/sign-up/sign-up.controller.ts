@@ -15,7 +15,7 @@ export async function signupProfileController(request: Request, response: Respon
     try {
 
 
-        const {profileEmail, profilePassword} = request.body;
+        const {profileEmail, profilePassword, profileLogin} = request.body;
         const profileHash = await setHash(profilePassword);
         const profileActivationToken = setActivationToken();
         const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${profileActivationToken}`
@@ -39,6 +39,7 @@ export async function signupProfileController(request: Request, response: Respon
             profileActivationToken,
             profileEmail,
             profileHash,
+            profileLogin,
         };
 
         const result = await insertProfile(profile)
