@@ -93,7 +93,7 @@ async function downloadPlants() {
                     plants.push(plant)
                 }
                 console.log(await insertAllPlants(plants))
-
+                
             })
 
     } catch (e) {
