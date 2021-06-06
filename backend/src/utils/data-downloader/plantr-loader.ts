@@ -4,16 +4,31 @@ import {v1 as uuid} from 'uuid';
 import {setHash} from "../auth.utils";
 import {Plant} from "../interfaces/Plant";
 import {insertProfile} from "../profile/insertProfile";
-import {insertPlant} from "../plant/insertPlant";
+import {insertAllPlants} from "../plant/insertAllPlants";
+import {insertProfilePlant} from "../profile-plant/insertProfilePlant";
 
 const fs = require('fs')
 const csv = require('csv-parser')
+let plantIds: string[] = []
+let userIds: (string|null)[] = []
+
+async function makeProfilePlants() {
+    const plantIpsum: string = 'Cool off red curry tofu noodles crunchy lemon lime minty Caribbean red habanero coconut lime matcha cremini mushrooms shiitake mushrooms green papaya salad chai tea lemongrass peanut butter crunch blueberry chia seed jam walnut pesto tart cilantro.'
+
+    for (let i = 0, j = 0; i < plantIds.length; i++) {
+        console.log(await insertProfilePlant(uuid(), userIds[j], plantIds[i], plantIpsum))
+        if (j < 3 && i %3 === 0) {
+            j++
+        }
+    }
+}
 
 function plantrLoader(): Promise<any> {
     async function main() {
         try {
             await downloadUsers();
             await downloadPlants();
+            await makeProfilePlants();
 
         } catch (error) {
             console.error(error);
@@ -26,6 +41,7 @@ function plantrLoader(): Promise<any> {
         try {
             const profileHash = await setHash("password")
             const userRequest = await axios.get("https://jsonplaceholder.typicode.com/users")
+            let userCount = 0
             for (const user of userRequest.data) {
                 const profile: Profile = {
                     profileId: uuid(),
@@ -34,8 +50,12 @@ function plantrLoader(): Promise<any> {
                     profileHash: profileHash,
                     profileActivationToken: null
                 }
-                // console.log(await insertProfile(profile))
-
+                userCount++
+                userIds.push(profile.profileId)
+                console.log(await insertProfile(profile))
+                if (userCount === 4) {
+                    break
+                }
             }
         } catch (error) {
             throw error;
@@ -46,6 +66,7 @@ function plantrLoader(): Promise<any> {
 async function downloadPlants() {
     try {
         const results: any = []
+        const plants: any = []
         // headers had to be removed from .csv and added to pipe() to prevent first header being read incorrectly.
         fs.createReadStream('./plant-data.csv')
             .pipe(csv(['plantBloomPeriod','plantCommonName','plantDuration','plantDroughtTolerance','plantGrowthHabit','plantGrowthPeriod','plantMatureHeight','plantMinFrostFreeDays','plantPrecipitationMax','plantPrecipitationMin','plantRootDepthMinimum','plantScientificName','plantShadeTolerance','plantToxicity']))
@@ -53,41 +74,7 @@ async function downloadPlants() {
                 results.push(data);
             })
             .on('end', async () => {
-/*                const {plantBloomPeriod,
-                    plantCommonName,
-                    plantDuration,
-                    plantDroughtTolerance,
-                    plantGrowthHabit,
-                    plantGrowthPeriod,
-                    plantMatureHeight,
-                    plantMinFrostFreeDays,
-                    plantPrecipitationMax,
-                    plantPrecipitationMin,
-                    plantRootDepthMinimum,
-                    plantScientificName,
-                    plantShadeTolerance,
-                    plantToxicity
-                } = results[0]
-
-                const plant: Plant = {
-                    plantId: uuid(),
-                    plantBloomPeriod,
-                    plantCommonName,
-                    plantDroughtTolerance,
-                    plantDuration,
-                    plantGrowthHabit,
-                    plantGrowthPeriod,
-                    plantMatureHeight,
-                    plantMinFrostFreeDays,
-                    plantPrecipitationMax,
-                    plantPrecipitationMin,
-                    plantRootDepthMinimum,
-                    plantScientificName,
-                    plantShadeTolerance,
-                    plantToxicity
-                }
-                console.log(plant)*/
-                for (let result of results) {
+                for (let i = 0; i < results.length; i++) {
 
                     const {
                         plantBloomPeriod,
@@ -104,7 +91,7 @@ async function downloadPlants() {
                         plantScientificName,
                         plantShadeTolerance,
                         plantToxicity
-                    } = result
+                    } = results[i]
 
                     const plant: Plant = {
                         plantId: uuid(),
@@ -123,8 +110,13 @@ async function downloadPlants() {
                         plantShadeTolerance,
                         plantToxicity
                     }
-                    console.log(await insertPlant(plant))
+                    if (i%150 === 0) {
+                        plantIds.push(plant.plantId)
+                    }
+                    plants.push(plant)
+
                 }
+                console.log(await insertAllPlants(plants))
 
             })
 
