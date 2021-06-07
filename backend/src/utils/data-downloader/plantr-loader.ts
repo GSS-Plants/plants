@@ -12,23 +12,11 @@ const csv = require('csv-parser')
 let plantIds: string[] = []
 let userIds: (string|null)[] = []
 
-async function makeProfilePlants() {
-    const plantIpsum: string = 'Cool off red curry tofu noodles crunchy lemon lime minty Caribbean red habanero coconut lime matcha cremini mushrooms shiitake mushrooms green papaya salad chai tea lemongrass peanut butter crunch blueberry chia seed jam walnut pesto tart cilantro.'
-
-    for (let i = 0, j = 0; i < plantIds.length; i++) {
-        console.log(await insertProfilePlant(uuid(), userIds[j], plantIds[i], plantIpsum))
-        if (j < 3 && i %3 === 0) {
-            j++
-        }
-    }
-}
-
 function plantrLoader(): Promise<any> {
     async function main() {
         try {
             await downloadUsers();
             await downloadPlants();
-            await makeProfilePlants();
 
         } catch (error) {
             console.error(error);

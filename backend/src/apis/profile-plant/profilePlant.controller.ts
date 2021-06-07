@@ -11,11 +11,17 @@ import {selectProfilePlantByProfilePlantId} from "../../utils/profile-plant/sele
 import uuid from "uuid";
 import {Profile} from "../../utils/interfaces/Profile";
 
+export async function getAnything(request: Request, response: Response): Promise<Response>  {
+    return response.json({status: 200, data: null, message: "You got it."})
+
+}
+
 // Create a new profilePlant
 export async function postProfilePlantController(request: Request, response: Response): Promise<Response> {
     try {
         const profile: Profile = <Profile>request.session?.profile
-        const profilePlantProfileId: string = profile.profileId as string
+        // const profilePlantProfileId: string = profile.profileId as string
+        const profilePlantProfileId: string = '0a890341-c799-11eb-8b68-0242c0a83002'
         const {profilePlantPlantId} = request.params
         const {profilePlantNotes} = request.body
 

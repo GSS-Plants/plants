@@ -8,6 +8,7 @@ import passport = require('passport');
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {signUpRoute} from "./apis/sign-up/signup.route";
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
+import {ProfilePlantRoute} from "./apis/profile-plant/profilePlant.route";
 
 const MemoryStore = require('memorystore')(session);
 // The following class creates the app and instantiates the server
@@ -55,6 +56,8 @@ export class App {
         this.app.use('/apis/profile', ProfileRoute)
         this.app.use('/apis/sign-up', signUpRoute)
         this.app.use('/apis/sign-in', SignInRouter)
+        this.app.use('/apis/profile-plant', ProfilePlantRoute)
+        this.app.use('/apis/profile/:profileId', ProfileRoute)
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port
