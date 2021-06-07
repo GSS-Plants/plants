@@ -5,7 +5,7 @@ export async function deleteProfile(profileId: string) {
     try {
         const mysqlConnection = await connect();
         const query: string = 'DELETE FROM profile  WHERE profileId = UUID_TO_BIN(:profileId)'
-        console.log(query)
+
 
         const [rows] = await mysqlConnection.execute(query, {profileId});
 
