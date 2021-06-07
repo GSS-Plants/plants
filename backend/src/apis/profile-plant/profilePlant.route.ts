@@ -1,4 +1,4 @@
-import {Router} from "express";
+import {Request, Response, Router} from "express";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {check, checkSchema} from "express-validator";
 import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
@@ -7,7 +7,10 @@ import {profileValidator} from "../profile/profile.validator";
 
 export const ProfilePlantRoute = Router();
 ProfilePlantRoute.route('/addplant/:plantId')
-    .post(postProfilePlantController);
+    .post(async function(request: Request, response: Response) {
+        return 'hush';
+});
+    // .post(postProfilePlantController);
 
 ProfilePlantRoute.route('/greenhouse/:profileId/:profilePlantId')
     .get(
