@@ -9,11 +9,13 @@ import {selectProfilePlantWithDetailsByProfilePlantId} from "../../utils/profile
 import {updateProfilePlant} from "../../utils/profile-plant/updateProfilePlant";
 import {selectProfilePlantByProfilePlantId} from "../../utils/profile-plant/selectProfilePlantByProfilePlantId";
 import uuid from "uuid";
+import {Profile} from "../../utils/interfaces/Profile";
 
 // Create a new profilePlant
 export async function postProfilePlantController(request: Request, response: Response): Promise<Response> {
     try {
-        const profilePlantProfileId: string = <string>request.session?.profile.profileId
+        const profile: Profile = <Profile>request.session?.profile
+        const profilePlantProfileId: string = profile.profileId as string
         const {profilePlantPlantId} = request.params
         const {profilePlantNotes} = request.body
 
@@ -42,7 +44,8 @@ export async function putProfilePlantController(request: Request, response: Resp
         // This probably is right.
         const {profilePlantId} = request.params
         const {profilePlantNotes} = request.body
-        const profileIdFromSession: string = <string>request.session?.profile.profileId
+        const profile: Profile = <Profile>request.session?.profile
+        const profileIdFromSession: string = profile.profileId as string
 
         const performUpdate = async (partialProfilePlant: PartialProfilePlant): Promise<Response> => {
             const previousProfilePlant: ProfilePlant = await selectProfilePlantByProfilePlantId(partialProfilePlant.profilePlantId)
@@ -69,7 +72,8 @@ export async function getProfilePlantByProfilePlantIdController(request: Request
     try {
         const {profilePlantId} = request.params;
         const {profileId} = request.params;
-        const profileIdFromSession: string = <string>request.session?.profile.profileId
+        const profile: Profile = <Profile>request.session?.profile
+        const profileIdFromSession: string = profile.profileId as string
         const result = await selectProfilePlantByProfilePlantId(profilePlantId);
         const data = result ?? null;
         const status: Status = {status: 200, data, message: null}
