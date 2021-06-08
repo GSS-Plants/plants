@@ -10,7 +10,7 @@ import {
     Nav,
     Form,
     InputGroup,
-    Button
+    Button, CardColumns, CardDeck
 } from "react-bootstrap";
 import logo from "../assets/logo-filler.png";
 
@@ -18,28 +18,95 @@ export const Search = () => {
     return (
         <>
             <Container>
+                <Navbar bg="light" variant="light" expand="xl">
+                    <Navbar.Brand href="#home">
+                        <img
+                            alt=""
+                            src={logo}
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                        />{' '}
+                        plant.r
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="navbar-links"/>
+                    <Navbar.Collapse id="navbar-links" className="justify-content-between">
+                        <Nav className="justify-content-between">
+                            <Nav.Link href="/reminder">Reminder</Nav.Link>
+                            <Nav.Link href="/search">Search</Nav.Link>
+                            <Nav.Link href="#plant">Plant</Nav.Link>
+                            <Nav.Link href="#greenhouse">Greenhouse</Nav.Link>
+                            <Nav.Link href="#contact">Contact Team Plants</Nav.Link>
+                            <Nav.Link href="#loginModal" className="text-success">Sign up / Sign in</Nav.Link>
+                        </Nav>
+                        <Form inline as={InputGroup} className="w-50">
+                            <Form.Control type="text" placeholder="Search for plants"/>
+                            <InputGroup.Append><Button variant="outline-success">Go</Button></InputGroup.Append>
+                        </Form>
+                    </Navbar.Collapse>
 
-            <h1><b>Search</b></h1>
+        </Navbar>
+
+        <h1><b>Search Results</b></h1>
+        <CardDeck>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://www.calloways.com/wp-content/uploads/grafted-cactus.jpg" />
                 <Card.Body>
-                    <Card.Title>Search</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                    </Card.Text>
+                    <Card.Title><b>plantCommonName</b></Card.Title>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                    <ListGroupItem>Cras justo odio</ListGroupItem>
-                    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                    <ListGroupItem>Vestibulum at eros</ListGroupItem>
+                    <ListGroupItem><b>plantScientificName</b></ListGroupItem>
+                    <ListGroupItem><b>plantDuration</b></ListGroupItem>
+                    <ListGroupItem><b>plantGrowthHabit</b></ListGroupItem>
+                    <ListGroupItem><b>plantToxicity</b></ListGroupItem>
                 </ListGroup>
                 <Card.Body>
                     <Card.Link href="#">More Details</Card.Link>
-                    <Card.Link href="#">Another Search</Card.Link>
                 </Card.Body>
             </Card>
-            </Container>
-        </>
-    )
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title><b>plantCommonName</b></Card.Title>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem><b>plantScientificName</b></ListGroupItem>
+                    <ListGroupItem><b>plantDuration</b></ListGroupItem>
+                    <ListGroupItem><b>plantGrowthHabit</b></ListGroupItem>
+                    <ListGroupItem><b>plantToxicity</b></ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                    <Card.Link href="#">More Details</Card.Link>
+                </Card.Body>
+            </Card>
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title><b>plantCommonName</b></Card.Title>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem><b>plantScientificName</b></ListGroupItem>
+                    <ListGroupItem><b>plantDuration</b></ListGroupItem>
+                    <ListGroupItem><b>plantGrowthHabit</b></ListGroupItem>
+                    <ListGroupItem><b>plantToxicity</b></ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                    <Card.Link href="#">More Details</Card.Link>
+                </Card.Body>
+            </Card>
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title><b>plantCommonName</b></Card.Title>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem><b>plantScientificName</b></ListGroupItem>
+                    <ListGroupItem><b>plantDuration</b></ListGroupItem>
+                    <ListGroupItem><b>plantGrowthHabit</b></ListGroupItem>
+                    <ListGroupItem><b>plantToxicity</b></ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                    <Card.Link href="#">More Details</Card.Link>
+                </Card.Body>
+            </Card>
+        </CardDeck>
+        </Container>
+</>
+)
 }

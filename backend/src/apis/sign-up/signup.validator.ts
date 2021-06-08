@@ -23,4 +23,13 @@ export const signupValidator = {
         trim: true,
         escape: true
     },
+    profileLogin: {
+        isLength: {
+            errorMessage: 'confirm login must be at least eight characters',
+            options: { min: 5,  max: 32}
+
+        },
+        trim: true,
+        escape: true
+    },
 };
