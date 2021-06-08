@@ -44,10 +44,6 @@ export async function postProfilePlantController(request: Request, response: Res
             profilePlantNotes
         }
 
-        console.log("log new profilePlant")
-        console.log(newProfilePlant)
-
-
         const post = async (newProfilePlant: ProfilePlant): Promise<Response> => {
             const data = await insertProfilePlant(newProfilePlant)
             return response.json(data)
