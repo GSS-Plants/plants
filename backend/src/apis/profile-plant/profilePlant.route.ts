@@ -20,11 +20,9 @@ ProfilePlantRoute.route('/:profilePlantId')
         ])
         , getProfilePlantByProfilePlantIdController
     )
-    .put(isLoggedIn, asyncValidatorController(checkSchema(profileValidator)), putProfilePlantController)
+    .put(putProfilePlantController)
+    .delete(deleteProfilePlantController)
 
 ProfilePlantRoute.route('/greenhouse/:profileId')
     .get(getProfilePlantWithDetailsByProfileIdController)
-
-ProfilePlantRoute.route('/greenhouse/delete/:profilePlantId')
-    .delete(deleteProfilePlantController)
 

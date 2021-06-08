@@ -60,8 +60,8 @@ export async function postProfilePlantController(request: Request, response: Res
 export async function putProfilePlantController(request: Request, response: Response): Promise<Response> {
     try {
         // This probably is right.
-        const {profilePlantId} = request.params
-        const {profilePlantNotes} = request.body
+        const profilePlantId: string = request.params.profilePlantId
+        const profilePlantNotes: string = request.body.profilePlantNotes
         const profileIdFromSession: string = getSessionId(request)
 
         const performUpdate = async (partialProfilePlant: PartialProfilePlant): Promise<Response> => {
@@ -87,7 +87,6 @@ export async function putProfilePlantController(request: Request, response: Resp
 // Get one profilePlant by its Id
 export async function getProfilePlantByProfilePlantIdController(request: Request, response: Response): Promise<Response> {
     try {
-        console.log(request.params.profilePlantId)
         const profilePlantId: string = request.params.profilePlantId;
         const profileIdFromSession: string =  getSessionId(request)
         const result = await selectProfilePlantByProfilePlantId(profilePlantId);
