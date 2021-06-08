@@ -135,8 +135,9 @@ export async function deleteProfilePlantController(request: Request, response: R
         const {profilePlantId} = request.params;
         const result = await deleteProfilePlant(profilePlantId);
         const data = result ?? null;
-        const status: Status = {status: 200, data, message: 'plant deleted successfully'}
-        return response.json(status)
+        const status: Status = {status: 200, data, message: 'plant removed from greenhouse'}
+        const error: Status = {status: 400, data: null, message: 'plant resisted deletion'}
+        return data !== null? response.json(status) : response.json(error)
     } catch (error) {
         return (response.json({status: 400, data: null, message: error.message}))
     }
