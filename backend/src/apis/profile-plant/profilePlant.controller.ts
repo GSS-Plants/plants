@@ -3,7 +3,6 @@ import {PartialProfilePlant, ProfilePlant} from "../../utils/interfaces/ProfileP
 import {Status} from "../../utils/interfaces/Status";
 import {deleteProfilePlant} from "../../utils/profile-plant/deleteProfilePlant"
 import {insertProfilePlant} from "../../utils/profile-plant/insertProfilePlant"
-import {selectProfilePlantByProfileId} from "../../utils/profile-plant/selectProfilePlantByProfileId";
 import {selectProfilePlantWithDetailsByProfileId} from "../../utils/profile-plant/selectProfilePlantWithDetailsByProfileId";
 import {selectProfilePlantWithDetailsByProfilePlantId} from "../../utils/profile-plant/selectProfilePlantWithDetailsByProfilePlantId";
 import {updateProfilePlant} from "../../utils/profile-plant/updateProfilePlant";
@@ -11,30 +10,47 @@ import {selectProfilePlantByProfilePlantId} from "../../utils/profile-plant/sele
 import uuid from "uuid";
 import {Profile} from "../../utils/interfaces/Profile";
 
-export async function getAnything(request: Request, response: Response): Promise<Response>  {
-    return response.json({status: 200, data: null, message: "You got it."})
+function getSessionId(request: Request): string {
+    try {
+        let profile: Profile = <Profile>request.session?.profile
+        return profile.profileId as string
+    } catch (e) {
+        return e
+    }
+}
 
+//for testing outputs
+export async function testController(request: Request, response: Response): Promise<Response> {
+    try {
+        let profilePlantProfileId: string = getSessionId(request)
+
+        return response.json({status: 200, data: null, message: 'Session profile Id: ' + profilePlantProfileId})
+    } catch (e) {
+        return response.json({status: 400, data: null, message: e.message})
+
+    }
 }
 
 // Create a new profilePlant
 export async function postProfilePlantController(request: Request, response: Response): Promise<Response> {
     try {
-        const profile: Profile = <Profile>request.session?.profile
-        // const profilePlantProfileId: string = profile.profileId as string
-        const profilePlantProfileId: string = '0a890341-c799-11eb-8b68-0242c0a83002'
-        const {profilePlantPlantId} = request.params
-        const {profilePlantNotes} = request.body
+        const profilePlantProfileId: string = getSessionId(request)
+        const {profilePlantPlantId, profilePlantNotes} = request.body
 
         const newProfilePlant: ProfilePlant = {
-            profilePlantId: null,
+            profilePlantId: uuid(),
             profilePlantPlantId,
             profilePlantProfileId,
             profilePlantNotes
         }
 
+        console.log("log new profilePlant")
+        console.log(newProfilePlant)
+
+
         const post = async (newProfilePlant: ProfilePlant): Promise<Response> => {
-            await insertProfilePlant(newProfilePlant)
-            return response.json({status: 200, data: null, message: "Plant successfully added to Greenhouse"})
+            const data = await insertProfilePlant(newProfilePlant)
+            return response.json(data)
         }
 
         return post(newProfilePlant);
@@ -128,7 +144,7 @@ export async function deleteProfilePlantController(request: Request, response: R
         const data = result ?? null;
         const status: Status = {status: 200, data, message: 'plant deleted successfully'}
         return response.json(status)
-    }catch (error) {
+    } catch (error) {
         return (response.json({status: 400, data: null, message: error.message}))
     }
 }
