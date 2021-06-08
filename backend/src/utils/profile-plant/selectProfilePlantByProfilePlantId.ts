@@ -6,10 +6,11 @@ export async function selectProfilePlantByProfilePlantId(profilePlantId: string)
         const mysqlConnection = await connect();
         const query : string = 'SELECT profilePlantId, profilePlantPlantId, profilePlantProfileId, profilePlantNotes FROM profilePlant WHERE profilePlantId = UUID_TO_BIN(:profilePlantId);'
 
-        const [rows] = await mysqlConnection.execute(query, profilePlantId);
-
+        const [rows] = await mysqlConnection.query(query, profilePlantId);
+        // @ts-ignore
+        console.log(rows[0])
         // @ts-ignore is required so that rows can be interacted with like the array it is
-        return rows.length !== 0 ? {...rows[0]} : undefined;
+        return rows[0]
     } catch (e) {
         console.error(e)
         return null

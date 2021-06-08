@@ -13,11 +13,10 @@ ProfilePlantRoute.route('/')
 ProfilePlantRoute.route('/add-plant/')
     .post(postProfilePlantController);
 
-ProfilePlantRoute.route('/greenhouse/:profileId/:profilePlantId')
+ProfilePlantRoute.route('/:profilePlantId')
     .get(
         asyncValidatorController([
             check("profilePlantId", "not a valid id").isUUID(),
-            check("profileId", "not a valid id").isUUID()
         ])
         , getProfilePlantByProfilePlantIdController
     )

@@ -62,8 +62,7 @@ export async function putProfilePlantController(request: Request, response: Resp
         // This probably is right.
         const {profilePlantId} = request.params
         const {profilePlantNotes} = request.body
-        const profile: Profile = <Profile>request.session?.profile
-        const profileIdFromSession: string = profile.profileId as string
+        const profileIdFromSession: string = getSessionId(request)
 
         const performUpdate = async (partialProfilePlant: PartialProfilePlant): Promise<Response> => {
             const previousProfilePlant: ProfilePlant = await selectProfilePlantByProfilePlantId(partialProfilePlant.profilePlantId)
@@ -88,10 +87,9 @@ export async function putProfilePlantController(request: Request, response: Resp
 // Get one profilePlant by its Id
 export async function getProfilePlantByProfilePlantIdController(request: Request, response: Response): Promise<Response> {
     try {
-        const {profilePlantId} = request.params;
-        const {profileId} = request.params;
-        const profile: Profile = <Profile>request.session?.profile
-        const profileIdFromSession: string = profile.profileId as string
+        console.log(request.params.profilePlantId)
+        const profilePlantId: string = request.params.profilePlantId;
+        const profileIdFromSession: string =  getSessionId(request)
         const result = await selectProfilePlantByProfilePlantId(profilePlantId);
         const data = result ?? null;
         const status: Status = {status: 200, data, message: null}
@@ -100,7 +98,7 @@ export async function getProfilePlantByProfilePlantIdController(request: Request
             return response.json({status: 400, data: null, message})
         }
 
-        return profileId === profileIdFromSession ? response.json(status) : updateFailed("you are not authorized to perform this action")
+        return data !== null? response.json(status) : updateFailed("request failed somehow")
 
     } catch (error) {
         return (response.json({status: 400, data: null, message: error.message}))
