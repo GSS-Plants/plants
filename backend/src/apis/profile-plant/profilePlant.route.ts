@@ -2,24 +2,27 @@ import {Router} from "express";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {check, checkSchema} from "express-validator";
 import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
-import {deleteProfilePlantController, getProfilePlantByProfilePlantIdController, getProfilePlantWithDetailsByProfileIdController, postProfilePlantController, putProfilePlantController} from "./profilePlant.controller";
+import {testController, deleteProfilePlantController, getProfilePlantByProfilePlantIdController, getProfilePlantWithDetailsByProfileIdController, postProfilePlantController, putProfilePlantController} from "./profilePlant.controller";
 import {profileValidator} from "../profile/profile.validator";
 
 export const ProfilePlantRoute = Router();
-ProfilePlantRoute.route('/addplant/:plantId')
+
+ProfilePlantRoute.route('/')
+    .get(isLoggedIn, testController)
+
+ProfilePlantRoute.route('/add-plant/')
     .post(postProfilePlantController);
 
-ProfilePlantRoute.route('/greenhouse/:profileId/:profilePlantId')
+ProfilePlantRoute.route('/:profilePlantId')
     .get(
         asyncValidatorController([
-            check("profilePlantId", "not a valid id").isUUID()
+            check("profilePlantId", "not a valid id").isUUID(),
         ])
         , getProfilePlantByProfilePlantIdController
     )
-    .put(isLoggedIn, asyncValidatorController(checkSchema(profileValidator)), putProfilePlantController)
+    .put(putProfilePlantController)
+    .delete(deleteProfilePlantController)
 
 ProfilePlantRoute.route('/greenhouse/:profileId')
     .get(getProfilePlantWithDetailsByProfileIdController)
 
-ProfilePlantRoute.route('/greenhouse/delete/:profilePlantId')
-    .delete(deleteProfilePlantController)
