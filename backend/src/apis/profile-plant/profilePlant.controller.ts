@@ -107,11 +107,14 @@ export async function getProfilePlantByProfilePlantIdController(request: Request
 // Get one profilePlant with Plant fields
 export async function getProfilePlantWithDetailsByProfilePlantIdController(request: Request, response: Response): Promise<Response> {
     try {
-        const {profilePlantId} = request.params;
+        const profilePlantId: string = request.params.profilePlantId;
+        const profileIdFromSession: string =  getSessionId(request)
         const result = await selectProfilePlantWithDetailsByProfilePlantId(profilePlantId);
         const data = result ?? null;
         const status: Status = {status: 200, data, message: null}
-        return response.json(status)
+        const error: Status = {status: 400, data: null, message: 'plant selection failed'}
+
+        return data !== null? response.json(status) : response.json(error)
     } catch (error) {
         return (response.json({status: 400, data: null, message: error.message}))
     }
