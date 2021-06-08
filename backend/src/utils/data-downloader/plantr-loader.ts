@@ -5,11 +5,9 @@ import {setHash} from "../auth.utils";
 import {Plant} from "../interfaces/Plant";
 import {insertProfile} from "../profile/insertProfile";
 import {insertAllPlants} from "../plant/insertAllPlants";
-import {insertProfilePlant} from "../profile-plant/insertProfilePlant";
 
 const fs = require('fs')
 const csv = require('csv-parser')
-let plantIds: string[] = []
 let userIds: (string|null)[] = []
 
 function plantrLoader(): Promise<any> {
@@ -98,11 +96,7 @@ async function downloadPlants() {
                         plantShadeTolerance,
                         plantToxicity
                     }
-                    if (i%150 === 0) {
-                        plantIds.push(plant.plantId)
-                    }
                     plants.push(plant)
-
                 }
                 console.log(await insertAllPlants(plants))
 
