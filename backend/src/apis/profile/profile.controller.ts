@@ -87,6 +87,7 @@ export async function deleteProfileController(request: Request, response: Respon
     try {
         const {profileId} = request.params;
         const result = await deleteProfile(profileId);
+
         const data = result ?? null;
         const status: Status = {status: 200, data, message: 'profile deleted successfully'}
         return response.json(status)
