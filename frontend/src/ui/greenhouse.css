@@ -140,10 +140,10 @@ nav .nav-links ul {
     flex-direction: row;
 }
 
-nav nav-links ul li{
-    padding: 0 4px;
-    list-style: none;
-}
+/*nav nav-links ul li{*/
+/*    padding: 0 4px;*/
+/*    list-style: none;*/
+/*}*/
 
 nav .nav-links ul li img {
     transform: scale(0.45);
