@@ -76,12 +76,7 @@ export const Home = () => {
                         <Card.Img variant="top"
                                   src="https://images.unsplash.com/photo-1509937528035-ad76254b0356?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=924&q=80"/>
                         <Card.Body>
-<<<<<<< HEAD
-                            <Card.Title>Kirsten Crocker</Card.Title>
-=======
-                            <ListGroupItem>Kyerstin O'Neal</ListGroupItem>
-                            <Card.Title>About Us!</Card.Title>
->>>>>>> 8452357d1a86e702b1c46de5f846f3d10c2f2dad
+                            <Card.Title>Kirsten O'Neal</Card.Title>
                             <Card.Text>
                                 <hr/>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam facere sunt
