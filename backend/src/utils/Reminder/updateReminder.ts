@@ -6,7 +6,7 @@ export async function updateReminder(reminder: Reminder) {
         const mysqlConnection = await connect();
         const query : string = 'UPDATE reminder SET reminderDescription = :reminderDescription, reminderRecurrence = :reminderRecurrence, reminderStartDate = :reminderStartDate';
 
-        const [rows] = await mysqlConnection.execute(query, reminder);
+        const [rows] = await mysqlConnection.execute(query, {reminder});
         // @ts-ignore is required so that rows can be interacted with like the array it is
 
         return rows[0]
