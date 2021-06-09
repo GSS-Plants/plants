@@ -4,6 +4,7 @@ import uuid from "uuid";
 import {insertReminder} from "../../utils/Reminder/InsertReminder";
 
 export async function postReminderController(request: Request, response: Response): Promise<Response> {
+    console.log("anything")
     try {
         const {reminderProfilePlantId, reminderDescription, reminderRecurrence, reminderStartDate} = request.body
         const reminder: Reminder = {
