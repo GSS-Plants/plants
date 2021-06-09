@@ -15,3 +15,4 @@ export async function selectProfilePlantWithDetailsByProfileId(profileId: string
         return null
     }
 }
+
