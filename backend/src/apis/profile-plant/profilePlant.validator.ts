@@ -18,6 +18,7 @@ export const profilePlantValidator : Schema = {
     },
     profilePlantNotes: {
         trim: true,
+        escape: true
 
     }
 }

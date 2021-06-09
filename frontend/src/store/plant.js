@@ -17,3 +17,10 @@ export const {getAllPlants} = plantSlice.actions
 
 // We use export default here so that if something imports this file, they will get it by default
 export default plantSlice.reducer
+
+// Create an export to allow async calls to our action
+export const fetchAllPlants = () => async dispatch => {
+    const {data} = await httpConfig(`/apis/plant/`)
+    dispatch(getAllPlants(data))
+}
+
