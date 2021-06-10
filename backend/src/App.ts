@@ -10,6 +10,11 @@ import {signUpRoute} from "./apis/sign-up/signup.route";
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
 import {ReminderRoute} from "./apis/reminder/reminder.route";
 
+import {PlantRoute} from "./apis/Plant/plant.route";
+
+import {ProfilePlantRoute} from "./apis/profile-plant/profilePlant.route";
+
+
 const MemoryStore = require('memorystore')(session);
 // The following class creates the app and instantiates the server
 export class App {
@@ -56,6 +61,8 @@ export class App {
         this.app.use('/apis/profile', ProfileRoute)
         this.app.use('/apis/sign-up', signUpRoute)
         this.app.use('/apis/sign-in', SignInRouter)
+        this.app.use('/apis/plant', PlantRoute)
+        this.app.use('/apis/profile-plant', ProfilePlantRoute)
         this.app.use('/apis/profile/:profileId', ProfileRoute)
         this.app.use('/apis/reminder', ReminderRoute)
     }

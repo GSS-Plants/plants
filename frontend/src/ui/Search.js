@@ -48,7 +48,7 @@ export const Search = () => {
         </Navbar>
 
         <h1><b>Search Results</b></h1>
-        <CardDeck>
+        <CardColumns>
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title><b>plantCommonName</b></Card.Title>
@@ -105,7 +105,7 @@ export const Search = () => {
                     <Card.Link href="#">More Details</Card.Link>
                 </Card.Body>
             </Card>
-        </CardDeck>
+        </CardColumns>
         </Container>
 </>
 )
