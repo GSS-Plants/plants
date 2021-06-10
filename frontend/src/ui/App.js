@@ -23,6 +23,7 @@ export const App = () => (
                 <Route exact path='/search' component={Search} />
                 <Route exact path='/plants' component={Plants} />
                 <Route exact path='/greenhouse' component={Greenhouse} />
+                <Route exact path='/greenhouse/:profileId' component={Greenhouse}profileId=':profileId' />
                 <Route exact path='/navbar' component={NavBar} />
                 {/*<Route exact path='/contact' component={Contact} />*/}
                 <Route component={FourOhFour} />

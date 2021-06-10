@@ -1,13 +1,32 @@
 import React from "react"
 import "./greenhouse.css"
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllPlants} from "../store/plant";
+import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 // import "./greenhouse-js.js"
 
-export const Greenhouse = () => {
+export const Greenhouse = ({match}) => {
+
+
+    // Tell this component that it needs to watch for items that live outside of this component.
+    // This is how we make sure this component looks for our data from Redux's call to the backend.
+    const dispatch = useDispatch()
+    const initialEffects = () => {
+        dispatch(fetchProfilePlantsByProfileId(match.params.profileId));
+    }
+    React.useEffect(initialEffects, [match.params.profileId, dispatch])
+
+    // Render our misquotes constant - before we have our data, render the skeleton.
+    // After we have our data, render the full object with our data.
+    const profilePlants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
+
+    console.log(profilePlants);
     return (
         <>
 
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
+                    <img src="../assets/shelves.png" alt=""/>
                     <h1 className="display-4">Fluid jumbotron</h1>
                     <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its
                         parent.</p>
