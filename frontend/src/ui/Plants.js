@@ -1,39 +1,53 @@
-import React from 'react'
-import {Row, Col, Button, Form, Navbar, Image, Container, Nav, InputGroup,} from 'react-bootstrap'
+import React, {useEffect} from 'react'
+import {Row, Col, Button, Form, Navbar, Image, Container, Nav, InputGroup, ListGroup, ListGroupItem,} from 'react-bootstrap'
 import "./Styles.css"
 import logo from "../assets/logo-filler.png";
+import {useDispatch, useSelector} from "react-redux";
+import{fetchPlantByPlantId} from "../store/plant";
 
-export const Plants= () => {
+export const Plants = ({match}) => {
+    console.log('PlantId: ' + match.params.plantId)
+
+    // Tell this component that it needs to watch for items that ListGroupItemve outside of this component.
+    // This is how we make sure this component looks for our data from Redux's call to the backend.
+    const dispatch = useDispatch()
+    const sideEffects = () => {
+        dispatch(fetchPlantByPlantId(match.params.plantId))
+    }
+   useEffect(sideEffects, [match.params.plantId, dispatch])
+
+    // Render our misquotes constant - before we have our data, render the skeleton.
+    // After we have our data, render the full object with our data.
+    const plant = useSelector(state => state.plants ? state.plants : [])
     return (
         <div id="container">
 
             <Row>
                 <Col id="Pcol" lg={{span:10,offset:1}}>
-                    <h1>More Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis cumque ducimus ea eligendi exercitationem ipsam molestias quod sequi. Ab architecto asperiores at autem consequuntur dolorum earum eos eum eveniet expedita fugit impedit labore laborum libero maiores maxime necessitatibus neque numquam pariatur praesentium provident quibusdam, quisquam quod repellat totam unde veritatis voluptate! Adipisci commodi cum, delectus, deserunt dicta distinctio dolorem eligendi error esse excepturi exercitationem in, non provident quae quisquam repudiandae velit voluptate voluptatum. Beatae, dicta et eum exercitationem illo illum laborum, maiores molestias natus nihil nostrum qui rem repellat repellendus repudiandae sequi voluptatum? Cumque dolores, eaque ex excepturi laudantium nulla sint ullam veritatis voluptas voluptates. Aspernatur beatae consequatur cumque ducimus, est et eum excepturi fuga incidunt itaque laboriosam libero magnam non numquam officiis saepe sequi sit tempora voluptate voluptatum. Aspernatur, deserunt, reprehenderit? Accusantium amet at commodi consequuntur corporis delectus enim eum incidunt iusto mollitia, nam non nostrum nulla optio pariatur sequi soluta veniam. Consequatur delectus doloremque dolores eum impedit inventore necessitatibus nisi, quibusdam sed sequi. Ab adipisci, aliquam cum doloremque eaque eius eligendi est facere in incidunt ipsam laborum laudantium nihil nisi nostrum officia sapiente temporibus ullam vel voluptate. Amet earum, exercitationem iure maxime modi nemo quia sed voluptatum.</p>
+                    <h1>I'm a Plant!</h1>
                 </Col>
             </Row>
             <Row>
-                <Col id="buttcall">
-                    <Button id="Butt" class="btn btn-success">Link</Button>
-                    <Button id="Butt2" class="btn btn-success">Add to Greenhouse</Button>
-                  <hr/>
+                <Col>
+                    <ListGroup>
+                        <ListGroupItem>${plant.plantBloomPeriod}</ListGroupItem>
+                        <ListGroupItem>${plant.plantCommonName}</ListGroupItem>
+                        <ListGroupItem>${plant.plantDuration}</ListGroupItem>
+                        <ListGroupItem>${plant.plantDroughtTolerance}</ListGroupItem>
+                        <ListGroupItem>${plant.plantGrowthHabit}</ListGroupItem>
+                        <ListGroupItem>${plant.plantGrowthPeriod}</ListGroupItem>
+                        <ListGroupItem>${plant.plantMatureHeight}</ListGroupItem>
+                        <ListGroupItem>${plant.plantMinFrostFreeDays}</ListGroupItem>
+                        <ListGroupItem>${plant.plantPrecipitationMax}</ListGroupItem>
+                        <ListGroupItem>${plant.plantPrecipitationMin}</ListGroupItem>
+                        <ListGroupItem>${plant.plantRootDepthMinimum}</ListGroupItem>
+                        <ListGroupItem>${plant.plantScientificName}</ListGroupItem>
+                        <ListGroupItem>${plant.plantShadeTolerance}</ListGroupItem>
+                        <ListGroupItem>${plant.plantToxicity}</ListGroupItem>
+                    </ListGroup>
                 </Col>
             </Row>
 
-            <Row>
-                <Col id="Pcol" lg={{span:10,offset:1}}>
-                    <h1>More Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis cumque ducimus ea eligendi exercitationem ipsam molestias quod sequi. Ab architecto asperiores at autem consequuntur dolorum earum eos eum eveniet expedita fugit impedit labore laborum libero maiores maxime necessitatibus neque numquam pariatur praesentium provident quibusdam, quisquam quod repellat totam unde veritatis voluptate! Adipisci commodi cum, delectus, deserunt dicta distinctio dolorem eligendi error esse excepturi exercitationem in, non provident quae quisquam repudiandae velit voluptate voluptatum. Beatae, dicta et eum exercitationem illo illum laborum, maiores molestias natus nihil nostrum qui rem repellat repellendus repudiandae sequi voluptatum? Cumque dolores, eaque ex excepturi laudantium nulla sint ullam veritatis voluptas voluptates. Aspernatur beatae consequatur cumque ducimus, est et eum excepturi fuga incidunt itaque laboriosam libero magnam non numquam officiis saepe sequi sit tempora voluptate voluptatum. Aspernatur, deserunt, reprehenderit? Accusantium amet at commodi consequuntur corporis delectus enim eum incidunt iusto mollitia, nam non nostrum nulla optio pariatur sequi soluta veniam. Consequatur delectus doloremque dolores eum impedit inventore necessitatibus nisi, quibusdam sed sequi. Ab adipisci, aliquam cum doloremque eaque eius eligendi est facere in incidunt ipsam laborum laudantium nihil nisi nostrum officia sapiente temporibus ullam vel voluptate. Amet earum, exercitationem iure maxime modi nemo quia sed voluptatum.</p>
-                </Col>
-            </Row>
-            <Row>
-                <Col id="buttcall">
-                    <Button id="Butt">Link</Button>
-                    <Button id="Butt2">Add to Greenhouse</Button>
-                    <hr/>
-                </Col>
-            </Row>
         </div>
     )
 }
