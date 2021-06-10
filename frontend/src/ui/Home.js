@@ -78,6 +78,7 @@ export const Home = () => {
                         <Card.Body>
 
                             <Card.Title>Kyerstin O'Neal</Card.Title>
+
                             <Card.Text>
                                 <hr/>
                                 I am an Air Force brat who’s been living in Albuquerque on and off for about a decade now. A few of my favorite things: sci-fi, MMA, disruptive technologies, travelling, and above all, food. Of the multiple careers I’ve had - personal trainer, journalist, real estate agent - I am most excited about my journey as a woman in tech. Also a two-time bootcamp graduate, I attended Deep Dive Digital Media in 2020 and Fullstack in 2021.
