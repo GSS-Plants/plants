@@ -19,7 +19,7 @@ export const {getProfilePlantsByProfileId} = plantSlice.actions
 
 // Create an export to allow async calls to our action
 export const fetchProfilePlantsByProfileId = (profileId) => async dispatch => {
-    const {data} = await httpConfig(`/apis/profile-plant/${profileId}`)
+    const {data} = await httpConfig(`/apis/profile-plant/greenhouse/${profileId}`)
     dispatch(getProfilePlantsByProfileId(data))
 
 }

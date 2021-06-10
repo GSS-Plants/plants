@@ -7,14 +7,14 @@ import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 
 export const Greenhouse = ({match}) => {
 
-
+    const profileId = match.params.profileId
     // Tell this component that it needs to watch for items that live outside of this component.
     // This is how we make sure this component looks for our data from Redux's call to the backend.
     const dispatch = useDispatch()
-    const initialEffects = () => {
-        dispatch(fetchProfilePlantsByProfileId(match.params.profileId));
+    const sideEffects = () => {
+        dispatch(fetchProfilePlantsByProfileId(profileId));
     }
-    React.useEffect(initialEffects, [match.params.profileId, dispatch])
+    React.useEffect(sideEffects, [match.params.profileId, dispatch])
 
     // Render our misquotes constant - before we have our data, render the skeleton.
     // After we have our data, render the full object with our data.
