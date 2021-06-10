@@ -12,7 +12,7 @@ const plantSlice = createSlice({
     },
 })
 
-// Make our actions callable as function getAllMisquotes.
+// Make our actions callable as function getAllPlants.
 export const {getAllPlants} = plantSlice.actions
 
 

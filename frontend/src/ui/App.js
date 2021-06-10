@@ -10,7 +10,7 @@ import {Greenhouse} from "./Greenhouse";
 import {NavBar} from "./Navbar";
 import {store} from "../store";
 import {Provider} from "react-redux";
-
+import "./Styles.css"
 export const App = () => (
     <>
         <Provider store={store} >
