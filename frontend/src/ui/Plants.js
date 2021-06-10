@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import{fetchPlantByPlantId} from "../store/plant";
 
 export const Plants = ({match}) => {
-    console.log('PlantId: ' + match.params.plantId)
 
     // Tell this component that it needs to watch for items that ListGroupItemve outside of this component.
     // This is how we make sure this component looks for our data from Redux's call to the backend.
@@ -18,19 +17,22 @@ export const Plants = ({match}) => {
 
     // Render our misquotes constant - before we have our data, render the skeleton.
     // After we have our data, render the full object with our data.
-    const plant = useSelector(state => state.plants ? state.plants : [])
+    const plantArray = useSelector(state => state.plants ? state.plants : [])
+    const plant = plantArray[0]
+    console.log(plantArray)
     return (
         <div id="container">
 
             <Row>
                 <Col id="Pcol" lg={{span:10,offset:1}}>
-                    <h1>I'm a Plant!</h1>
+                    <h1>Hi, My Name Is:</h1>
+                    <h2>{plant.plantCommonName}</h2>
                 </Col>
             </Row>
             <Row>
                 <Col>
                     <ListGroup>
-                        <ListGroupItem>${plant.plantBloomPeriod}</ListGroupItem>
+                        <ListGroupItem>Bloom Period: {plant.plantBloomPeriod}</ListGroupItem>
                         <ListGroupItem>${plant.plantCommonName}</ListGroupItem>
                         <ListGroupItem>${plant.plantDuration}</ListGroupItem>
                         <ListGroupItem>${plant.plantDroughtTolerance}</ListGroupItem>

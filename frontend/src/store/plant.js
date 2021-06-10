@@ -7,11 +7,9 @@ const plantSlice = createSlice({
     initialState: [],
     reducers: {
         getAllPlants: (plants, action) => {
-            console.log("getAllPlants reducer")
             return action.payload
         },
         getPlantByPlantId: (plants, action) => {
-            console.log("getPlantByPlantId reducer")
             return action.payload
         }
     },
@@ -25,7 +23,6 @@ export const fetchAllPlants = () => async dispatch => {
 }
 //get a single plant
 export const fetchPlantByPlantId = (plantId) => async dispatch => {
-    console.log("plant.js fetchPlantByPlantId")
     const {data} = await httpConfig(`/apis/plant/${plantId}`)
     dispatch(getPlantByPlantId(data))
 }

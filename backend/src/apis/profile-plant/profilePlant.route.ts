@@ -11,7 +11,7 @@ ProfilePlantRoute.route('/')
     .get(isLoggedIn, testController)
 
 ProfilePlantRoute.route('/add-plant/')
-    .post(postProfilePlantController);
+    .post(isLoggedIn, postProfilePlantController);
 
 ProfilePlantRoute.route('/:profilePlantId')
     .get(
@@ -20,11 +20,11 @@ ProfilePlantRoute.route('/:profilePlantId')
         ])
         , getProfilePlantByProfilePlantIdController
     )
-    .put(putProfilePlantController)
-    .delete(deleteProfilePlantController)
+    .put(isLoggedIn, putProfilePlantController)
+    .delete(isLoggedIn, deleteProfilePlantController)
 
 ProfilePlantRoute.route('/details/:profilePlantId')
-    .get(
+    .get( isLoggedIn,
         asyncValidatorController([
             check("profilePlantId", "not a valid id").isUUID(),
         ])
@@ -32,7 +32,7 @@ ProfilePlantRoute.route('/details/:profilePlantId')
 
 
 ProfilePlantRoute.route('/greenhouse/:profileId')
-    .get(
+    .get( isLoggedIn,
         asyncValidatorController([
             check("profileId", "not a valid id").isUUID(),
         ])
