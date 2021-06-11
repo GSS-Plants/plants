@@ -11,7 +11,7 @@ export const Plants = ({match}) => {
         console.log('nooooooooo')
         dispatch(fetchPlantByPlantId(match.params.plantId))
     }
-   useEffect(sideEffects, [match.params.plantId, dispatch])
+   React.useEffect(sideEffects, [match.params.plantId, dispatch])
 
     // Render our plants constant - before we have our data, render the skeleton.
     // After we have our data, render the full object with our data.

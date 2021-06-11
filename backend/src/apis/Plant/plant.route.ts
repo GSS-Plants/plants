@@ -3,7 +3,7 @@ import {asyncValidatorController} from "../../utils/controllers/asyncValidator.c
 import {check, checkSchema} from "express-validator";
 import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 import {plantValidator} from "./plant.validator";
-import {getAllPlants, getByCommonName, selectByScientificName} from "./plant.controller";
+import {getAllPlants, getByCommonName, getPlantByPlantId, selectByScientificName} from "./plant.controller";
 
 
 export const PlantRoute: Router = Router();
