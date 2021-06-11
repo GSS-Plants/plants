@@ -27,9 +27,7 @@ export const Greenhouse = ({match}) => {
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <img src="../assets/shelves.png" alt=""/>
-                    <h1 className="display-4">Fluid jumbotron</h1>
-                    <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its
-                        parent.</p>
+                    <h1 className="display-4">Greenhouse</h1>
                 </div>
             </div>
 
