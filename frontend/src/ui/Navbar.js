@@ -42,7 +42,7 @@ export const NavBar = () => {
 
                         <Form inline as={InputGroup} className="w-50">
                             <Form.Control type="text" placeholder="Search for plants"/>
-                            <InputGroup.Append><Button variant="outline-dark">Dark</Button></InputGroup.Append>
+                            <InputGroup.Append><Button variant="outline-dark">Go</Button></InputGroup.Append>
                         </Form>
                     </Navbar.Collapse>
                 </Navbar>
