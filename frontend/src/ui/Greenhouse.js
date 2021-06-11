@@ -1,10 +1,19 @@
-import React from "react"
-import "./greenhouse.css"
-// import "./greenhouse-js.js"
+import React, {useState} from "react"
+// import "./greenhouse.css"
+import {Button, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row} from "react-bootstrap";
+import logo from "../assets/logo-filler.png";
+
+
+
+import "./greenhouse-js.js"
 
 export const Greenhouse = () => {
+
+
     return (
         <>
+
+
 
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
@@ -79,10 +88,12 @@ export const Greenhouse = () => {
 
                     </div>
                 </div>
+
             </section>
 
 
         </>
-)
-}
+ )
 
+
+}

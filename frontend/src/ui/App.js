@@ -10,7 +10,9 @@ import {Greenhouse} from "./Greenhouse";
 import {NavBar} from "./Navbar";
 import {store} from "../store";
 import {Provider} from "react-redux";
+
 import "./Styles.css"
+
 export const App = () => (
     <>
         <Provider store={store} >
@@ -23,7 +25,7 @@ export const App = () => (
                 <Route exact path='/search' component={Search} />
                 <Route exact path='/plants' component={Plants} />
                 <Route exact path='/greenhouse' component={Greenhouse} />
-                <Route exact path='/navbar' component={NavBar} />
+                <Route exact path='/Navbar' component={NavBar} />
                 {/*<Route exact path='/contact' component={Contact} />*/}
                 <Route component={FourOhFour} />
             </Switch>
