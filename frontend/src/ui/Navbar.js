@@ -1,9 +1,12 @@
 import {Button, Form, InputGroup, Nav, Navbar, Container} from "react-bootstrap";
 import logo from "../assets/logo-filler.png";
 import React from "react";
+import {useLocation} from "react-router";
 
 
 export const NavBar= () => {
+    const location = useLocation().pathname
+    console.log(location)
     return (
         <>
 
@@ -31,10 +34,10 @@ export const NavBar= () => {
                             <Nav.Link href="#loginModal" className="text-light">Sign up / Sign in</Nav.Link>
                         </Nav>
 
-                        <Form inline as={InputGroup} className="w-50">
+                        {location !== '/' && (<><Form inline as={InputGroup} className="w-50">
                             <Form.Control type="text" placeholder="Search for plants"/>
                             <InputGroup.Append><Button variant="outline-success">Go</Button></InputGroup.Append>
-                        </Form>
+                        </Form></>)}
                     </Navbar.Collapse>
                 </Navbar>
 
