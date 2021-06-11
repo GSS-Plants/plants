@@ -6,6 +6,11 @@ import {Plants} from "./Plants";
 import { Reminder } from './Reminder';
 import { FourOhFour } from './pagesFourOhFour'
 import React from 'react'
+// Import react-redux so we can use the store.
+import {Provider} from "react-redux";
+
+library.add(faPencilAlt, faUserCircle, faSortDown, faEnvelope, faSignInAlt, faKey, faDog );
+
 
 export const App = () => (
     <>
