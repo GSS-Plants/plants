@@ -40,8 +40,8 @@ export const Search = () => {
         <CardColumns>
             {
                 plants.map(plant => <PlantCard plant={plant} key={plant.plantId}/>)
-
             }
+
         </CardColumns>
         </Container>
 </>
