@@ -7,8 +7,14 @@ export function PlantCard(props) {
     const growth = growths[0]
 
     switch (growth) {
-        case 'Shrub': return "frontend/src/assets/shrub.png";
-        case 'Stalks': return "frontend/src/assets/stalks.png";
+        case 'Graminoid': return "frontend/src/assets/logo-filler.png";
+        case 'Subshrub': return "frontend/src/assets/subshrub.png";
+        case 'Herb': return "frontend/src/assets/herb.png"
+        case 'Nonvascular': return "frontend/src/assets/nonvascular.png"
+        case 'Shrub': return "frontend/src/assets/shrub.png"
+        case 'Tree': return "frontend/src/assets/tree.png"
+        case 'Vine': return "frontend/src/assets/vine.png"
+        case 'Lichenous': return "frontend/src/assets/lichenous.png"
     }
     return(
         <>
