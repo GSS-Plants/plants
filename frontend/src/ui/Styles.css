@@ -1,3 +1,7 @@
+#container{
+    background-color: #D1E2C4;
+}
+
 #jumone {
 
     background-image: url("https://images.unsplash.com/photo-1515472379677-6c0ad8823829?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80");
@@ -14,18 +18,22 @@
 }
 #buttcall{
 
+
     text-align: center;
 }
 #cardA{
+    background-color: #778A35;
     text-align: center;
 
 }
 #cardd{
+    color: #31352E;
+    background-color: #D1E2C4;
     display: flex;
     margin: 3rem auto 5rem auto;
 }
  #Butt{
-
+     background-color: #778A35;
      margin-right: 2rem;
      margin-bottom: 6rem;
 
@@ -35,9 +43,7 @@
      margin-bottom: 6rem;
 
  }
- Pcol{
-     text-align: right;
- }
+
 h1{
     text-align: center;
 }
@@ -59,4 +65,10 @@ h1{
 
 }
 
+#theNav{
+   background-color:#778A35;
+}
+hr{
+    border-top: 2px solid #778A35;
 
+}
