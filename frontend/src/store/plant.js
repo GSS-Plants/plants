@@ -23,6 +23,7 @@ export const fetchAllPlants = () => async dispatch => {
 }
 //get a single plant
 export const fetchPlantByPlantId = (plantId) => async dispatch => {
+    console.log('AAAAAAAAAHHHHHHHHH')
     const {data} = await httpConfig(`/apis/plant/${plantId}`)
     dispatch(getPlantByPlantId(data))
 }

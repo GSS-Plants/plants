@@ -1,25 +1,23 @@
-import React, {useEffect} from 'react'
-import {Row, Col, Button, Form, Navbar, Image, Container, Nav, InputGroup, ListGroup, ListGroupItem,} from 'react-bootstrap'
-import "./Styles.css"
-import logo from "../assets/logo-filler.png";
 import {useDispatch, useSelector} from "react-redux";
+import React, {useEffect} from 'react'
+import {Row, Col, ListGroup, ListGroupItem,} from 'react-bootstrap'
 import{fetchPlantByPlantId} from "../store/plant";
 
 export const Plants = ({match}) => {
 
-    // Tell this component that it needs to watch for items that ListGroupItemve outside of this component.
     // This is how we make sure this component looks for our data from Redux's call to the backend.
     const dispatch = useDispatch()
     const sideEffects = () => {
+        console.log('nooooooooo')
         dispatch(fetchPlantByPlantId(match.params.plantId))
     }
    useEffect(sideEffects, [match.params.plantId, dispatch])
 
-    // Render our misquotes constant - before we have our data, render the skeleton.
+    // Render our plants constant - before we have our data, render the skeleton.
     // After we have our data, render the full object with our data.
     const plantArray = useSelector(state => state.plants ? state.plants : [])
     const plant = plantArray[0]
-    console.log(plantArray)
+    console.log('plantArray: ' + plantArray)
     return (
         <div id="container">
 

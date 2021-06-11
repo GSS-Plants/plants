@@ -45,6 +45,7 @@ export async function selectByScientificName(request: Request, response: Respons
 
 export async function getPlantByPlantId(request: Request, response: Response): Promise<Response> {
     try {
+        console.log('get plant by plant id')
         const {plantId} = request.params
         const mySqlResult = await selectPlantByPlantId(plantId);
         const data = mySqlResult ?? null
