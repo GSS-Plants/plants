@@ -2,16 +2,33 @@ import {Button, Form, InputGroup, Nav, Navbar, Modal} from "react-bootstrap";
 import logo from "../assets/logo-filler.png";
 import React, {useState} from "react";
 import {useLocation} from "react-router";
+import {Formik} from "formik";
+import {httpConfig} from "../utils/httpConfig";
+import {searchBar} from "./searchBar";
 
 
 export const NavBar = () => {
-    const location = useLocation().pathname
+
+    const search = (searchText, {resetForm, setStatus}) => {
+        httpConfig.get(`/apis/plants/search-common-name/${searchText}`, searchText)
+            .then(reply => {
+                    let {message, type} = reply;
+
+                    if (reply.status === 200) {
+                        resetForm();
+                    }
+                    setStatus({message, type});
+                }
+            );
+    };
+
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const currentPath = useLocation().pathname
 
     return (
         <>
@@ -41,12 +58,17 @@ export const NavBar = () => {
                             </Nav>
                             <Nav.Link onClick={handleShow} className="text-light">Sign up / Sign in</Nav.Link>
 
-                            {location !== '/' && (<><Form inline as={InputGroup} className="w-50">
-                                <Form.Control type="text" placeholder="Search for plants"/>
-                                <InputGroup.Append><Button variant="outline-success">Go</Button></InputGroup.Append>
-                            </Form></>)}
-                    </Navbar.Collapse>
-                </Navbar>
+                            {currentPath !== '/' && (<>
+                                <Formik
+                                    initialValues={searchBar}
+                                    onSubmit={search}
+                                >
+                                </Formik>
+                            </>)}
+                            {searchBar}
+
+                        </Navbar.Collapse>
+                    </Navbar>
                     <Modal
                         show={show}
                         onHide={handleClose}
@@ -67,8 +89,8 @@ export const NavBar = () => {
                             <Button variant="primary">Understood</Button>
                         </Modal.Footer>
                     </Modal>
+                </div>
             </div>
-            </div>
-</>
-)
+        </>
+    )
 }
