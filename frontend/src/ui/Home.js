@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Styles.css"
 import {
     Row,
     Col,
@@ -12,40 +13,39 @@ import {
     Nav,
     InputGroup
 } from 'react-bootstrap'
-import "./Styles.css"
+
 import logo from "../assets/logo-filler.png";
 
 export const Home = () => {
     return (
         <div id="container">
-            <div id="theNav">
-                <Navbar variant="light" expand="xl">
-                    <Navbar.Brand href="#home">
-                        <img
-                            alt=""
-                            src={logo}
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
-                        />{' '}
-                        plant.r
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbar-links"/>
-                    <Navbar.Collapse id="navbar-links" className="justify-content-between">
-                        <Nav className="justify-content-between">
-                            <Nav.Link href="/reminder">Reminder</Nav.Link>
-                            <Nav.Link href="#search">Search</Nav.Link>
-                            <Nav.Link href="#plant">Plant</Nav.Link>
-                            <Nav.Link href="#greenhouse">Greenhouse</Nav.Link>
-                            <Nav.Link href="#contact">Contact Team Plants</Nav.Link>
+            {/*<div id="theNav">*/}
+            {/*    <Navbar variant="light" expand="xl">*/}
+            {/*        <Navbar.Brand href="#home">*/}
+            {/*            <img*/}
+            {/*                alt=""*/}
+            {/*                src={logo}*/}
+            {/*                width="30"*/}
+            {/*                height="30"*/}
+            {/*                className="d-inline-block align-top"*/}
+            {/*            />{' '}*/}
+            {/*            plant.r*/}
+            {/*        </Navbar.Brand>*/}
+            {/*        <Navbar.Toggle aria-controls="navbar-links"/>*/}
+            {/*        <Navbar.Collapse id="navbar-links" className="justify-content-between">*/}
+            {/*            <Nav className="justify-content-between">*/}
+            {/*                <Nav.Link href="/reminder">Reminder</Nav.Link>*/}
+            {/*                <Nav.Link href="#search">Search</Nav.Link>*/}
+            {/*                <Nav.Link href="#plant">Plant</Nav.Link>*/}
+            {/*                <Nav.Link href="#greenhouse">Greenhouse</Nav.Link>*/}
+            {/*                <Nav.Link href="#contact">Contact Team Plants</Nav.Link>*/}
 
-                        </Nav>
-                        <Nav.Link href="#loginModal" className="text-light">Sign up / </Nav.Link>
-                        <Nav.Link href="#loginModal" className="text-light">Sign in</Nav.Link>
-                    </Navbar.Collapse>
-                </Navbar>
+            {/*            </Nav>*/}
+            {/*            <Nav.Link href="#loginModal" className="text-light">Sign up / Sign in</Nav.Link>*/}
+            {/*        </Navbar.Collapse>*/}
+            {/*    </Navbar>*/}
 
-            </div>
+            {/*</div>*/}
             <Row>
                 <Col>
                     <Jumbotron id="jumone" className="jumbotron jumbotron-fluid">
@@ -79,8 +79,7 @@ export const Home = () => {
                             <Card.Title>Kirsten O'Neal</Card.Title>
                             <Card.Text>
                                 <hr/>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam facere sunt
-                                veritatis.
+                                I am an Air Force brat who’s been living in Albuquerque on and off for about a decade now. A few of my favorite things: sci-fi, MMA, disruptive technologies, travelling, and above all, food. Of the multiple careers I’ve had - personal trainer, journalist, real estate agent - I am most excited about my journey as a woman in tech. Also a two-time bootcamp graduate, I attended Deep Dive Digital Media in 2020 and Fullstack in 2021.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
@@ -117,8 +116,8 @@ export const Home = () => {
                             <Card.Title>Simo</Card.Title>
                             <Card.Text>
                                 <hr/>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam facere sunt
-                                veritatis.
+                                I'm a Moroccan-American Citizen who immigrated to the US in 2011. Lived in Brooklyn NY, Fort Lauderdale FL  I then moved to Albuquerque NM early 2017. My favorite things including ; Playing Piano, Music, Rugby, languages, cultures, traveling and technology... I've had difference work experience, operating Forklifts, Construction, Cook, Baker, Warehouse Supervisor...
+                                Deep Dive Fullstack Bootcamp 2021 has been a Unique and Challenging experience for me that I'm glad I signed up for and committed to it during the 10 weeks.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
@@ -135,8 +134,7 @@ export const Home = () => {
                             <Card.Title>Gabriella Hawkins</Card.Title>
                             <Card.Text>
                              <hr/>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam facere sunt
-                                veritatis.
+                                California born; Albuquerque raised. I have been interested in Web Development for the last 5 or 6 years. I saw the opportunity to take this bootcamp as a result of the pandemic, and I am overly excited to begin my career. I am highly skilled and passionate about Front-End Development, but I am proud to call myself a Full-Stack Web Developer. Outside of Web Development I enjoy camping adventures with my two German Shepherds, reading comics, playing video games and building PCs.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">

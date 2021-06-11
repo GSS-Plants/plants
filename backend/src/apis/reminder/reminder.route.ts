@@ -1,7 +1,14 @@
 import {Router} from "express";
+import {getReminderController, deleteReminderController, postReminderController, putReminderController} from "./reminder.controller";
 
 
-export const ReminderRoute = Router ();
+export const ReminderRoute = Router();
 
 
 ReminderRoute.route('/')
+    .post(postReminderController)
+
+ReminderRoute.route('/:reminderId')
+    .put(putReminderController)
+    .get(getReminderController)
+    .delete(deleteReminderController)
