@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./Styles.css"
+import "./Navbar"
 import {
     Row,
     Col,
@@ -8,44 +9,19 @@ import {
     Form,
     Card,
     ListGroup,
-    ListGroupItem,
-    Navbar,
-    Nav,
-    InputGroup
 } from 'react-bootstrap'
-
+import "./Navbar"
 import logo from "../assets/logo-filler.png";
 
 export const Home = () => {
+
+
+
     return (
+
         <div id="container">
-            {/*<div id="theNav">*/}
-            {/*    <Navbar variant="light" expand="xl">*/}
-            {/*        <Navbar.Brand href="#home">*/}
-            {/*            <img*/}
-            {/*                alt=""*/}
-            {/*                src={logo}*/}
-            {/*                width="30"*/}
-            {/*                height="30"*/}
-            {/*                className="d-inline-block align-top"*/}
-            {/*            />{' '}*/}
-            {/*            plant.r*/}
-            {/*        </Navbar.Brand>*/}
-            {/*        <Navbar.Toggle aria-controls="navbar-links"/>*/}
-            {/*        <Navbar.Collapse id="navbar-links" className="justify-content-between">*/}
-            {/*            <Nav className="justify-content-between">*/}
-            {/*                <Nav.Link href="/reminder">Reminder</Nav.Link>*/}
-            {/*                <Nav.Link href="#search">Search</Nav.Link>*/}
-            {/*                <Nav.Link href="#plant">Plant</Nav.Link>*/}
-            {/*                <Nav.Link href="#greenhouse">Greenhouse</Nav.Link>*/}
-            {/*                <Nav.Link href="#contact">Contact Team Plants</Nav.Link>*/}
 
-            {/*            </Nav>*/}
-            {/*            <Nav.Link href="#loginModal" className="text-light">Sign up / Sign in</Nav.Link>*/}
-            {/*        </Navbar.Collapse>*/}
-            {/*    </Navbar>*/}
 
-            {/*</div>*/}
             <Row>
                 <Col>
                     <Jumbotron id="jumone" className="jumbotron jumbotron-fluid">
@@ -56,8 +32,10 @@ export const Home = () => {
                             <Form.Control size="lg" type="text" placeholder="What kind of plant do you have?"/>
                         </Form.Group>
                         <Row>
-                            <Col id="buttcall">
-                                <Button id="Butt" class="btn btn">Learn More</Button>
+                            <Col id="butcol" >
+                                <Button id="buttcall" variant="outline-dark">Search</Button>
+
+
                             </Col>
                         </Row>
                     </Jumbotron>
@@ -103,6 +81,7 @@ export const Home = () => {
                                 and the people. I learned everything I could from work in a Verizon call center before
                                 signing up for Deep Dive Java + Android in 2020 and Fullstack in 2021.
                             </Card.Text>
+
                         </Card.Body>
                         <ListGroup className="list-group-flush">
                         </ListGroup>
@@ -147,3 +126,4 @@ export const Home = () => {
         </div>
     )
 }
+

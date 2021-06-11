@@ -33,17 +33,19 @@ export const Search = () => {
     console.log(plants)
     return (
         <>
-            <Container>
+
+            <div id="container">
 
 
         <h1><b>Search Results</b></h1>
-        <CardColumns>
+        <CardColumns className="CardCol">
             {
                 plants.map(plant => <PlantCard plant={plant} key={plant.plantId}/>)
 
             }
         </CardColumns>
-        </Container>
+
+            </div>
 </>
 )
 }
