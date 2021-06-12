@@ -14,7 +14,7 @@ export const SearchBarContent = (props) => {
                         onChange={handleChange}
                         value={values.searchText}
                         name="searchText"
-                        placeholder='Search for plants'
+                        placeholder='What kind of plants do you have?'
                     />
                     {props.errors.name && <div id="feedback">{props.errors.name}</div>}
                     <button type="submit">Go</button>
