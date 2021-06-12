@@ -13,7 +13,7 @@ const mailgun = require("mailgun-js")
 
 export async function signupProfileController(request: Request, response: Response) : Promise<Response|undefined>  {
     try {
-
+        console.log("sign up controller " , request.body)
 
         const {profileEmail, profilePassword, profileLogin} = request.body;
         const profileHash = await setHash(profilePassword);
