@@ -1,5 +1,5 @@
 import React from 'react';
-import {httpConfig} from "../../../utils/http-config";
+import {httpConfig} from "../../utils/httpConfig.js";
 import * as Yup from "yup";
 import {Formik} from "formik";
 
@@ -18,7 +18,7 @@ export const SignUpForm = () => {
             .email("email must be a valid email")
             .required('email is required'),
         profileLogin: Yup.string()
-            .required("profile handle is required"),
+            .required("login name is required"),
         profilePassword: Yup.string()
             .required("Password is required")
             .min(8, "Password must be at least eight characters"),
@@ -28,6 +28,7 @@ export const SignUpForm = () => {
     });
 
     const submitSignUp = (values, {resetForm, setStatus}) => {
+        console.log(values)
         httpConfig.post("/apis/sign-up/", values)
             .then(reply => {
                     let {message, type} = reply;

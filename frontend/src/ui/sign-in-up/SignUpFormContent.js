@@ -24,7 +24,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="envelope"/>
+                                {/*<FontAwesomeIcon icon="envelope"/>*/}
                             </div>
                         </div>
                         <input
@@ -53,7 +53,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="key"/>
+                                {/*<FontAwesomeIcon icon="key"/>*/}
                             </div>
                         </div>
                         <input
@@ -75,7 +75,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="key"/>
+                                {/*<FontAwesomeIcon icon="key"/>*/}
                             </div>
                         </div>
                         <input
@@ -96,11 +96,11 @@ export const SignUpFormContent = (props) => {
 
 
                 <div className="form-group">
-                    <label htmlFor="profileLogin">Login</label>
+                    <label htmlFor="profileLogin">Login Name</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="dove"/>
+                                {/*<FontAwesomeIcon icon="dove"/>*/}
                             </div>
                         </div>
                         <input
@@ -135,7 +135,7 @@ export const SignUpFormContent = (props) => {
                 </div>
 
 
-                <FormDebugger {...props} />
+                {/*<FormDebugger {...props} />*/}
             </form>
             {
                 status && (<div className={status.type}>{status.message}</div>)

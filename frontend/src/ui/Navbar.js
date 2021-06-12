@@ -1,9 +1,33 @@
 import {Button, Form, InputGroup, Nav, Navbar, Container} from "react-bootstrap";
 import logo from "../assets/logo-filler.png";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAuth} from "../store/auth";
+import {SignUpModal} from "./sign-in-up/SignUpModal";
 
 
 export const NavBar= () => {
+
+    const auth = useSelector(state => state.auth);
+    const dispatch = useDispatch()
+    const effects = () => {
+        dispatch(fetchAuth());
+    };
+    const inputs = [];
+    useEffect(effects, inputs);
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const isModalOpen = ()=> {
+        if(!auth) {
+            return !auth
+        } else if(show === true && auth  ) {
+            return true
+        }
+    }
     return (
         <>
 
@@ -28,7 +52,12 @@ export const NavBar= () => {
                             <Nav.Link href="#plant">Plant</Nav.Link>
                             <Nav.Link href="#greenhouse">Greenhouse</Nav.Link>
                             <Nav.Link href="#contact">Contact Team Plants</Nav.Link>
-                            <Nav.Link href="#loginModal" className="text-light">Sign up / Sign in</Nav.Link>
+                            {isModalOpen()  &&  (
+                                <>
+                                    <SignUpModal/>
+                                    {/*<SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>*/}
+                                </>
+                            )}
                         </Nav>
 
                         <Form inline as={InputGroup} className="w-50">
