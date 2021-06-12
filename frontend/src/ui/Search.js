@@ -23,7 +23,8 @@ export const Search = () => {
     // This is how we make sure this component looks for our data from Redux's call to the backend.
     const dispatch = useDispatch()
     const initialEffects = () => {
-        dispatch(fetchAllPlants())
+        //disabled to work on search bar
+        // dispatch(fetchAllPlants())
     }
     React.useEffect(initialEffects, [dispatch])
 

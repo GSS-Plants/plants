@@ -9,11 +9,14 @@ const plantSlice = createSlice({
         getAllPlants: (plants, action) => {
             return action.payload
         },
+        getPlantsByCommonName: (plants, action) => {
+            return action.payload
+}
     },
 })
 
 // Make our actions callable as function getAllPlants.
-export const {getAllPlants} = plantSlice.actions
+export const {getAllPlants, getPlantsByCommonName} = plantSlice.actions
 
 
 
@@ -21,7 +24,10 @@ export const {getAllPlants} = plantSlice.actions
 export const fetchAllPlants = () => async dispatch => {
     const {data} = await httpConfig(`/apis/plant/`)
     dispatch(getAllPlants(data))
-
+}
+export const fetchPlantsByCommonName = (searchText) => async dispatch => {
+    const {data} = await httpConfig(`/apis/plant/search-common-name/${searchText}`)
+    dispatch(getPlantsByCommonName(data))
 }
 // We use export default here so that if something imports this file, they will get it by default
 export default plantSlice.reducer

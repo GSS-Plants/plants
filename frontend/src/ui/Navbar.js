@@ -3,24 +3,41 @@ import logo from "../assets/logo-filler.png";
 import React, {useState} from "react";
 import {useLocation} from "react-router";
 import {Formik} from "formik";
+import * as Yup from "yup";
 import {httpConfig} from "../utils/httpConfig";
 import {searchBar} from "./searchBar";
+import {useDispatch} from "react-redux";
+import {fetchPlantsByCommonName} from "../store/plant";
 
 
 export const NavBar = () => {
+    const search = {
+        searchText: ""
+    }
+    const dispatch = useDispatch()
 
-    const search = (searchText, {resetForm, setStatus}) => {
+    const doSearch = (values, {resetForm, setStatus}) => {
+        const searchText = values.searchText
+        console.log(searchText)
         httpConfig.get(`/apis/plants/search-common-name/${searchText}`, searchText)
             .then(reply => {
-                    let {message, type} = reply;
+                console.log(reply)
+
+                let {message, type} = reply;
 
                     if (reply.status === 200) {
                         resetForm();
+                        dispatch(fetchPlantsByCommonName(searchText))
                     }
                     setStatus({message, type});
                 }
             );
     };
+
+    const validator = Yup.object().shape({
+        searchText: Yup.string()
+            .required("search text is required"),
+    });
 
 
     const [show, setShow] = useState(false);
@@ -60,12 +77,14 @@ export const NavBar = () => {
 
                             {currentPath !== '/' && (<>
                                 <Formik
-                                    initialValues={searchBar}
-                                    onSubmit={search}
+                                    initialValues={search}
+                                    onSubmit={doSearch}
+                                    validationSchema={validator}
                                 >
+                                    {searchBar}
+
                                 </Formik>
                             </>)}
-                            {searchBar}
 
                         </Navbar.Collapse>
                     </Navbar>
