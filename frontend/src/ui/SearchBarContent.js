@@ -1,7 +1,7 @@
 import {Button, Form, InputGroup} from "react-bootstrap";
 import React from "react";
 
-export const searchBar = (props) => {
+export const SearchBarContent = (props) => {
     const {handleSubmit, handleBlur, handleChange, values} = props
     return (
         <>
@@ -22,8 +22,9 @@ export const searchBar = (props) => {
             </form>
         </>
     )
-}
+};
 
+/*
 export const bootstrappedSearchBar = (props) => {
     const searchText = props.searchText
     return (
@@ -42,6 +43,9 @@ export const bootstrappedSearchBar = (props) => {
         </>
     )
 }
+*/
+
+
 /*
  <Form inline as={InputGroup} className="w-50">
  <Form.Control type="text" placeholder="Search for plants"/>

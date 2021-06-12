@@ -5,12 +5,13 @@ import {useLocation} from "react-router";
 import {Formik} from "formik";
 import * as Yup from "yup";
 import {httpConfig} from "../utils/httpConfig";
-import {searchBar} from "./searchBar";
+import {SearchBar} from "./SearchBar";
 import {useDispatch} from "react-redux";
 import {fetchPlantsByCommonName} from "../store/plant";
 import { useHistory } from "react-router-dom";
 
 export const NavBar = () => {
+    /*
     const history = useHistory()
     const search = {
         searchText: ""
@@ -37,21 +38,18 @@ export const NavBar = () => {
             );
     };
 
-
-
-
     const validator = Yup.object().shape({
         searchText: Yup.string()
             .required("search text is required"),
     });
-
-
+*/
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const currentPath = useLocation().pathname
+    console.log(currentPath)
 
     return (
         <>
@@ -81,16 +79,9 @@ export const NavBar = () => {
                             </Nav>
                             <Nav.Link onClick={handleShow} className="text-light">Sign up / Sign in</Nav.Link>
 
-                            {currentPath !== '/' && (<>
-                                <Formik
-                                    initialValues={search}
-                                    onSubmit={doSearch}
-                                    validationSchema={validator}
-                                >
-                                    {searchBar}
-
-                                </Formik>
-                            </>)}
+                            {currentPath !== '/' && (
+                                    <SearchBar/>
+                            )}
 
                         </Navbar.Collapse>
                     </Navbar>
