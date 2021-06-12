@@ -2,16 +2,54 @@ import {Button, Form, InputGroup, Nav, Navbar, Modal} from "react-bootstrap";
 import logo from "../assets/logo-filler.png";
 import React, {useState} from "react";
 import {useLocation} from "react-router";
-
+import {Formik} from "formik";
+import * as Yup from "yup";
+import {httpConfig} from "../utils/httpConfig";
+import {SearchBar} from "./SearchBar";
+import {useDispatch} from "react-redux";
+import {fetchPlantsByCommonName} from "../store/plant";
+import { useHistory } from "react-router-dom";
 
 export const NavBar = () => {
-    const location = useLocation().pathname
+    /*
+    const history = useHistory()
+    const search = {
+        searchText: ""
+    }
+    const dispatch = useDispatch()
 
+    const doSearch = (values, {resetForm, setStatus}) => {
+        const searchText = values.searchText
+        console.log(searchText)
+        httpConfig.get(`/apis/plant/search-common-name/${searchText}`)
+            .then(reply => {
+                console.log(reply)
+                let {message, type} = reply;
+                    if (reply.status === 200) {
+                        resetForm();
+                        dispatch(fetchPlantsByCommonName(searchText))
+                        history.push('/search')
+                    }
+                    if (reply.status === 404) {
+                        //cry
+                    }
+                    setStatus({message, type});
+                }
+            );
+    };
+
+    const validator = Yup.object().shape({
+        searchText: Yup.string()
+            .required("search text is required"),
+    });
+*/
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const currentPath = useLocation().pathname
+    console.log(currentPath)
 
     return (
         <>
@@ -41,12 +79,14 @@ export const NavBar = () => {
                             </Nav>
                             <Nav.Link onClick={handleShow} className="text-light">Sign up / Sign in</Nav.Link>
 
+
                             {location !== '/' && (<><Form inline as={InputGroup} className="w-50">
                                 <Form.Control type="text" placeholder="Search for plants"/>
                                 <InputGroup.Append><Button variant="outline-dark">Go</Button></InputGroup.Append>
                             </Form></>)}
                     </Navbar.Collapse>
                 </Navbar>
+
                     <Modal
                         show={show}
                         onHide={handleClose}
@@ -67,8 +107,8 @@ export const NavBar = () => {
                             <Button variant="primary">Understood</Button>
                         </Modal.Footer>
                     </Modal>
+                </div>
             </div>
-            </div>
-</>
-)
+        </>
+    )
 }

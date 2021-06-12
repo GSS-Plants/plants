@@ -12,6 +12,7 @@ import {
 } from 'react-bootstrap'
 import "./Navbar"
 import logo from "../assets/logo-filler.png";
+import {SearchBar} from "./SearchBar";
 
 export const Home = () => {
 
@@ -28,9 +29,7 @@ export const Home = () => {
                         <Jumbotron id="thejum">
                             <h1 id="logo"><b>I WILL BE YOUR LOGO!!</b></h1>
                         </Jumbotron>
-                        <Form.Group id="search">
-                            <Form.Control size="lg" type="text" placeholder="What kind of plant do you have?"/>
-                        </Form.Group>
+                        <SearchBar/>
                         <Row>
                             <Col id="butcol" >
                                 <Button id="buttcall" variant="outline-dark">Search</Button>

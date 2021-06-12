@@ -1,21 +1,8 @@
 import React from "react"
-import {
-    Col,
-    Container,
-    Row,
-    Card,
-    ListGroup,
-    ListGroupItem,
-    Navbar,
-    Nav,
-    Form,
-    InputGroup,
-    Button, CardColumns, CardDeck
-} from "react-bootstrap";
-import logo from "../assets/logo-filler.png";
+import {CardColumns} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllPlants} from "../store/plant";
 import {PlantCard} from "./plantSearch";
+import {fetchPlantsByCommonName} from "../store/plant";
 
 export const Search = () => {
 
@@ -23,7 +10,7 @@ export const Search = () => {
     // This is how we make sure this component looks for our data from Redux's call to the backend.
     const dispatch = useDispatch()
     const initialEffects = () => {
-        dispatch(fetchAllPlants())
+
     }
     React.useEffect(initialEffects, [dispatch])
 
