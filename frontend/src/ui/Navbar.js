@@ -8,9 +8,10 @@ import {httpConfig} from "../utils/httpConfig";
 import {searchBar} from "./searchBar";
 import {useDispatch} from "react-redux";
 import {fetchPlantsByCommonName} from "../store/plant";
-
+import { useHistory } from "react-router-dom";
 
 export const NavBar = () => {
+    const history = useHistory()
     const search = {
         searchText: ""
     }
@@ -19,20 +20,25 @@ export const NavBar = () => {
     const doSearch = (values, {resetForm, setStatus}) => {
         const searchText = values.searchText
         console.log(searchText)
-        httpConfig.get(`/apis/plants/search-common-name/${searchText}`, searchText)
+        httpConfig.get(`/apis/plant/search-common-name/${searchText}`)
             .then(reply => {
                 console.log(reply)
-
                 let {message, type} = reply;
-
                     if (reply.status === 200) {
                         resetForm();
                         dispatch(fetchPlantsByCommonName(searchText))
+                        history.push('/search')
+                    }
+                    if (reply.status === 404) {
+                        //cry
                     }
                     setStatus({message, type});
                 }
             );
     };
+
+
+
 
     const validator = Yup.object().shape({
         searchText: Yup.string()
