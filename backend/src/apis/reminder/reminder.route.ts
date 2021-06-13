@@ -12,3 +12,6 @@ ReminderRoute.route('/:reminderId')
     .put(putReminderController)
     .get(getReminderController)
     .delete(deleteReminderController)
+
+ReminderRoute.route('/profile/:profileId')
+    .get(getReminderByProfileId)

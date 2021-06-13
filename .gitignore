@@ -30,3 +30,4 @@ plantr.env
 /.env
 
 /frontend/src/setupProxy.js
+*/setupProxy.js
