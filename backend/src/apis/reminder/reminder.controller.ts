@@ -68,3 +68,17 @@ return response.json({status: 400, data: null, message: error.message})
     }
     }
 
+export async function getReminderByProfileId(request: Request, response: Response): Promise<Response> {
+    try {
+        const profileId: string = request.params.profileId
+        const result = await selectReminderByReminderId(profileId)
+        const data = result ?? null
+        const status: Status = {status: 200, data, message: 'reminder removed'}
+        const error: Status = {status: 400, data: null, message: 'error removing reminder'}
+        return data !== null? response.json(status) : response.json(error)
+
+    } catch (error) {
+        return response.json({status: 400, data: null, message: error.message})
+
+    }
+}
