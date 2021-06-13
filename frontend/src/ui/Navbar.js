@@ -80,12 +80,14 @@ export const NavBar = () => {
                             <Nav.Link onClick={handleShow} className="text-light">Sign up / Sign in</Nav.Link>
 
 
-                            {location !== '/' && (<><Form inline as={InputGroup} className="w-50">
-                                <Form.Control type="text" placeholder="Search for plants"/>
-                                <InputGroup.Append><Button variant="outline-dark">Go</Button></InputGroup.Append>
-                            </Form></>)}
-                    </Navbar.Collapse>
-                </Navbar>
+
+
+                            {currentPath !== '/' && (
+                                    <SearchBar/>
+                            )}
+
+                        </Navbar.Collapse>
+                    </Navbar>
 
                     <Modal
                         show={show}
