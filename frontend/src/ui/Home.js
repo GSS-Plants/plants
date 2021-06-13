@@ -30,13 +30,7 @@ export const Home = () => {
                             <h1 id="logo"><b>I WILL BE YOUR LOGO!!</b></h1>
                         </Jumbotron>
                         <SearchBar/>
-                        <Row>
-                            <Col id="butcol" >
-                                <Button id="buttcall" variant="outline-dark">Search</Button>
 
-                                https://deepdivecoding.slack.com/files/U012WQ9LDGW/F024THASJ58/kyerstin-image.png
-                            </Col>
-                        </Row>
                     </Jumbotron>
                 </Col>
             </Row>
