@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {SignInForm} from "./SignInForm";
 
 
-export const SignInModal = (props) => {
-    const {handleShow, handleClose, show} = props
+export const SignInModal = () => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
 
 
     return (
@@ -22,10 +26,10 @@ export const SignInModal = (props) => {
                     <SignInForm/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="dark" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="dark" onClick={handleClose}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
