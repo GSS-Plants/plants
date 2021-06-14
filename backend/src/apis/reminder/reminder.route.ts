@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {getReminderController, deleteReminderController, postReminderController, putReminderController} from "./reminder.controller";
+import {getReminderController, deleteReminderController, postReminderController, putReminderController, getReminderByProfileId} from "./reminder.controller";
 
 
 export const ReminderRoute = Router();
