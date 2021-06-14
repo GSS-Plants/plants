@@ -20,8 +20,10 @@ export const {getRemindersByProfileId} = reminderSlice.actions
 export const fetchRemindersByProfileId = () => async (dispatch, getState) => {
     await dispatch(fetchAuth())
     const {auth} = getState()
-    const {data} = await httpConfig(`/apis/reminder/profile/${auth.profileId}`)
-    dispatch(getRemindersByProfileId(data))
+    if (auth !== null) {
+        const {data} = await httpConfig(`/apis/reminder/profile/${auth.profileId}`)
+        dispatch(getRemindersByProfileId(data))
+    }
 }
 
 // We use export default here so that if something imports this file, they will get it by default
