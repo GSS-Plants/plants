@@ -23,7 +23,7 @@ export const SignOut = () => {
         <>
 
 
-                <Button variant="primary"  onClick={signOut}>
+                <Button id="signOutB" variant="outline-dark"  onClick={signOut}>
                     Sign Out&nbsp;&nbsp;<FontAwesomeIcon icon="sign-out-alt" />
                 </Button>
 
