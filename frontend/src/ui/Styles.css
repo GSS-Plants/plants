@@ -150,6 +150,15 @@ hr{
     border: 5px solid #31352E;
     transition: border 0.2s ease;
 }
+#reminderB{
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color:#778A35 ;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
 #signInB:hover {
     border: 5px solid yellowgreen;
     cursor: pointer;
@@ -170,4 +179,14 @@ hr{
 #signUpB:hover{
     border: 5px solid yellowgreen;
     cursor: pointer;
+}
+#reminderB:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+#remindersBorder{
+    border-style: double;
+    border-color: #31352E;
+    padding: 1rem 2rem;
+
 }

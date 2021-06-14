@@ -13,14 +13,14 @@ export const Reminder = () => {
 
 
 
-                <Container className="text-center mt-4">
+                <Container id="remindersBorder" className="text-center mt-4">
                 <Row>
                     <Col>
                         <h1 className="my-3">Reminders</h1>
 
                     </Col>
                 </Row>
-                <Row className="justify-content-center">
+                <Row  className="justify-content-center">
                     <Col md={8} xl={6}><Table striped bordered hover size="sm">
                         <thead>
                         <tr>
@@ -71,7 +71,7 @@ export const Reminder = () => {
                     </Row>
                     <Row  className="justify-content-center">
                         <Col md={6}>
-                            <Button variant="primary" size="lg" block>
+                            <Button id="reminderB" variant="primary" size="lg" block>
                                 Save reminder </Button>
                         </Col>
                     </Row>
