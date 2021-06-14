@@ -1,4 +1,4 @@
-import {Button, Form, InputGroup, Nav, Navbar, Modal} from "react-bootstrap";
+import {Button, Form, InputGroup, Nav, Navbar, Modal, Container} from "react-bootstrap";
 import logo from "../assets/logo-filler.png";
 import React, {useEffect, useState} from "react";
 import {useLocation} from "react-router";
@@ -29,6 +29,7 @@ export const NavBar = () => {
     console.log(currentPath)
     return (
         <>
+
             <div id="container">
                 <div id="theNav">
                     <Navbar variant="light" expand="xl">
@@ -45,10 +46,10 @@ export const NavBar = () => {
                         <Navbar.Toggle aria-controls="navbar-links"/>
                         <Navbar.Collapse id="navbar-links" className="justify-content-between">
                             <Nav className="justify-content-between">
-                                <Nav.Link href="/reminder">Reminder</Nav.Link>
-                                <Nav.Link href="/search">Search</Nav.Link>
-                                <Nav.Link href="/plants">Plant</Nav.Link>
-                                <Nav.Link href="/greenhouse">Greenhouse</Nav.Link>
+                                <Nav.Link id="navLink" href="/reminder">Reminder</Nav.Link>
+                                <Nav.Link id="navLink"  href="/search">Search</Nav.Link>
+                                <Nav.Link id="navLink"  href="/plants">Plant</Nav.Link>
+                                <Nav.Link id="navLink"  href="/greenhouse">Greenhouse</Nav.Link>
                                 {/*<Nav.Link href="#contact">Contact Team Plants</Nav.Link>*/}
                                 {auth ? (
                                     <SignOut/>
@@ -68,6 +69,7 @@ export const NavBar = () => {
                     </Navbar>
                 </div>
             </div>
+
         </>
     )
 }

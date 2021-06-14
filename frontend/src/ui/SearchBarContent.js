@@ -1,5 +1,6 @@
 import {Button, Form, InputGroup} from "react-bootstrap/";
 import React from "react";
+import {Container} from "react-bootstrap";
 
 
 
@@ -7,6 +8,7 @@ export const SearchBarContent = (props) => {
     const {handleSubmit, handleBlur, handleChange, values} = props
     return (
         <>
+
             <form onSubmit={handleSubmit}>
                 <div className='form-group'>
                     <input id="formCon"
@@ -26,6 +28,7 @@ export const SearchBarContent = (props) => {
 
                 </div>
             </form>
+
         </>
     )
 };

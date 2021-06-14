@@ -73,6 +73,7 @@ export const Reminder = () => {
                         <Col md={6}>
                             <Button id="reminderB" variant="primary" size="lg" block>
                                 Save reminder </Button>
+
                         </Col>
                     </Row>
                     </Form>
