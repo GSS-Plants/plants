@@ -5,10 +5,10 @@ import logo from "../assets/logo-filler.png";
 
 
 
-import "./greenhouse-js.js"
-import {GreenhousePlant} from "./GreenhousePlant";
+// import "./greenhouse-js.js"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
+import {GreenhousePlant} from "./GreenhousePlant";
 
 export const Greenhouse = (props) => {
 
@@ -22,9 +22,10 @@ const profileId = props.match.params.profileId
 
     // Render our misquotes constant - before we have our data, render the skeleton.
     // After we have our data, render the full object with our data.
-    const plants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
-
-    console.log(plants)
+    const statePlants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
+    const housePlants = []
+    Object.values(statePlants).map(statePlant => housePlants.push(statePlant))
+    console.log(housePlants)
     return (
         <>
 
@@ -34,7 +35,7 @@ const profileId = props.match.params.profileId
                 <div className="container">
                     <h1 className="display-4">GREENHOUSE</h1>
                     <CardGroup>
-                        {plants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
+                        {housePlants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
                     </CardGroup>
                 </div>
             </div>
