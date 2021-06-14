@@ -28,7 +28,7 @@ export const Home = () => {
                     <Jumbotron id="jumone" className="jumbotron jumbotron-fluid-rounded">
                         <Jumbotron id="thejum">
                             <h1 id="logo"><b>Plant.r</b></h1>
-                            <img src="./frontend/src/assets/graminoid.png" alt="plant"/>
+
                         </Jumbotron>
                         <SearchBar/>
 

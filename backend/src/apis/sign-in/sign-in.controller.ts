@@ -74,7 +74,7 @@ export const  passportStrategy: Strategy = new LocalStrategy(
 
             const profile: Profile | undefined = await selectProfileByProfileEmail(email);
 
-            return profile ? done(null, profile) : done(undefined, undefined, {message: 'Incorrect username or password'});
+            return profile ? done(null, profile ) : done(undefined, undefined, {message: 'Incorrect username or password'});
         } catch (error) {
             return done(error);
         }
