@@ -1,5 +1,13 @@
 import {Card, Image, ListGroup, ListGroupItem} from "react-bootstrap";
 import React from "react";
+import tree from "../assets/tree.png"
+import graminoid from '../assets/logo-filler.png'
+import subshrub from "../assets/subshrub.png"
+import herb from "../assets/herb.png"
+import nonvascular from "../assets/nonvascular.png"
+import shrub from "../assets/shrub.png"
+import vine from "../assets/vine.png"
+import lichenous from "../assets/lichenous.png"
 
 export function GreenhousePlant(props) {
     const {plant} = props
@@ -9,21 +17,21 @@ export function GreenhousePlant(props) {
     function imageFinder (growth) {
         switch (growth) {
             case 'Graminoid':
-                return <Image src="frontend/src/assets/logo-filler.png"/>
+                return <Image src={graminoid}/>
             case 'Subshrub':
-                return <Image src="frontend/src/assets/subshrub.png"/>
-            case 'Herb':
-                return <Image src="frontend/src/assets/herb.png"/>
+                return <Image src={subshrub}/>
+            case 'Forb/Herb':
+                return <Image src={herb}/>
             case 'Nonvascular':
-                return <Image src="frontend/src/assets/nonvascular.png"/>
+                return <Image src={nonvascular}/>
             case 'Shrub':
-                return <Image src="frontend/src/assets/shrub.png"/>
+                return <Image src={shrub} />
             case 'Tree':
-                return <Image src="frontend/src/assets/tree.png"/>
+                return <Image src={tree}/>
             case 'Vine':
-                return <Image src="frontend/src/assets/vine.png"/>
+                return <Image src={vine}/>
             case 'Lichenous':
-                return <Image src="frontend/src/assets/lichenous.png"/>
+                return <Image src={lichenous}/>
         }
     }
     return(

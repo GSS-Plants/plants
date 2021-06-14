@@ -11,6 +11,7 @@ import {NavBar} from "./Navbar";
 import {store} from "../store";
 import {Provider} from "react-redux";
 
+import {SearchBarContent} from "react-bootstrap/";
 import "./Styles.css"
 
 export const App = () => (
@@ -24,7 +25,8 @@ export const App = () => (
                 <Route exact path='/reminder' component={Reminder} />
                 <Route exact path='/search' component={Search} />
                 <Route exact path='/plants' component={Plants} />
-                <Route exact path='/greenhouse/:profileId' component={Greenhouse} />
+                <Route exact path='/greenhouse/' component={Greenhouse} />
+
                 <Route exact path='/Navbar' component={NavBar} />
                 {/*<Route exact path='/contact' component={Contact} />*/}
                 <Route component={FourOhFour} />

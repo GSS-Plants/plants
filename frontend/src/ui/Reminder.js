@@ -1,11 +1,19 @@
-import React from "react"
-import {Button, Col, Container, Form, Row, Table} from "react-bootstrap";
-import {PlantrNav} from "./PlantrNav";
+import React, {useState} from "react"
+import {Button, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row, Table} from "react-bootstrap";
+import "./Styles.css"
+import logo from "../assets/logo-filler.png";
+
 
 export const Reminder = () => {
+
     return (
         <>
-            <Container className="text-center">
+
+            <div id="container">
+
+
+
+                <Container className="text-center mt-4">
                 <Row>
                     <Col>
                         <h1 className="my-3">Reminders</h1>
@@ -44,9 +52,9 @@ export const Reminder = () => {
                         </tbody>
                     </Table></Col>
                 </Row>
-            </Container>
-            <Container className="text-center mt-4">
-                <Form>
+
+
+                    <Form>
                     <Row><Col><h2>Add A Reminder</h2></Col></Row>
                     <Row className="justify-content-center">
                         <Col md={3} className="my-2">
@@ -67,8 +75,9 @@ export const Reminder = () => {
                                 Save reminder </Button>
                         </Col>
                     </Row>
-                </Form>
-            </Container>
+                    </Form>
+                </Container>
+            </div>
         </>
     )
 }

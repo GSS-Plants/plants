@@ -8,10 +8,12 @@ import passport = require('passport');
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {signUpRoute} from "./apis/sign-up/signup.route";
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
+import {ReminderRoute} from "./apis/reminder/reminder.route";
 
 import {PlantRoute} from "./apis/Plant/plant.route";
 
 import {ProfilePlantRoute} from "./apis/profile-plant/profilePlant.route";
+import {SignOutRouter} from "./apis/sign-out/signout.route";
 
 
 const MemoryStore = require('memorystore')(session);
@@ -63,7 +65,8 @@ export class App {
         this.app.use('/apis/plant', PlantRoute)
         this.app.use('/apis/profile-plant', ProfilePlantRoute)
         this.app.use('/apis/profile/:profileId', ProfileRoute)
-
+        this.app.use('/apis/reminder', ReminderRoute)
+       this.app.use ('/apis/sign-out',SignOutRouter)
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port

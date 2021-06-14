@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./Styles.css"
+import "./Navbar"
 import {
     Row,
     Col,
@@ -8,68 +9,35 @@ import {
     Form,
     Card,
     ListGroup,
-    ListGroupItem,
-    Navbar,
-    Nav,
-    InputGroup
 } from 'react-bootstrap'
-
+import "./Navbar"
 import logo from "../assets/logo-filler.png";
+import {SearchBar} from "./SearchBar";
 
 export const Home = () => {
+
+
+
     return (
+
         <div id="container">
-            {/*<div id="theNav">*/}
-            {/*    <Navbar variant="light" expand="xl">*/}
-            {/*        <Navbar.Brand href="#home">*/}
-            {/*            <img*/}
-            {/*                alt=""*/}
-            {/*                src={logo}*/}
-            {/*                width="30"*/}
-            {/*                height="30"*/}
-            {/*                className="d-inline-block align-top"*/}
-            {/*            />{' '}*/}
-            {/*            plant.r*/}
-            {/*        </Navbar.Brand>*/}
-            {/*        <Navbar.Toggle aria-controls="navbar-links"/>*/}
-            {/*        <Navbar.Collapse id="navbar-links" className="justify-content-between">*/}
-            {/*            <Nav className="justify-content-between">*/}
-            {/*                <Nav.Link href="/reminder">Reminder</Nav.Link>*/}
-            {/*                <Nav.Link href="#search">Search</Nav.Link>*/}
-            {/*                <Nav.Link href="#plant">Plant</Nav.Link>*/}
-            {/*                <Nav.Link href="#greenhouse">Greenhouse</Nav.Link>*/}
-            {/*                <Nav.Link href="#contact">Contact Team Plants</Nav.Link>*/}
 
-            {/*            </Nav>*/}
-            {/*            <Nav.Link href="#loginModal" className="text-light">Sign up / Sign in</Nav.Link>*/}
-            {/*        </Navbar.Collapse>*/}
-            {/*    </Navbar>*/}
 
-            {/*</div>*/}
             <Row>
                 <Col>
-                    <Jumbotron id="jumone" className="jumbotron jumbotron-fluid">
+                    <Jumbotron id="jumone" className="jumbotron jumbotron-fluid-rounded">
                         <Jumbotron id="thejum">
-                            <h1 id="logo"><b>I WILL BE YOUR LOGO!!</b></h1>
+                            <h1 id="logo"><b>Plant.r</b></h1>
+                            <img src="./frontend/src/assets/graminoid.png" alt="plant"/>
                         </Jumbotron>
-                        <Form.Group id="search">
-                            <Form.Control size="lg" type="text" placeholder="What kind of plant do you have?"/>
-                        </Form.Group>
-                        <Row>
-                            <Col id="buttcall">
-                                <Button id="Butt" class="btn btn">Learn More</Button>
-                            </Col>
-                        </Row>
+                        <SearchBar/>
+
                     </Jumbotron>
                 </Col>
             </Row>
-            <h2>This is how you use the site</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem, consequatur cumque debitis dignissimos
-                dolore dolorum eius ex labore modi nihil numquam omnis quaerat qui quisquam ratione repellat, sunt unde!
-                Animi culpa magni molestias tenetur! Dolorum neque officiis perspiciatis rem voluptate. Dolorem fuga
-                minima quasi, recusandae repellendus rerum tenetur ullam. Deleniti ratione tempore unde voluptates.
-                Adipisci asperiores autem eos ipsum minus nesciunt nulla quis veniam. Accusamus eius excepturi expedita
-                illo maiores non nulla officiis porro possimus voluptas! Ab inventore, totam!</p>
+            <h1>Lets Get Started!</h1>
+            <p>Welcome to Plant.r where you can search any plant you like to learn more on how not to kill them, you can also create a plant profile and add your plant of choice to keep track of when to water.<br/>
+            So go on! find your new friend, and create a reminder so they can live forever!</p>
             <Row>
                 <Col id="cardA">
                     <Card style={{width: '18rem'}} id="cardd">
@@ -78,6 +46,7 @@ export const Home = () => {
                         <Card.Body>
 
                             <Card.Title>Kyerstin O'Neal</Card.Title>
+
                             <Card.Text>
                                 <hr/>
                                 I am an Air Force brat who’s been living in Albuquerque on and off for about a decade now. A few of my favorite things: sci-fi, MMA, disruptive technologies, travelling, and above all, food. Of the multiple careers I’ve had - personal trainer, journalist, real estate agent - I am most excited about my journey as a woman in tech. Also a two-time bootcamp graduate, I attended Deep Dive Digital Media in 2020 and Fullstack in 2021.
@@ -103,6 +72,7 @@ export const Home = () => {
                                 and the people. I learned everything I could from work in a Verizon call center before
                                 signing up for Deep Dive Java + Android in 2020 and Fullstack in 2021.
                             </Card.Text>
+
                         </Card.Body>
                         <ListGroup className="list-group-flush">
                         </ListGroup>
@@ -147,3 +117,4 @@ export const Home = () => {
         </div>
     )
 }
+

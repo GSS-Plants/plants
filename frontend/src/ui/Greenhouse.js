@@ -4,19 +4,18 @@ import {Button, CardGroup, Col, Container, Form, InputGroup, Modal, Nav, Navbar,
 import logo from "../assets/logo-filler.png";
 
 
-
-// import "./greenhouse-js.js"
+import "./greenhouse-js.js"
+import {GreenhousePlant} from "./GreenhousePlant";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
-import {GreenhousePlant} from "./GreenhousePlant";
 
-export const Greenhouse = (props) => {
+export const Greenhouse = () => {
 
-const profileId = props.match.params.profileId
 
     const dispatch = useDispatch()
+
     const initialEffects = () => {
-    dispatch(fetchProfilePlantsByProfileId(profileId))
+        dispatch(fetchProfilePlantsByProfileId())
     }
     React.useEffect(initialEffects, [dispatch])
 
@@ -25,10 +24,9 @@ const profileId = props.match.params.profileId
     const statePlants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
     const housePlants = []
     Object.values(statePlants).map(statePlant => housePlants.push(statePlant))
-    console.log(housePlants)
+    console.log(statePlants)
     return (
         <>
-
 
 
             <div className="jumbotron jumbotron-fluid">
@@ -39,7 +37,6 @@ const profileId = props.match.params.profileId
                     </CardGroup>
                 </div>
             </div>
-
 
 
             {/*<header>*/}
@@ -112,7 +109,7 @@ const profileId = props.match.params.profileId
 
 
         </>
- )
+    )
 
 
 }
