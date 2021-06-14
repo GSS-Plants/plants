@@ -22,7 +22,6 @@ export const {getProfilePlantsByProfileId} = plantSlice.actions
 export const fetchProfilePlantsByProfileId = () => async (dispatch, getState) => {
     await dispatch(fetchAuth())
     const {auth} = getState()
-    console.log(auth)
     if (auth !== null) {
         const {data} = await httpConfig(`/apis/profile-plant/greenhouse/${auth.profileId}`)
         dispatch(getProfilePlantsByProfileId(data))

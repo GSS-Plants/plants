@@ -84,7 +84,7 @@ export async function deleteReminderController(request: Request, response: Respo
     }
 }
 
-export async function getReminderByProfileId(request: Request, response: Response): Promise<Response> {
+export async function getRemindersByProfileId(request: Request, response: Response): Promise<Response> {
     try {
         const profileId: string = request.params.profileId
         const result = await selectReminderByProfileId(profileId)

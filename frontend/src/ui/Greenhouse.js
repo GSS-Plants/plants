@@ -1,7 +1,6 @@
 import React, {useState} from "react"
 // import "./greenhouse.css"
 import {Button, CardGroup, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row} from "react-bootstrap";
-import logo from "../assets/logo-filler.png";
 
 
 import "./greenhouse-js.js"
