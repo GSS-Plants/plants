@@ -1,35 +1,45 @@
-import React from "react"
-import "./greenhouse.css"
+import React, {useState} from "react"
+// import "./greenhouse.css"
+import {Button, CardGroup, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row} from "react-bootstrap";
+import logo from "../assets/logo-filler.png";
+
+
+
+import "./greenhouse-js.js"
+import {GreenhousePlant} from "./GreenhousePlant";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllPlants} from "../store/plant";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
-// import "./greenhouse-js.js"
 
-export const Greenhouse = ({match}) => {
+export const Greenhouse = (props) => {
 
-    const profileId = match.params.profileId
-    // Tell this component that it needs to watch for items that live outside of this component.
-    // This is how we make sure this component looks for our data from Redux's call to the backend.
+const profileId = props.match.params.profileId
+
     const dispatch = useDispatch()
-    const sideEffects = () => {
-        dispatch(fetchProfilePlantsByProfileId(profileId));
+    const initialEffects = () => {
+    dispatch(fetchProfilePlantsByProfileId(profileId))
     }
-    React.useEffect(sideEffects, [match.params.profileId, dispatch])
+    React.useEffect(initialEffects, [dispatch])
 
     // Render our misquotes constant - before we have our data, render the skeleton.
     // After we have our data, render the full object with our data.
-    const profilePlants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
+    const plants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
 
-    console.log(profilePlants);
+    console.log(plants)
     return (
         <>
 
+
+
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <img src="../assets/shelves.png" alt=""/>
-                    <h1 className="display-4">Greenhouse</h1>
+                    <h1 className="display-4">GREENHOUSE</h1>
+                    <CardGroup>
+                        {plants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
+                    </CardGroup>
                 </div>
             </div>
+
+
 
             {/*<header>*/}
             {/*<h1 className="big-title translate" data-speed="0.1">GREENHOUSE</h1>*/}
@@ -96,10 +106,12 @@ export const Greenhouse = ({match}) => {
 
                     </div>
                 </div>
+
             </section>
 
 
         </>
-)
-}
+ )
 
+
+}

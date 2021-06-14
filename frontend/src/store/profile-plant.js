@@ -3,7 +3,7 @@ import {httpConfig} from "../utils/httpConfig"
 
 // Define our reducer and action.
 const plantSlice = createSlice({
-    name: "profilePlant",
+    name: "profilePlants",
     initialState: [],
     reducers: {
         getProfilePlantsByProfileId: (profilePlants, action) => {
