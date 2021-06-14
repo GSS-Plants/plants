@@ -23,7 +23,7 @@ return(
         <ListGroupItem><b>Toxicity:{plant.plantToxicity}</b></ListGroupItem>
     </ListGroup>
     <Card.Body>
-        <Card.Link href="#">More Details</Card.Link>
+        <Card.Link href="/search">More Details</Card.Link>
     </Card.Body>
 </Card>
 

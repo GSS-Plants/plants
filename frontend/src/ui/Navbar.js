@@ -13,11 +13,7 @@ import {SignUpModal} from "./sign-in-up/SignUpModal";
 import {SignInModal} from "./sign-in-up/SigninModal";
 import {SignOut} from "./sign-in-up/SignOut";
 import {fetchAuth} from "../store/auth";
-
-
 export const NavBar = () => {
-
-
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch()
     const effects = () => {
@@ -26,18 +22,13 @@ export const NavBar = () => {
     const inputs = [];
     useEffect(effects, inputs);
     console.log("auth",auth)
-
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
     const currentPath = useLocation().pathname
     console.log(currentPath)
-
     return (
         <>
-
             <div id="container">
                 <div id="theNav">
                     <Navbar variant="light" expand="xl">
@@ -59,30 +50,22 @@ export const NavBar = () => {
                                 <Nav.Link href="/plants">Plant</Nav.Link>
                                 <Nav.Link href="/greenhouse">Greenhouse</Nav.Link>
                                 {/*<Nav.Link href="#contact">Contact Team Plants</Nav.Link>*/}
-
+                                {auth ? (
+                                    <SignOut/>
+                                ):(
+                                    <>
+                                        <SignUpModal/>
+                                        <SignInModal/>
+                                    </>
+                                )
+                                }
+                                {currentPath !== '/' && (
+                                    <SearchBar className="ml-auto"/>
+                                )}
                             </Nav>
-                            {auth ? (
-                                <SignOut/>
-                            ):(
-                                <>
-                                <SignUpModal/>
-                                <SignInModal/>
-                                </>
-                            )
-                            }
-
-
-
-
-
-                            {currentPath !== '/' && (
-                                    <SearchBar/>
-                            )}
 
                         </Navbar.Collapse>
                     </Navbar>
-
-
                 </div>
             </div>
         </>

@@ -71,16 +71,28 @@ h1, p{
 
     text-align: center;
     background-color:#31352E;
-    height: 5rem;
+
+    margin: 1rem 2rem 3rem 3rem;
     opacity:80%;
 
 
 }
 #logo{
+
     text-align: center;
     color: #778A35;
 
 
+}
+.form-control{
+    margin: 1rem auto 1rem 2rem;
+
+
+}
+#formCon{
+    text-align: center;
+    margin: 1rem 5rem 1rem 7rem;
+    width: 80%;
 }
 
 #theNav{
@@ -89,9 +101,6 @@ h1, p{
 hr{
     border-top: 2px solid #778A35;
 
-}
-#greenHouseRow{
-    justify-content: space-evenly;
 }
 
 .CardCol{
@@ -103,7 +112,8 @@ hr{
     margin: 3rem auto 5rem auto;
 }
 #signInB{
-    display: inline-block;
+    margin: 1rem 1rem 5rem 2rem;
+
     border-radius: 50px;
     background-color: #D1E2C4;
     color: #31352E;
@@ -111,6 +121,7 @@ hr{
     transition: border 0.2s ease;
 }
 #signUpB{
+    margin: 1rem 1rem 5rem auto;
     display: inline-block;
     border-radius: 50px;
     background-color: #D1E2C4;
@@ -119,10 +130,27 @@ hr{
     transition: border 0.2s ease;
 
 }
-.form-control{
-    margin: auto 5rem auto auto;
-
+#signOutB{
+    margin: auto 10rem auto 10rem;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #D1E2C4;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
 }
+#searchB{
+
+    margin: auto 10rem auto 10rem;
+    padding: 8px 20px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #D1E2C4;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
+
 #signUpContent{
     background-color: #778A35;
 }
@@ -130,10 +158,9 @@ hr{
     background-color: #778A35;
 }
 
-#searchB{
-    text-align: left;
-    margin:.1rem auto 2rem auto;
-    padding: 5px 15px;
+
+#signInBM {
+    padding: 4px 10px;
     display: inline-block;
     border-radius: 50px;
     background-color: #D1E2C4;
@@ -141,11 +168,11 @@ hr{
     border: 5px solid #31352E;
     transition: border 0.2s ease;
 }
-#signInBM,#signOutB {
+#reminderB{
     padding: 4px 10px;
     display: inline-block;
     border-radius: 50px;
-    background-color: #D1E2C4;
+    background-color:#778A35 ;
     color: #31352E;
     border: 5px solid #31352E;
     transition: border 0.2s ease;
@@ -170,4 +197,14 @@ hr{
 #signUpB:hover{
     border: 5px solid yellowgreen;
     cursor: pointer;
+}
+#reminderB:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+#remindersBorder{
+    border-style: double;
+    border-color: #31352E;
+    padding: 1rem 2rem;
+
 }
