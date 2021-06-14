@@ -21,12 +21,14 @@ export const App = () => (
         <BrowserRouter>
             <NavBar/>
             <Switch>
+
                 <Route exact path='/' component={Home} />
                 <Route exact path='/reminder' component={Reminder} />
                 <Route exact path='/search' component={Search} />
                 <Route exact path='/plants' component={Plants} />
                 <Route exact path='/greenhouse' component={Greenhouse} />
                 <Route exact path='/Navbar' component={NavBar} />
+
                 {/*<Route exact path='/contact' component={Contact} />*/}
                 <Route component={FourOhFour} />
             </Switch>
