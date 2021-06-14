@@ -1,27 +1,42 @@
 import React, {useState} from "react"
 // import "./greenhouse.css"
-import {Button, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row} from "react-bootstrap";
-import logo from "../assets/logo-filler.png";
-
+import {Button, CardGroup, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row} from "react-bootstrap";
 
 
 import "./greenhouse-js.js"
+import {GreenhousePlant} from "./GreenhousePlant";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 
 export const Greenhouse = () => {
 
 
+    const dispatch = useDispatch()
+
+    const initialEffects = () => {
+        dispatch(fetchProfilePlantsByProfileId())
+    }
+    React.useEffect(initialEffects, [dispatch])
+
+    // Render our misquotes constant - before we have our data, render the skeleton.
+    // After we have our data, render the full object with our data.
+    const statePlants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
+    const housePlants = []
+    Object.values(statePlants).map(statePlant => housePlants.push(statePlant))
+    console.log(statePlants)
     return (
         <>
 
 
-
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4">Fluid jumbotron</h1>
-                    <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its
-                        parent.</p>
+                    <h1 className="display-4">GREENHOUSE</h1>
+                    <CardGroup>
+                        {housePlants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
+                    </CardGroup>
                 </div>
             </div>
+
 
             {/*<header>*/}
             {/*<h1 className="big-title translate" data-speed="0.1">GREENHOUSE</h1>*/}
@@ -93,7 +108,7 @@ export const Greenhouse = () => {
 
 
         </>
- )
+    )
 
 
 }

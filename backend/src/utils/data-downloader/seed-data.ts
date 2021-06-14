@@ -3,6 +3,7 @@ import {connect} from "../database.utils";
 import {ProfilePlant} from "../interfaces/ProfilePlant";
 import {insertProfilePlant} from "../profile-plant/insertProfilePlant";
 import {Reminder} from "../interfaces/Reminder";
+import {insertReminder} from "../Reminder/InsertReminder";
 
 
 
@@ -16,8 +17,15 @@ function seedData(): Promise<any> {
             // @ts-ignore
             let profileId: string = profiles[0].id
 
-            await makeProfilePlants(mysqlConnection, profileId);
-            await makeReminders(mysqlConnection, profileId);
+            const profilePlantQuery: string = "SELECT BIN_TO_UUID(profilePlantId) AS id FROM profilePlant WHERE profilePlantProfileId = UUID_TO_BIN(:profileId)"
+            const [profilePlants] = await mysqlConnection.query(profilePlantQuery, {profileId})
+
+            // @ts-ignore
+            if (profilePlants.length === 0) {
+                await makeProfilePlants(mysqlConnection, profileId);
+            }
+
+            await makeReminders(mysqlConnection, profilePlants);
         } catch (error) {
             console.error(error);
         }
@@ -42,11 +50,8 @@ async function makeProfilePlants(mysqlConnection: any, profileId: string) {
     })
 }
 
-// waiting on finished Reminder utils
-async function makeReminders(mysqlConnection: any, profileId: string) {
-/*
-    const query: string = "SELECT BIN_TO_UUID(profilePlantId) AS id FROM profilePlant WHERE profilePlantProfileId = :profileId"
-    const[rows] = await mysqlConnection.query(query, profileId)
+async function makeReminders(mysqlConnection: any, rows: any) {
+    console.log('I got some plants: ', rows)
     //@ts-ignore
     rows.map(async row => {
         let recurrence: number = Math.floor(Math.random()*12) + 2
@@ -55,11 +60,10 @@ async function makeReminders(mysqlConnection: any, profileId: string) {
             reminderDescription: "water this plant carefully yet thoroughly",
             reminderProfilePlantId: row.id,
             reminderRecurrence: recurrence,
-            reminderStartDate: 20210601
+            reminderStartDate: '2021-06-01'
         }
         console.log(await insertReminder(reminder))
     })
-*/
 
 }
 
