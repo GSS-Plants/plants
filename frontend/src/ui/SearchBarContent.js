@@ -9,7 +9,7 @@ export const SearchBarContent = (props) => {
         <>
             <form onSubmit={handleSubmit}>
                 <div className='form-group'>
-                    <input
+                    <input id="formCon"
                         className="form-control"
                         type="text"
                         onBlur={handleBlur}

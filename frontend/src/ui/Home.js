@@ -1,6 +1,10 @@
 import React, {useState} from 'react'
 import "./Styles.css"
 import "./Navbar"
+import vine from "../assets/vine.png";
+import shrub from "../assets/shrub.png"
+import tree from "../assets/tree.png"
+import stalk from "../assets/nonessential-stalks.png"
 import {
     Row,
     Col,
@@ -11,7 +15,7 @@ import {
     ListGroup,
 } from 'react-bootstrap'
 import "./Navbar"
-import logo from "../assets/logo-filler.png";
+
 import {SearchBar} from "./SearchBar";
 
 export const Home = () => {
@@ -25,8 +29,8 @@ export const Home = () => {
 
             <Row>
                 <Col>
-                    <Jumbotron id="jumone" className="jumbotron jumbotron-fluid-rounded">
-                        <Jumbotron id="thejum">
+                    <Jumbotron id="jumone" className="jumbotron jumbotron-fluid">
+                        <Jumbotron id="thejum" className="jumbotron-fluid-rounded">
                             <h1 id="logo"><b>Plant.r</b></h1>
 
                         </Jumbotron>
@@ -41,8 +45,13 @@ export const Home = () => {
             <Row>
                 <Col id="cardA">
                     <Card style={{width: '18rem'}} id="cardd">
-                        <Card.Img variant="top"
-                                  src="https://images.unsplash.com/photo-1509937528035-ad76254b0356?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=924&q=80"/>
+                        <Card.Img
+                            alt="plant photo"
+                            src={shrub}
+                            width="30"
+                            height="400"
+                            className="d-inline-block align-top"
+                     />
                         <Card.Body>
 
                             <Card.Title>Kyerstin O'Neal</Card.Title>
@@ -60,7 +69,13 @@ export const Home = () => {
                 <Col id="cardA">
                     <Card style={{width: '18rem'}} id="cardd">
                         <Card.Img variant="top"
-                                  src="https://images.unsplash.com/photo-1509937528035-ad76254b0356?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=924&q=80"/>
+
+                                  alt="plant photo"
+                                  src={tree}
+                                  width="30"
+                                  height="400"
+                                  className="d-inline-block align-top"
+                        />
                         <Card.Body>
                             <Card.Title>Samuel Martinez</Card.Title>
 
@@ -82,7 +97,13 @@ export const Home = () => {
                 <Col id="cardA">
                     <Card style={{width: '18rem'}} id="cardd">
                         <Card.Img variant="top"
-                                  src="https://images.unsplash.com/photo-1509937528035-ad76254b0356?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=924&q=80"/>
+
+                                  alt="plant photo"
+                                  src={stalk}
+                                  width="30"
+                                  height="400"
+                                  className="d-inline-block align-top"
+                        />
                         <Card.Body>
                             <Card.Title>Simo</Card.Title>
                             <Card.Text>
@@ -99,7 +120,13 @@ export const Home = () => {
                 <Col id="cardA" class="col-md-3 mx-auto mb-5 text-center">
                     <Card style={{width: '18rem'}} id="cardd">
                         <Card.Img variant="top"
-                                  src="https://images.unsplash.com/photo-1509937528035-ad76254b0356?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=924&q=80"/>
+
+                            alt="plant photo"
+                            src={vine}
+                            width="30"
+                            height="400"
+                            className="d-inline-block align-top"
+                        />
                         <Card.Body>
 
                             <Card.Title>Gabriella Hawkins</Card.Title>
