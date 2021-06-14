@@ -12,9 +12,10 @@ export async function getReminderController(request: Request, response: Response
     try {
         const reminderId: string = request.params.reminderId
         const result = await selectReminderByReminderId(reminderId)
+        console.log(result)
         const status: Status = {status: 200, data: result, message: 'reminder retrieved'}
         const error: Status = {status: 400, data: result, message: 'error retrieving reminder'}
-        return result !== null ? response.json(status) : response.json(error)
+        return result !== undefined ? response.json(status) : response.json(error)
 
     } catch (error) {
         return response.json({status: 400, data: null, message: error.message})
@@ -75,7 +76,7 @@ export async function deleteReminderController(request: Request, response: Respo
     try {
         const reminderId = request.params.reminderId
         await deleteReminder(reminderId)
-        return response.json({status: 200, data: null, message: "reminder inserted successfully"})
+        return response.json({status: 200, data: null, message: "reminder deleted successfully"})
 
     } catch (error) {
         return response.json({status: 400, data: null, message: error.message})
