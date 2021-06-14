@@ -8,10 +8,12 @@ import passport = require('passport');
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {signUpRoute} from "./apis/sign-up/signup.route";
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
+import {ReminderRoute} from "./apis/reminder/reminder.route";
 
 import {PlantRoute} from "./apis/Plant/plant.route";
 
 import {ProfilePlantRoute} from "./apis/profile-plant/profilePlant.route";
+import {SignOutRouter} from "./apis/sign-out/signout.route";
 
 
 const MemoryStore = require('memorystore')(session);
@@ -19,7 +21,7 @@ const MemoryStore = require('memorystore')(session);
 export class App {
     app: Application;
 
-    constructor (
+    constructor(
         private port?: number | string
     ) {
         this.app = express()
@@ -29,18 +31,18 @@ export class App {
     }
 
     // private method that sets the port for the sever, to one from index.route.ts, and external .env file or defaults to 3000
-    public settings () {
+    public settings() {
         this.app.set('port', this.port || process.env.PORT || 4200)
     }
 
     // private method to setting up the middleware to handle json responses, one for dev and one for prod
-    private middlewares () {
+    private middlewares() {
 
-        const sessionConfig  =  {
+        const sessionConfig = {
             store: new MemoryStore({
                 checkPeriod: 100800
             }),
-            secret:"secret",
+            secret: "secret",
             saveUninitialized: true,
             resave: true,
             maxAge: "3h"
@@ -54,7 +56,7 @@ export class App {
     }
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
-    private routes () {
+    private routes() {
         // TODO add "/apis"
         this.app.use('/apis', indexRoute)
         this.app.use('/apis/profile', ProfileRoute)
@@ -63,11 +65,12 @@ export class App {
         this.app.use('/apis/plant', PlantRoute)
         this.app.use('/apis/profile-plant', ProfilePlantRoute)
         this.app.use('/apis/profile/:profileId', ProfileRoute)
-
+        this.app.use('/apis/reminder', ReminderRoute)
+       this.app.use ('/apis/sign-out',SignOutRouter)
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port
-    public async listen (): Promise<void> {
+    public async listen(): Promise<void> {
         await this.app.listen(this.app.get('port'))
         console.log('Express application built successfully')
     }

@@ -7,6 +7,8 @@ export const plantValidator: Schema = {
         },
     },
 };
+
+// FOR WHEN WE IMPLEMENT INSERT PLANT
 // plantBloomPeriod: {
 //     isUUID: {
 //         errorMessage: 'oooppsss'

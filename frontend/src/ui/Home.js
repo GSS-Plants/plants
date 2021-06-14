@@ -12,6 +12,7 @@ import {
 } from 'react-bootstrap'
 import "./Navbar"
 import logo from "../assets/logo-filler.png";
+import {SearchBar} from "./SearchBar";
 
 export const Home = () => {
 
@@ -24,30 +25,19 @@ export const Home = () => {
 
             <Row>
                 <Col>
-                    <Jumbotron id="jumone" className="jumbotron jumbotron-fluid">
+                    <Jumbotron id="jumone" className="jumbotron jumbotron-fluid-rounded">
                         <Jumbotron id="thejum">
-                            <h1 id="logo"><b>I WILL BE YOUR LOGO!!</b></h1>
+                            <h1 id="logo"><b>Plant.r</b></h1>
+                            <img src="./frontend/src/assets/graminoid.png" alt="plant"/>
                         </Jumbotron>
-                        <Form.Group id="search">
-                            <Form.Control size="lg" type="text" placeholder="What kind of plant do you have?"/>
-                        </Form.Group>
-                        <Row>
-                            <Col id="butcol" >
-                                <Button id="buttcall" variant="outline-dark">Search</Button>
+                        <SearchBar/>
 
-
-                            </Col>
-                        </Row>
                     </Jumbotron>
                 </Col>
             </Row>
-            <h2>This is how you use the site</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem, consequatur cumque debitis dignissimos
-                dolore dolorum eius ex labore modi nihil numquam omnis quaerat qui quisquam ratione repellat, sunt unde!
-                Animi culpa magni molestias tenetur! Dolorum neque officiis perspiciatis rem voluptate. Dolorem fuga
-                minima quasi, recusandae repellendus rerum tenetur ullam. Deleniti ratione tempore unde voluptates.
-                Adipisci asperiores autem eos ipsum minus nesciunt nulla quis veniam. Accusamus eius excepturi expedita
-                illo maiores non nulla officiis porro possimus voluptas! Ab inventore, totam!</p>
+            <h1>Lets Get Started!</h1>
+            <p>Welcome to Plant.r where you can search any plant you like to learn more on how not to kill them, you can also create a plant profile and add your plant of choice to keep track of when to water.<br/>
+            So go on! find your new friend, and create a reminder so they can live forever!</p>
             <Row>
                 <Col id="cardA">
                     <Card style={{width: '18rem'}} id="cardd">
@@ -56,6 +46,7 @@ export const Home = () => {
                         <Card.Body>
 
                             <Card.Title>Kyerstin O'Neal</Card.Title>
+
                             <Card.Text>
                                 <hr/>
                                 I am an Air Force brat who’s been living in Albuquerque on and off for about a decade now. A few of my favorite things: sci-fi, MMA, disruptive technologies, travelling, and above all, food. Of the multiple careers I’ve had - personal trainer, journalist, real estate agent - I am most excited about my journey as a woman in tech. Also a two-time bootcamp graduate, I attended Deep Dive Digital Media in 2020 and Fullstack in 2021.

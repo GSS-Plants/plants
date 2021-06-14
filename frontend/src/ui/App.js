@@ -10,8 +10,9 @@ import {Greenhouse} from "./Greenhouse";
 import {NavBar} from "./Navbar";
 import {store} from "../store";
 import {Provider} from "react-redux";
-
+import {SearchBarContent} from "react-bootstrap/";
 import "./Styles.css"
+
 
 export const App = () => (
     <>

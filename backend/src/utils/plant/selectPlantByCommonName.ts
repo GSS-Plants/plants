@@ -5,10 +5,9 @@ export async function selectPlantByCommonName(text: string) {
     try {
         const name = `%${text}%`
         const mysqlConnection = await connect();
-        const query: string = "SELECT BIN_TO_UUID(plantId), plant.plantBloomPeriod, plant.plantCommonName, plant.plantDuration, plant.plantDroughtTolerance, plant.plantGrowthHabit, plant.plantGrowthPeriod, plant.plantMatureHeight, plant.plantMinFrostFreeDays, plant.plantPrecipitationMax, plant.plantPrecipitationMin, plant.plantRootDepthMinimum, plant.plantScientificName, plant.plantShadeTolerance, plant.plantToxicity FROM plant WHERE plant.plantCommonName LIKE '%:text%'";
 
         // const [rows] = await mysqlConnection.query(query, text);
-        const [rows] = await mysqlConnection.execute("SELECT BIN_TO_UUID(plantId), plant.plantBloomPeriod, plant.plantCommonName, plant.plantDuration, plant.plantDroughtTolerance, plant.plantGrowthHabit, plant.plantGrowthPeriod, plant.plantMatureHeight, plant.plantMinFrostFreeDays, plant.plantPrecipitationMax, plant.plantPrecipitationMin, plant.plantRootDepthMinimum, plant.plantScientificName, plant.plantShadeTolerance, plant.plantToxicity FROM plant WHERE plant.plantCommonName LIKE :name", {name})
+        const [rows] = await mysqlConnection.execute("SELECT BIN_TO_UUID(plantId) AS plantId, plantBloomPeriod, plantCommonName, plantDuration, plantDroughtTolerance, plantGrowthHabit, plantGrowthPeriod, plantMatureHeight, plantMinFrostFreeDays, plantPrecipitationMax, plantPrecipitationMin, plantRootDepthMinimum, plantScientificName, plantShadeTolerance, plantToxicity FROM plant WHERE plantCommonName LIKE :name", {name})
         await mysqlConnection.release()
 
         //@ts-ignore
