@@ -50,19 +50,20 @@ export const NavBar = () => {
                                 <Nav.Link href="/plants">Plant</Nav.Link>
                                 <Nav.Link href="/greenhouse">Greenhouse</Nav.Link>
                                 {/*<Nav.Link href="#contact">Contact Team Plants</Nav.Link>*/}
+                                {auth ? (
+                                    <SignOut/>
+                                ):(
+                                    <>
+                                        <SignUpModal/>
+                                        <SignInModal/>
+                                    </>
+                                )
+                                }
+                                {currentPath !== '/' && (
+                                    <SearchBar className="ml-auto"/>
+                                )}
                             </Nav>
-                            {auth ? (
-                                <SignOut/>
-                            ):(
-                                <>
-                                    <SignUpModal/>
-                                    <SignInModal/>
-                                </>
-                            )
-                            }
-                            {currentPath !== '/' && (
-                                <SearchBar/>
-                            )}
+
                         </Navbar.Collapse>
                     </Navbar>
                 </div>
