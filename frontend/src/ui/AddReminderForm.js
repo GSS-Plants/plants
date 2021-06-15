@@ -20,7 +20,7 @@ export const AddReminderForm = () => {
         reminderStartDate: Yup.date()
             .required("Start date is required"),
         reminderRecurrence: Yup.number()
-            .required("Reminder recurrence is required")
+            .required("Interval is required")
             .min(1, "Don't be silly.")
             .max(365, "You need to water plants more often than that."),
         reminderDescription: Yup.string()

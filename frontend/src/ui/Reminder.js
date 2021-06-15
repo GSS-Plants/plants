@@ -43,13 +43,13 @@ export const Reminder = () => {
 
                 <Container id="remindersBorder" className="text-center mt-4">
                     <Row>
-                        <Col>
-                            <h1 className="my-3">Reminders</h1>
+                        <Col className='m-0'>
+                            <h1>Reminders</h1>
 
                         </Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md={8} xl={6}><Table striped bordered hover size="sm">
+                        <Col md={8}><Table striped bordered hover size="sm">
                             <thead>
                             <tr>
                                 <th>Plant Name</th>
@@ -64,7 +64,7 @@ export const Reminder = () => {
                                     deleteId: reminder.reminderId
                                 };
                                 return (
-                                    <tr className='align-content-center'>
+                                    <tr className='align-text-center'>
                                         <td>{reminder.plantCommonName}</td>
                                         <td>{reminder.reminderStartDate}</td>
                                         <td>{reminder.reminderRecurrence} days</td>
