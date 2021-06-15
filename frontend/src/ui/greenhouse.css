@@ -1,8 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');*/
+
+#greenJumbo {
+    margin: 5rem;
+    height: 100rem;
+}
+
+#greenCard {
+    padding: 5px;
+}
+
+/*.element.style {*/
+/*    background-color: #fff;*/
+/*}*/
+
+
+/* GREEN JUMBO {*/
+/*    position: absolute;*/
+/*    width: 1350px;*/
+/*    height: 800px;*/
+/*    bottom: 150px;*/
+/*    left: 90px;*/
+/*    z-index: 18;*/
+/*}*/
 
 
 
- /*DRAG & DROP */
+
+/* !*DRAG & DROP*!*/
 /**{*/
 /*    margin: 20px;*/
 /*}*/

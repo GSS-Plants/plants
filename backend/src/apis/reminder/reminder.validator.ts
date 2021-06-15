@@ -1,31 +1,28 @@
 import {Schema} from "express-validator";
 
-export const reminderValidator : Schema = {
-    reminderId: {
-        isUUID: {
-            errorMessage: 'oooppsss'
-        },
-    },
+export const reminderValidator: Schema = {
+
     reminderProfilePlantId: {
         isUUID: {
-            errorMessage: 'oooppsss'
+            errorMessage: 'ProfilePlant Id is invalid'
         },
     },
 
-    reminderDescription : {
-        trim : true,
-        escape : true,
+    reminderDescription: {
+        trim: true,
+        escape: true,
     },
 
-    reminderRecurrence : {
-        isInt : {
-        errorMessage : 'invalid reminder repeat interval'
+    reminderRecurrence: {
+        isInt: {
+            errorMessage: 'Reminder Recurrence is invalid'
         }
     },
 
-    reminderStartDate  :  {
-        isDate : {
-        errorMessage: 'not a valid date'
+    reminderStartDate: {
+        isDate: {
+            options: {format: 'YYYY-MM-DD'},
+            errorMessage: 'Reminder start date is invalid'
         }
     },
 };

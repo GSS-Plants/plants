@@ -38,10 +38,10 @@ export async function getByCommonName(request: Request, response: Response) : Pr
 
 }
 
-export async function selectByScientificName(request: Request, response: Response) : Promise<Response> {
+export async function getByScientificName(request: Request, response: Response) : Promise<Response> {
     try {
-        const {search} = request.params
-        const mySqlResult = await selectPlantByScientificName(search);
+        const {text} = request.params
+        const mySqlResult = await selectPlantByScientificName(text);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)

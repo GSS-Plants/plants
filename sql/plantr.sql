@@ -57,11 +57,11 @@ CREATE TABLE profilePlant
 );
 CREATE TABLE reminder
 (
-    reminderId             BINARY(16)  NOT NULL,
-    reminderProfilePlantId BINARY(16)  NOT NULL,
+    reminderId             BINARY(16) NOT NULL,
+    reminderProfilePlantId BINARY(16) NOT NULL,
     reminderDescription    VARCHAR(255),
-    reminderRecurrence     INT         NOT NULL,
-    reminderStartDate      DATETIME(6) NOT NULL,
+    reminderRecurrence     INT        NOT NULL,
+    reminderStartDate      DATE       NOT NULL,
     FOREIGN KEY (reminderProfilePlantId) REFERENCES profilePlant (profilePlantId),
     PRIMARY KEY (reminderId)
 );
