@@ -1,4 +1,5 @@
 import {Router} from "express";
+
 import {getReminderController, deleteReminderController, postReminderController, putReminderController, getRemindersByProfileId} from "./reminder.controller";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {checkSchema} from "express-validator";
