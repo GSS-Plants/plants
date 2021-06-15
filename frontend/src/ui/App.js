@@ -10,7 +10,7 @@ import {Greenhouse} from "./Greenhouse";
 import {NavBar} from "./Navbar";
 import {store} from "../store";
 import {Provider} from "react-redux";
-// import {DragDrop} from "./DragDrop";
+import {DragDrop} from "./DragDrop";
 
 import {SearchBarContent} from "react-bootstrap/";
 import "./Styles.css"
@@ -28,6 +28,7 @@ export const App = () => (
                 <Route exact path='/search' component={Search} />
                 <Route exact path='/plants' component={Plants} />
                 <Route exact path='/greenhouse/' component={Greenhouse} />
+                <Route exact path='/drag-drop/' component={DragDrop} />
 
 
                 <Route exact path='/Navbar' component={NavBar} />

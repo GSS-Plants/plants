@@ -36,7 +36,7 @@ export function GreenhousePlant(props) {
     }
     return(
         <>
-            <Card style={{ width: '18rem' }}>
+            <Card id="ghCard">
                 <Card.Body>
                     {imageFinder(growth)}
                     <Card.Title><b>{plant.plantCommonName}</b></Card.Title>

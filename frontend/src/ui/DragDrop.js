@@ -6,34 +6,34 @@ import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 
 export function DragDrop() {
 
-    const profileId = props.match.params.profileId
-
     const dispatch = useDispatch()
+
+    const profilePlants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
+
+
     const initialEffects = () => {
-        dispatch(fetchProfilePlantsByProfileId(profileId))
+        dispatch(fetchProfilePlantsByProfileId())
     }
-    React.useEffect(initialEffects, [dispatch])
+    React.useEffect(initialEffects, [])
 
-    // Render our misquotes constant - before we have our data, render the skeleton.
-    // After we have our data, render the full object with our data.
-    const plants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
 
-    console.log(plants)
+
+    console.log(profilePlants)
 
 
 
 
 
-    const [greenhousePlants, updateGreenhousePlants] = useState(finalStateGreenhousePlants)
+    const [greenhousePlants, updateGreenhousePlants] = useState(profilePlants)
 
     function handleOnDragEnd(result) {
         if (!result.destination) return;
         const items = Array.from(greenhousePlants);
-        const [reorderedItem] = items.splice(results.source.index, 1);
+        const [reorderedItem] = items.splice(result.source.index, 1);
         items.splice(result.destination.index, 0, reorderedItem);
         updateGreenhousePlants(items);
     }
-
+    console.log(greenhousePlants);
     return (
         <>
 
