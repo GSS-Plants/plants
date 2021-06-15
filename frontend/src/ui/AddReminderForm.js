@@ -12,8 +12,8 @@ export const AddReminderForm = () => {
 
     const validator = Yup.object().shape({
         reminderProfilePlantId: Yup.string()
-            .uuid("Couldn't find that plant in your greenhouse")
-            .required("Plant is required"),
+            .uuid("Please choose a plant")
+            .required("Please choose a plant"),
         reminderStartDate: Yup.date()
             .required("Start date is required"),
         reminderRecurrence: Yup.number()

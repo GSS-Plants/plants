@@ -35,20 +35,29 @@ export const AddReminderFormContent = (props) => {
                         <Form.Label>Which plant?</Form.Label>
                         <Form.Control as="select" placeholder="Choose..." value={values.plant} name='reminderProfilePlantId' onChange={handleChange} onBlur={handleBlur}>
                             <option>Choose...</option>
-                            {plants.map(plant => (<option key={plant.id} value={plant.id}>{plant.name}</option>))}
+                            {plants.map(plant => (<option key={plant.key} value={plant.id}>{plant.name}</option>))}
                         </Form.Control>
                     </Form.Group>
+                    {errors.reminderProfilePlantId && touched.reminderProfilePlantId && (
+                        <div className="alert alert-danger">{errors.reminderProfilePlantId}</div>
+                    )}
                 </Col>
                 <Col md={3} className="my-2">
                     <Form.Group controlId="datePicker">
                         <Form.Label>When to start reminders:</Form.Label>
                         <Form.Control as="input" type="date" name="reminderStartDate" value={values.reminderStartDate} onChange={handleChange} onBlur={handleBlur} placeholder="Number of days"/>
                     </Form.Group>
+                    {errors.reminderStartDate && touched.reminderStartDate && (
+                        <div className="alert alert-danger">{errors.reminderStartDate}</div>
+                    )}
                 </Col>
                 <Col md={3} className="my-2">
                     <Form.Group controlId="intervalPicker">
                         <Form.Label>Days between reminders:</Form.Label>
                         <Form.Control as="input" type="number" htmlSize={4} min="1" max="365" name="reminderRecurrence" value={values.reminderRecurrence} onChange={handleChange} onBlur={handleBlur} placeholder="Number of days"/></Form.Group>
+                    {errors.reminderRecurrence && touched.reminderRecurrence && (
+                        <div className='alert alert-danger'>{errors.reminderRecurrence}</div>
+                    )}
                 </Col>
             </Row>
             <Row className="justify-content-center"><Col md={6}>
@@ -64,8 +73,7 @@ export const AddReminderFormContent = (props) => {
                         Save reminder </Button>
                 </Col>
             </Row>
-            <FormDebugger {...props} />
-
+            {/*<FormDebugger {...props} />*/}
         </Form>
         {
             status && (<div className={status.type}>{status.message}</div>)
