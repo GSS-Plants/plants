@@ -15,8 +15,8 @@ export function GreenhousePlant(props) {
     const growth = growths[0]
 
     function imageFinder (growth) {
-        switch (growth.contains()) {
-            case growth.contains('Graminoid'):
+        switch (growth) {
+            case 'Graminoid':
                 return <Image src={graminoid}/>
             case 'Subshrub':
                 return <Image src={subshrub}/>
