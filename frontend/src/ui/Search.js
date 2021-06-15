@@ -25,7 +25,10 @@ export const Search = () => {
 
 
         <h1><b>Search Results</b></h1>
-        <CardColumns className="CardCol">
+                {
+                    plants.length === 0 && (<h2 className='text-center my-4 py-4'>No results to display ...</h2>)
+                }
+                <CardColumns className="CardCol">
             {
                 plants.map(plant => <PlantCard plant={plant} key={plant.plantId}/>)
             }

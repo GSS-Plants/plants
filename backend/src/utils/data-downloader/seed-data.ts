@@ -26,6 +26,8 @@ function seedData(): Promise<any> {
             }
 
             await makeReminders(mysqlConnection, profilePlants);
+            console.log('ctrl+C to terminate')
+            console.log('if \'I got some plants\' a few lines up doesn\'t also log some plants, run this file again')
         } catch (error) {
             console.error(error);
         }
