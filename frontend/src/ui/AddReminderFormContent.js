@@ -44,7 +44,7 @@ export const AddReminderFormContent = (props) => {
                 </Col>
                 <Col md={3}>
                     <Form.Group controlId="datePicker">
-                        <Form.Label>Start:</Form.Label>
+                        <Form.Label>Start Date:</Form.Label>
                         <Form.Control as="input" className='mx-auto mt-0'  type="date" name="reminderStartDate" value={values.reminderStartDate} onChange={handleChange} onBlur={handleBlur} placeholder="Number of days"/>
                     </Form.Group>
                     {errors.reminderStartDate && touched.reminderStartDate && (
@@ -53,7 +53,7 @@ export const AddReminderFormContent = (props) => {
                 </Col>
                 <Col md={3}>
                     <Form.Group controlId="intervalPicker">
-                        <Form.Label>Interval (days):</Form.Label>
+                        <Form.Label>Frequency (days):</Form.Label>
                         <Form.Control as="input" className='mx-auto mt-0'  type="number" htmlSize={4} min="1" max="365" name="reminderRecurrence" value={values.reminderRecurrence} onChange={handleChange} onBlur={handleBlur} placeholder="Number of days"/></Form.Group>
                     {errors.reminderRecurrence && touched.reminderRecurrence && (
                         <div className='alert alert-danger'>{errors.reminderRecurrence}</div>
@@ -62,7 +62,7 @@ export const AddReminderFormContent = (props) => {
             </Row>
             <Row className="justify-content-center"><Col md={6} className='m-0'>
                 <Form.Group controlId="reminderNotes">
-                    <Form.Label>Reminder Notes:</Form.Label>
+                    <Form.Label>Notes:</Form.Label>
                     <Form.Control as="input" className='mx-auto mt-0'  type="text-area" name="reminderDescription" value={values.reminderDescription} onChange={handleChange} onBlur={handleBlur}
                     placeholder="Anything you need to remember about your watering method"/>
                 </Form.Group>
