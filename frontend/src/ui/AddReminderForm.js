@@ -6,9 +6,12 @@ import {httpConfig} from "../utils/httpConfig";
 import {Formik} from "formik";
 import {FormDebugger} from "./sign-in-up/FormDebugger";
 import {AddReminderFormContent} from "./AddReminderFormContent";
+import {fetchRemindersByProfileId} from "../store/reminders";
 
 
 export const AddReminderForm = () => {
+
+    const dispatch = useDispatch()
 
     const validator = Yup.object().shape({
         reminderProfilePlantId: Yup.string()
@@ -39,6 +42,7 @@ export const AddReminderForm = () => {
                 setStatus({message, type});
                 if (reply.status === 200) {
                     resetForm();
+                    dispatch(fetchRemindersByProfileId())
                 }
             })
     }

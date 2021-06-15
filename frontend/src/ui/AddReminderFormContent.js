@@ -2,6 +2,7 @@ import {Button, Col, Form, Row} from "react-bootstrap";
 import {FormDebugger} from "./sign-in-up/FormDebugger";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
+import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 
 export const AddReminderFormContent = (props) => {
     const {
@@ -16,16 +17,15 @@ export const AddReminderFormContent = (props) => {
         handleSubmit,
         handleReset,
     } = props;
-    const reminders = useSelector((state) => state.reminders ? state.reminders : [])
-    const plants = []
-    reminders.map(reminder => {
-        const plant = {
-            id: reminder.reminderProfilePlantId,
-            name: reminder.plantCommonName,
-            key: reminder.index
-        }
-        plants.push(plant)
-    })
+    const dispatch = useDispatch()
+
+    const initialEffects = () => {
+        dispatch(fetchProfilePlantsByProfileId())
+    }
+    React.useEffect(initialEffects, [dispatch])
+
+    const plants = useSelector((state) => state.profilePlants? state.profilePlants : [])
+
     return (<>
         <Form id="newReminderContent" onSubmit={handleSubmit} className="justify-content-center">
             <Row><Col><h2>Add A Reminder</h2></Col></Row>
@@ -35,7 +35,7 @@ export const AddReminderFormContent = (props) => {
                         <Form.Label>Which plant?</Form.Label>
                         <Form.Control as="select" placeholder="Choose..." value={values.plant} name='reminderProfilePlantId' onChange={handleChange} onBlur={handleBlur}>
                             <option>Choose...</option>
-                            {plants.map(plant => (<option key={plant.key} value={plant.id}>{plant.name}</option>))}
+                            {plants.map(plant => (<option key={plant.profilePlantId} value={plant.profilePlantId}>{plant.plantCommonName}</option>))}
                         </Form.Control>
                     </Form.Group>
                     {errors.reminderProfilePlantId && touched.reminderProfilePlantId && (
