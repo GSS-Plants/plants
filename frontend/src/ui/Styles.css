@@ -11,16 +11,17 @@
     background-image: url("https://images.unsplash.com/photo-1515472379677-6c0ad8823829?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80");
     background-size: cover;
     margin: auto;
-    height: 25rem;
+    height: 20rem;
 
 }
 
 
 
-#photoplants {
-    max-width: 100%;
-    text-align: center;
-    background: no-repeat;
+#formCon {
+    float: right;
+    margin: 1rem 2rem 1rem auto;
+    text-align: left;
+
 }
 
 #Pbuttcall{
@@ -56,42 +57,11 @@
     display: flex;
     margin: 3rem auto 5rem auto;
 }
- #Butt{
-     background-color: #778A35;
-     margin-right: 2rem;
-     margin-bottom: 6rem;
 
- }
- #Butt2{
-
-     margin-bottom: 6rem;
-
- }
 
 h1, p{
     text-align: center;
 }
-
-#thejum {
-
-    text-align: center;
-    background-color: #5c073b;
-    margin: -2rem auto 3rem auto;
-    opacity:80%;
-
-
-}
-#logo{
-    margin: auto 2rem;
-    background:#111;
-    color: #D1E2C4;
-    text-shadow:1px 1px 10px #0cf82d, 1px 1px 10px rgba(58, 172, 103, 0.82);
-    font-size:100px;
-    text-align:center;
-
-}
-
-
 
 #theNav{
    background-color:#778A35;
@@ -109,7 +79,8 @@ h1, p{
     margin: 3rem auto 5rem auto;
 }
 #signInB{
-    margin: 2rem 3rem 5rem 5rem;
+    padding: 7px 20px;
+    margin: 3rem 5rem 5rem auto;
     display: inline-block;
     border-radius: 50px;
     background-color: #D1E2C4;
@@ -118,7 +89,8 @@ h1, p{
     transition: border 0.2s ease;
 }
 #signUpB{
-    margin: 2rem 3rem 5rem 5rem;
+    padding: 7px 20px;
+    margin: 3rem 17rem 5rem auto;
     display: inline-block;
     border-radius: 50px;
     background-color: #D1E2C4;
@@ -138,13 +110,13 @@ h1, p{
 }
 #searchB{
 
-    margin: .1rem 4rem 1rem 9rem;
-    padding: 8px 20px;
+    margin: 8rem 5rem 1rem auto;
+    padding: 7px 20px;
     display: inline-block;
     border-radius: 50px;
     background-color: #D1E2C4;
     color: #31352E;
-    border: 5px solid #31352E;
+    border: 4px solid #31352E;
     transition: border 0.2s ease;
 }
 
@@ -208,22 +180,17 @@ h1, p{
 }
 #navLink{
 
-    margin: 3.7rem auto 2rem auto;
+    margin: 4.4rem auto 2rem auto;
 }
 #LGS{
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
-
-
-
-
-
 .typing-demo {
 
     color: #aceecf;
-    margin-bottom:  3rem;
-    width: 24rem;
+    margin-bottom:  1rem;
+    width: 45rem;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
@@ -243,8 +210,10 @@ h1, p{
         border-color: transparent
     }
 }
+form{
+    margin: 2rem 1rem 3rem auto;
 
-
+}
 
 
 

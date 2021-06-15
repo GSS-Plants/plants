@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import "./Styles.css"
 import "./Navbar"
 import vine from "../assets/vine.png";
-import stems from "../assets/nonessential-tall stems large leaves.png"
+import succulent from "../assets/nonessential-succulent.png"
 import tree from "../assets/tree.png"
 import stalk from "../assets/nonessential-stalks.png"
 import {
@@ -33,7 +33,7 @@ export const Home = () => {
                                     <div className="typing-demo">
                                         Plant.r
                                     </div>
-                            <SearchBar/>
+
                         </Container>
 
                     </Jumbotron>
@@ -50,7 +50,7 @@ export const Home = () => {
                     <Card style={{width: '18rem'}} id="cardd">
                         <Card.Img
                             alt="plant photo"
-                            src={stems}
+                            src={succulent}
                             width="30"
                             height="400"
                             className="d-inline-block align-top"

@@ -25,8 +25,8 @@ export const NavBar = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const currentPath = useLocation().pathname
-    console.log(currentPath)
+    // const currentPath = useLocation().pathname
+    // console.log(currentPath)
     return (
         <>
 
@@ -37,8 +37,8 @@ export const NavBar = () => {
                             <img
                                 alt=""
                                 src={logo}
-                                width="30"
-                                height="30"
+                                width="40"
+                                height="50"
                                 className="d-inline-block align-top"
                             />{' '}
                             plant.r
@@ -46,6 +46,7 @@ export const NavBar = () => {
                         <Navbar.Toggle aria-controls="navbar-links"/>
                         <Navbar.Collapse id="navbar-links" className="justify-content-between">
                             <Nav className="justify-content-between">
+
                                 <Nav.Link id="navLink" href="/reminder">Reminder</Nav.Link>
                                 <Nav.Link id="navLink"  href="/search">Search</Nav.Link>
                                 <Nav.Link id="navLink"  href="/plants">Plant</Nav.Link>
@@ -60,9 +61,9 @@ export const NavBar = () => {
                                     </>
                                 )
                                 }
-                                {currentPath !== '/' && (
+                                {/*{currentPath !== '/' && (*/}
                                     <SearchBar className="ml-auto"/>
-                                )}
+                                {/*)}*/}
                             </Nav>
 
                         </Navbar.Collapse>

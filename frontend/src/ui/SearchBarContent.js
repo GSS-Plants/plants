@@ -23,12 +23,14 @@ export const SearchBarContent = (props) => {
 
                     />
 
-                    {props.errors.name && <div id="feedback">{props.errors.name}</div>}
-                    <Button id="searchB" variant="outline-dark" type="submit">Go</Button>
+
 
                 </div>
-            </form>
 
+
+            </form>
+            {props.errors.name && <div id="feedback">{props.errors.name}</div>}
+            <Button id="searchB" variant="outline-dark" type="submit">Go</Button>
         </>
     )
 };
