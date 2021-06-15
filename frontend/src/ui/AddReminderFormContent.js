@@ -22,10 +22,10 @@ export const AddReminderFormContent = (props) => {
     const initialEffects = () => {
         dispatch(fetchProfilePlantsByProfileId())
     }
-    React.useEffect(initialEffects, [dispatch])
+    React.useEffect(initialEffects, [])
 
-    const plants = useSelector((state) => state.profilePlants? state.profilePlants : [])
-
+    const plants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
+    console.log(plants)
     return (<>
         <Form id="newReminderContent" onSubmit={handleSubmit} className="justify-content-center">
             <Row><Col><h2>Add A Reminder</h2></Col></Row>
