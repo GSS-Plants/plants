@@ -9,7 +9,7 @@ export async function selectProfilePlantWithDetailsByProfileId(profileId: string
         const [rows] = await mysqlConnection.execute(query, {profileId});
 
         // @ts-ignore is required so that rows can be interacted with like the array it is
-        return rows.length !== 0 ? {...rows} : undefined;
+        return rows.length !== 0 ? rows : undefined;
     } catch (e) {
         console.error(e)
         return null

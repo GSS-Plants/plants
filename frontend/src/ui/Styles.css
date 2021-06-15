@@ -17,10 +17,24 @@
     background: no-repeat;
 }
 #buttcall{
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #778A35;
+    text-align: center;
+}
+#Pbuttcall{
+    justify-content: center;
+    margin: 0 1.5rem;
+    background-color: #778A35;
+    text-align: center;
+}
 
+#butcol{
 
     text-align: center;
 }
+
+
 #cardA{
     background-color: #778A35;
     text-align: center;
@@ -71,4 +85,16 @@ h1{
 hr{
     border-top: 2px solid #778A35;
 
+}
+#greenHouseRow{
+    justify-content: space-evenly;
+}
+
+.CardCol{
+    text-align: center;
+    color: #31352E;
+    justify-content: space-evenly;
+    background-color: #D1E2C4;
+    display: inline-block;
+    margin: 3rem auto 5rem auto;
 }
