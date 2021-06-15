@@ -1,8 +1,9 @@
 import React, {useState} from "react"
-// import "./greenhouse.css"
+import "./greenhouse.css"
+import bgimage from "../assets/shelves.png"
 
 
-import {Button, CardGroup, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row} from "react-bootstrap";
+import {Button, CardGroup, Col, Container, Form, InputGroup, Jumbotron, Modal, Nav, Navbar, Row} from "react-bootstrap";
 
 import logo from "../assets/logo-filler.png";
 
@@ -34,16 +35,17 @@ export const Greenhouse = () => {
     return (
         <>
 
-
-            <div className="jumbotron jumbotron-fluid">
+            <h1 className="display-4">GREENHOUSE</h1>
+            <Jumbotron id="greenJumbo" className="jumbotron jumbotron-fluid" style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
                 <div className="container">
 
-                    <h1 className="display-4">GREENHOUSE</h1>
-                    <CardGroup>
+
+                    <CardGroup id="greenCard">
                         {plants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
                     </CardGroup>
                 </div>
-            </div>
+
+            </Jumbotron>
 
 
 
