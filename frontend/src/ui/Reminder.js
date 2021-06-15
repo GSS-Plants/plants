@@ -4,6 +4,7 @@ import "./Styles.css"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 import {fetchRemindersByProfileId} from "../store/reminders";
+import {AddReminderForm} from "./AddReminderForm";
 
 
 export const Reminder = () => {
@@ -15,7 +16,6 @@ export const Reminder = () => {
     React.useEffect(initialEffects, [dispatch])
 
     const reminders = useSelector((state) => state.reminders ? state.reminders : [])
-    let plantNames = []
     return (
         <>
 
@@ -41,8 +41,7 @@ export const Reminder = () => {
                             </thead>
                             <tbody>
                             {reminders.map(reminder => {
-                                plantNames.push(reminder.plantCommonName)
-                                console.log(plantNames)
+
                                 return (
                                     <tr>
                                         <td>{reminder.plantCommonName}</td>
@@ -56,60 +55,7 @@ export const Reminder = () => {
                     </Row>
 
 
-                    <Form>
-                        <Row><Col><h2>Add A Reminder</h2></Col></Row>
-                        <Row className="justify-content-center">
-                            <Col md={3} className="my-2">
-                                <Form.Group controlId="plantPicker">
-                                    <Form.Label>Which plant?</Form.Label>
-                                    <Form.Control as="select" defaultValue="Choose...">
-                                        <option>Choose...</option>
-                                        {plantNames.map(plantName => (<option>{plantName}</option>))}
-                                    </Form.Control>
-                                </Form.Group>
-                            </Col>
-                            <Col md={3} className="my-2">
-                                <Form.Group controlId="datePicker">
-                                    <Form.Label>When to start reminders:</Form.Label>
-                                    <Form.Control type="date" placeholder="Number of days"/>
-                                </Form.Group>
-                            </Col>
-                            <Col md={3} className="my-2">
-                                <Form.Group controlId="intervalPicker">
-                                    <Form.Label>Days between reminders:</Form.Label>
-                                    <Form.Control type="number" htmlSize={4} min="1" max="365" placeholder="Number of days"/></Form.Group>
-                            </Col>
-                        </Row>
-                        <Row><Col>
-                            <Form.Group controlId="reminderNotes">
-                                <Form.Label>Reminder Notes:</Form.Label>
-                                <Form.Control type="text-area" placeholder="Anything you need to remember about your watering method"/>
-                            </Form.Group>
-<<<<<<< HEAD
-                        </Col>
-                        <Col md={3} className="my-2">
-                            <Form.Group controlId="intervalPicker">
-                                <Form.Label>Days between reminders:</Form.Label>
-                                <Form.Control type="number" htmlSize={4} min="1" max="365" placeholder="Number of days"/></Form.Group>
-                        </Col>
-                    </Row>
-                    <Row  className="justify-content-center">
-                        <Col md={6}>
-                            <Button id="reminderB" variant="primary" size="lg" block>
-                                Save reminder </Button>
-
-                        </Col>
-                    </Row>
-=======
-                        </Col></Row>
-                        <Row className="justify-content-center">
-                            <Col md={6}>
-                                <Button id="reminderB" variant="primary" size="lg" block>
-                                    Save reminder </Button>
-                            </Col>
-                        </Row>
->>>>>>> b9d2d332b5970eb88c124b6e09a41c3d9d6aa237
-                    </Form>
+                    <AddReminderForm/>
                 </Container>
             </div>
         </>
