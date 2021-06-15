@@ -12,7 +12,7 @@ export const SignUpModal = () => {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button id="signUpB" variant="dark" onClick={handleShow}>
                 Sign Up
             </Button>
 
@@ -23,14 +23,7 @@ export const SignUpModal = () => {
                 <Modal.Body>
                     <SignUpForm/>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="dark" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="dark" onClick={handleClose}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
+
             </Modal>
         </>
     );

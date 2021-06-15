@@ -1,13 +1,17 @@
-import {Button, Form, InputGroup} from "react-bootstrap";
+import {Button, Form, InputGroup} from "react-bootstrap/";
 import React from "react";
+import {Container} from "react-bootstrap";
+
+
 
 export const SearchBarContent = (props) => {
     const {handleSubmit, handleBlur, handleChange, values} = props
     return (
         <>
+
             <form onSubmit={handleSubmit}>
                 <div className='form-group'>
-                    <input
+                    <input id="formCon"
                         className="form-control"
                         type="text"
                         onBlur={handleBlur}
@@ -15,11 +19,16 @@ export const SearchBarContent = (props) => {
                         value={values.searchText}
                         name="searchText"
                         placeholder='What kind of plants do you have?'
+
+
                     />
+
                     {props.errors.name && <div id="feedback">{props.errors.name}</div>}
-                    <button type="submit">Go</button>
+                    <Button id="searchB" variant="outline-dark" type="submit">Go</Button>
+
                 </div>
             </form>
+
         </>
     )
 };

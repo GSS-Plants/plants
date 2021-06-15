@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 // import "./greenhouse.css"
 
+
 import {Button, CardGroup, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row} from "react-bootstrap";
 
 import logo from "../assets/logo-filler.png";
@@ -8,22 +9,24 @@ import logo from "../assets/logo-filler.png";
 
 import "./greenhouse-js.js"
 
+
 import {GreenhousePlant} from "./GreenhousePlant";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 
-export const Greenhouse = (props) => {
-
+export const Greenhouse = () => {
 
 
     const dispatch = useDispatch()
 
     const plants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
 
+
     const initialEffects = () => {
         dispatch(fetchProfilePlantsByProfileId())
     }
     React.useEffect(initialEffects, [])
+
 
 
     console.log(plants)
@@ -41,7 +44,6 @@ export const Greenhouse = (props) => {
                     </CardGroup>
                 </div>
             </div>
-
 
 
 

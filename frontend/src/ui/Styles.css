@@ -1,12 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+
 #container{
+
     background-color: #D1E2C4;
+
 }
 
 #jumone {
-
+    text-align: center;
     background-image: url("https://images.unsplash.com/photo-1515472379677-6c0ad8823829?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80");
     background-size: cover;
-    height: 28rem;
+    margin: auto;
+    height: 25rem;
+
 }
 
 
@@ -16,17 +22,21 @@
     text-align: center;
     background: no-repeat;
 }
-#buttcall{
-    justify-content: center;
-    margin: 0 auto;
-    background-color: #778A35;
-    text-align: center;
-}
+
 #Pbuttcall{
-    justify-content: center;
-    margin: 0 1.5rem;
+    margin: auto 2rem;
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 50px;
     background-color: #778A35;
-    text-align: center;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
+#Pbuttcall:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+
 }
 
 #butcol{
@@ -58,37 +68,37 @@
 
  }
 
-h1{
+h1, p{
     text-align: center;
 }
-#search{
-    padding-left: 15rem;
-    padding-right: 15rem;
-    padding-top: 2rem;
 
-}
 #thejum {
-    background-color: brown;
-    height: 10rem;
-    opacity: 78%;
+
+    text-align: center;
+    background-color: #5c073b;
+    margin: -2rem auto 3rem auto;
+    opacity:80%;
 
 
 }
 #logo{
-    color: aquamarine;
+    margin: auto 2rem;
+    background:#111;
+    color: #D1E2C4;
+    text-shadow:1px 1px 10px #0cf82d, 1px 1px 10px rgba(58, 172, 103, 0.82);
+    font-size:100px;
+    text-align:center;
 
 }
+
+
 
 #theNav{
    background-color:#778A35;
-}
-hr{
-    border-top: 2px solid #778A35;
+
 
 }
-#greenHouseRow{
-    justify-content: space-evenly;
-}
+
 
 .CardCol{
     text-align: center;
@@ -98,3 +108,145 @@ hr{
     display: inline-block;
     margin: 3rem auto 5rem auto;
 }
+#signInB{
+    margin: 2rem 3rem 5rem 5rem;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #D1E2C4;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
+#signUpB{
+    margin: 2rem 3rem 5rem 5rem;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #D1E2C4;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+
+}
+#signOutB{
+    margin:3rem 1rem 4rem 1rem;
+
+    border-radius: 50px;
+    background-color: #D1E2C4;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
+#searchB{
+
+    margin: .1rem 4rem 1rem 9rem;
+    padding: 8px 20px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #D1E2C4;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
+
+#signUpContent{
+    background-color: #778A35;
+}
+#signInContent{
+    background-color: #778A35;
+}
+
+
+#signInBM {
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #D1E2C4;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
+#reminderB{
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color:#778A35 ;
+    color: #31352E;
+    border: 5px solid #31352E;
+    transition: border 0.2s ease;
+}
+#signInB:hover {
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+#signInBM:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+
+#searchB:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+#signOutB:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+#signUpB:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+#reminderB:hover{
+    border: 5px solid yellowgreen;
+    cursor: pointer;
+}
+#remindersBorder{
+
+    border-style: double;
+    border-color: #31352E;
+    padding: 1rem 2rem;
+
+}
+#navLink{
+
+    margin: 3.7rem auto 2rem auto;
+}
+#LGS{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+
+
+
+
+.typing-demo {
+
+    color: #aceecf;
+    margin-bottom:  3rem;
+    width: 24rem;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 7em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+
+
+
+
+
+

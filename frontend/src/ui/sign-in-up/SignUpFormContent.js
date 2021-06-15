@@ -17,7 +17,7 @@ export const SignUpFormContent = (props) => {
     } = props;
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form id="signUpContent" onSubmit={handleSubmit}>
                 {/*controlId must match what is passed to the initialValues prop*/}
                 <div className="form-group">
                     <label htmlFor="profileEmail">Email Address</label>
@@ -125,13 +125,13 @@ export const SignUpFormContent = (props) => {
 
 
                 <div className="form-group">
-                    <button className="btn btn-primary mb-2" type="submit">Submit</button>
-                    <button
-                        className="btn btn-danger mb-2"
-                        onClick={handleReset}
-                        disabled={!dirty || isSubmitting}
-                    >Reset
-                    </button>
+                    <button id="signUpB" className="btn btn-outline-dark mb-2" type="submit">Submit</button>
+                    {/*<button*/}
+                    {/*    className="btn btn-outline-dark mb-2"*/}
+                    {/*    onClick={handleReset}*/}
+                    {/*    disabled={!dirty || isSubmitting}*/}
+                    {/*>Reset*/}
+                    {/*</button>*/}
                 </div>
 
 

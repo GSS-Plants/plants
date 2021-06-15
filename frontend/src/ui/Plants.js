@@ -45,6 +45,7 @@ export const Plants= () => {
                     <Button id="Pbuttcall" variant="outline-dark">Add to Greenhouse</Button>
                 </Col>
             </Row>
+            <hr/>
         </div>
     )
 }

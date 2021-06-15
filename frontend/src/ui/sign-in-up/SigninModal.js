@@ -14,7 +14,7 @@ export const SignInModal = () => {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button id="signInB" variant="outline-dark " onClick={handleShow}>
                 Sign In
             </Button>
 
@@ -26,12 +26,8 @@ export const SignInModal = () => {
                     <SignInForm/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="dark" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="dark" onClick={handleClose}>
-                        Save Changes
-                    </Button>
+
+
                 </Modal.Footer>
             </Modal>
         </>
