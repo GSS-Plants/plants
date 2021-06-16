@@ -29,6 +29,7 @@ import {GreenhousePlant} from "./GreenhousePlant";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 import plant from "../store/plant";
+import {CompostModal} from "./CompostModal";
 
 export const Greenhouse = () => {
 
@@ -90,7 +91,7 @@ export const Greenhouse = () => {
             <Row>
                 <Col>
                     <div>
-                        <Button className="btn btn-lg" id="ghBtn-compostPlant">compost plant ༼ つ ಥ_ಥ ༽つ</Button>
+                        <CompostModal plants={plants}/>
                     </div>
                 </Col>
                     <Col>
