@@ -9,12 +9,10 @@ import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {signUpRoute} from "./apis/sign-up/signup.route";
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
 import {ReminderRoute} from "./apis/reminder/reminder.route";
-
 import {PlantRoute} from "./apis/Plant/plant.route";
-
 import {ProfilePlantRoute} from "./apis/profile-plant/profilePlant.route";
 import {SignOutRouter} from "./apis/sign-out/signout.route";
-
+const helmet = require("helmet");
 
 const MemoryStore = require('memorystore')(session);
 // The following class creates the app and instantiates the server
@@ -49,6 +47,7 @@ export class App {
         };
         this.app.use(morgan('dev'))
         this.app.use(express.json())
+        this.app.use(helmet())
         this.app.use(session(sessionConfig));
         this.app.use(passport.initialize());
         this.app.use(passport.session());
@@ -57,7 +56,6 @@ export class App {
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
     private routes() {
-        // TODO add "/apis"
         this.app.use('/apis', indexRoute)
         this.app.use('/apis/profile', ProfileRoute)
         this.app.use('/apis/sign-up', signUpRoute)
