@@ -12,6 +12,7 @@ import {
     Modal,
     ListGroup,
     ListGroupItem,
+    Badge,
 } from 'react-bootstrap'
 import "./Styles.css"
 import logo from "../assets/logo-filler.png";
@@ -30,28 +31,28 @@ export const Plants = (props) => {
 
         <div id="container">
             <Row>
-                <Col id="Pcol" lg={{span:10,offset:1}}>
+                <Col id="Pcol" lg={{span:10,offset:1}} className="text-center">
                     <h1>Hi, My Name Is:</h1>
-                    <h2>{plant.plantCommonName}</h2>
+                    <h2><i>"{plant.plantCommonName}"</i></h2>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <ListGroup>
-                        <ListGroupItem>Bloom Period: {plant.plantBloomPeriod}</ListGroupItem>
-                        <ListGroupItem>${plant.plantCommonName}</ListGroupItem>
-                        <ListGroupItem>${plant.plantDuration}</ListGroupItem>
-                        <ListGroupItem>${plant.plantDroughtTolerance}</ListGroupItem>
-                        <ListGroupItem>${plant.plantGrowthHabit}</ListGroupItem>
-                        <ListGroupItem>${plant.plantGrowthPeriod}</ListGroupItem>
-                        <ListGroupItem>${plant.plantMatureHeight}</ListGroupItem>
-                        <ListGroupItem>${plant.plantMinFrostFreeDays}</ListGroupItem>
-                        <ListGroupItem>${plant.plantPrecipitationMax}</ListGroupItem>
-                        <ListGroupItem>${plant.plantPrecipitationMin}</ListGroupItem>
-                        <ListGroupItem>${plant.plantRootDepthMinimum}</ListGroupItem>
-                        <ListGroupItem>${plant.plantScientificName}</ListGroupItem>
-                        <ListGroupItem>${plant.plantShadeTolerance}</ListGroupItem>
-                        <ListGroupItem>${plant.plantToxicity}</ListGroupItem>
+                    <ListGroup className="text-center">
+                        <ListGroupItem><b>Bloom Period :></b> {plant.plantBloomPeriod}</ListGroupItem>
+                        <ListGroupItem><b>Scientific Name :></b> {plant.plantScientificName}</ListGroupItem>
+                        <ListGroupItem><b>Duration :></b> {plant.plantDuration}</ListGroupItem>
+                        <ListGroupItem><b>Drought Tolerance :></b> {plant.plantDroughtTolerance}</ListGroupItem>
+                        <ListGroupItem><b>Growth Habit :></b> {plant.plantGrowthHabit}</ListGroupItem>
+                        <ListGroupItem><b>Growth Period :></b> {plant.plantGrowthPeriod}</ListGroupItem>
+                        <ListGroupItem><b>Mature Height :></b> {plant.plantMatureHeight}</ListGroupItem>
+                        <ListGroupItem><b>Min Frost Free Days :></b> {plant.plantMinFrostFreeDays}</ListGroupItem>
+                        <ListGroupItem><b>Precipitation Max :></b> {plant.plantPrecipitationMax}</ListGroupItem>
+                        <ListGroupItem><b>Precipitation Min :></b> {plant.plantPrecipitationMin}</ListGroupItem>
+                        <ListGroupItem><b>Root Depth Min :></b> {plant.plantRootDepthMinimum}</ListGroupItem>
+
+                        <ListGroupItem><b>Shade Tolerance :></b> {plant.plantShadeTolerance}</ListGroupItem>
+                        <ListGroupItem><b>Toxicity :></b> {plant.plantToxicity}</ListGroupItem>
                     </ListGroup>
                 </Col>
             </Row>
