@@ -15,10 +15,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 import plant from "../store/plant";
 import {CompostModal} from "./CompostModal";
+import {useHistory} from "react-router-dom";
 
 
 export const Greenhouse = () => {
 
+    const history = useHistory()
 
     const dispatch = useDispatch()
 
@@ -79,14 +81,10 @@ export const Greenhouse = () => {
                         <CompostModal plants={plants}/>
                     </div>
                 </Col>
-                {/*<Col>*/}
-                {/*    <div>*/}
-                {/*        <Button className="btn btn-lg" id="ghBtn-addNewPlant">+ new plant</Button>*/}
-                {/*    </div>*/}
-                {/*</Col>*/}
+
                 <Col>
                     <div>
-                        <Button className="btn btn-lg" id="ghBtn-editReminders">edit reminders</Button>
+                        <Button className="btn btn-lg" id="ghBtn-editReminders" onClick={() => {history.push('/reminder')}}>edit reminders</Button>
                     </div>
                 </Col>
 
