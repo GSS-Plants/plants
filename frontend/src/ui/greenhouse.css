@@ -1,52 +1,87 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');*/
 
+
+#ghTitle {
+    margin-top: 25px;
+}
+
 #greenJumbo {
-    margin: 5rem;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 5rem;
     height: 75rem;
+    /*bottom: 200px;*/
+}
+
+#ghCardCol {
+    height: 300px;
+    width: 1000px;
+    text-align: center;
+    /*color: #31352E;*/
+    justify-content: space-evenly;
+    /*background-color: #D1E2C4;*/
+    display: inline-block;
+    /*margin: 3rem auto 5rem auto;*/
+    border-color: darkorchid;
+    border-style: dashed;
 }
 
 img {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
+}
+
+/*CONTAINS GROWTH HABIT IMAGE*/
+#ghPlant {
+    height: 150px;
+    width: 150px;
+    /*border-color: darkorchid;*/
+    /*border-style: dashed;*/
+
 }
 
 #card {
     height: 300px;
     width: 200px;
+    border-color: darkorchid;
+    border-style: dashed;
 }
+
 
 #ghCard {
     /*margin: 10px;*/
-    margin: 2rem;
     /*padding: 5rem;*/
     width: 18rem;
     height: 16rem;
+    border-color: darkorchid;
+    border-style: dashed;
 }
 
-#ghPlant {
-    height: 150px;
-    width: 150px;
+
+#ghStandingPlant {
+    position: absolute;
+    bottom: -1000px;
+    width: 1000px;
+    height: 1200px;
+    right: -150px;
+    /*z-index: 19;*/
 }
 
-#ghCardImg {
-    height: 100px;
-    width: 100px;
-}
+/*#ghCardImg {*/
+/*    height: 100px;*/
+/*    width: 100px;*/
+/*    border-color: darkorchid;*/
+/*    border-style: dashed;*/
+/*}*/
 
-#ghCardBody {
-    text-align: center;
-    width: 173px;
-    height: 250px;
-}
-
-#ghCardCol {
-    text-align: center;
-    /*color: #31352E;*/
-    justify-content: space-evenly;
-    /*background-color: #D1E2C4;*/
-    /*display: inline-block;*/
-    /*margin: 3rem auto 5rem auto;*/
-}
+/*#ghCardBody {*/
+/*    text-align: center;*/
+/*    width: 150px;*/
+/*    height: 200px;*/
+/*    border-color: darkorchid;*/
+/*    border-style: dashed;*/
+/*}*/
 
 
 

@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import "./greenhouse.css"
 import bgimage from "../assets/shelves.png"
+import standingPlant from "../assets/standingPlant.png"
 
 
 import {
@@ -9,7 +10,7 @@ import {
     CardGroup,
     Col,
     Container,
-    Form,
+    Form, Image,
     InputGroup,
     Jumbotron,
     Modal,
@@ -43,50 +44,53 @@ export const Greenhouse = () => {
     React.useEffect(initialEffects, [])
 
 
-
     console.log(plants)
 
     function imageFinder(growth) {
-        
+
     }
 
     return (
         <>
 
-
-            <Jumbotron id="greenJumbo" className="jumbotron jumbotron-fluid" style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
+            {/*<h1 className="display-4" id="ghTitle"><b>GREENHOUSE</b></h1>*/}
+            <Jumbotron id="greenJumbo" className="jumbotron jumbotron-fluid"
+                       style={{backgroundImage: `url(${bgimage})`, backgroundSize: 'cover'}}>
 
                 <div className="container">
-                <Container>
-                    <h1 className="display-4"><b>GREENHOUSE</b></h1>
-                    <Row>
-                        <Col>
-<CardColumns id="ghCardCol">
-                    <CardGroup id="ghCardGroup">
-                        {/*<Card id="ghCard">*/}
-                            <Card.Body id="ghCardBody">
-                                <Card.Img src={imageFinder} id="ghCardImg"/>
-                                <Card.Title>{plant.plantCommonName}</Card.Title>
-                                {/*<Card.Img*/}
-                                {/*</>*/}
-                        {plants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
-                            </Card.Body>
-                        {/*</Card>*/}
-                    </CardGroup>
-</CardColumns>
+                    <Container>
 
-                        </Col>
-                    </Row>
-                </Container>
+                        <Row>
+                            <Col>
+                                <CardColumns id="ghCardCol">
+                                    <CardGroup id="ghCardGroup">
+                                        {/*<Card id="ghCard">*/}
+                                        <Card.Body id="ghCardBody">
+                                            {/*<Card.Img src={imageFinder} id="ghCardImg"/>*/}
+                                            <Card.Title>{plant.plantCommonName}</Card.Title>
+                                            {/*<Card.Img*/}
+                                            {/*</>*/}
+                                            {plants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
+                                        </Card.Body>
+                                        {/*</Card>*/}
+                                    </CardGroup>
+                                </CardColumns>
+                                {/*STANDING PLANT*/}
+                                <Image src={standingPlant} id="ghStandingPlant"/>
+                            </Col>
+                        </Row>
+                        <div>
+                            <Button>EDIT REMINDERS</Button>
+                        </div>
+                    </Container>
                 </div>
 
             </Jumbotron>
 
 
-
-            </>
-            )
-        }
+        </>
+    )
+}
 
 
 
