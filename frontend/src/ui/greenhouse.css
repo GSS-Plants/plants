@@ -12,11 +12,13 @@
 /*}*/
 
 #greenJumbo {
+    background-size: auto;
     margin-top: 0rem;
     margin-left: 0rem;
     margin-right: 0rem;
     margin-bottom: 5rem;
     height: 75rem;
+    overflow: hidden;
 }
 
 
@@ -46,11 +48,21 @@
     /*border-style: dashed;*/
 }
 
+#gHCard {
+    text-align: center;
+    top: -20px;
+}
+
+
+
+
+
 /*BUTTONS*/
 #ghBtn-compostPlant {
     /*margin-left: 150px;*/
     background-color: darkorchid;
     border-color: darkorchid;
+    margin: 1rem;
 }
 
 /*#ghBtn-addNewPlant {*/
@@ -63,6 +75,7 @@
     /*margin-left: -375px;*/
     background-color: darkorchid;
     border-color: darkorchid;
+    margin: 1rem;
 }
 /*END BUTTONS*/
 
@@ -71,10 +84,10 @@
 
 #ghStandingPlant {
     position: absolute;
-    bottom: -1000px;
+    bottom: -550px;
     width: 1600px;
     height: 1200px;
-    right: -250px;
+    right: -5px;
     /*z-index: 19;*/
 }
 

@@ -51,23 +51,23 @@ export const Greenhouse = () => {
                     <Container id="ghContainer">
 
                         <Row>
-                            <Col md>
-                                <CardColumns id="ghCardCol">
-                                    <CardGroup id="ghCardGroup">
-                                        {/*<Card id="ghCard">*/}
-                                        <Card.Body id="ghCardBody">
+                            {/*<Col md>*/}
+                            {/*    <CardColumns id="ghCardCol">*/}
+                            {/*        <CardGroup id="ghCardGroup">*/}
+                            {/*            /!*<Card id="ghCard">*!/*/}
+                            {/*            <Card.Body id="ghCardBody">*/}
                                             {/*<Card.Img src={imageFinder} id="ghCardImg"/>*/}
-                                            <Card.Title>{plant.plantCommonName}</Card.Title>
+                                            {/*<Card.Title>{plant.plantCommonName}</Card.Title>*/}
                                             {/*<Card.Img*/}
                                             {/*</>*/}
                                             {plants.map(plant => <GreenhousePlant plant={plant} key={plant.plantId}/>)}
-                                        </Card.Body>
-                                        {/*</Card>*/}
-                                    </CardGroup>
-                                </CardColumns>
+                            {/*            </Card.Body>*/}
+                            {/*            /!*</Card>*!/*/}
+                            {/*        </CardGroup>*/}
+                            {/*    </CardColumns>*/}
                                 {/*STANDING PLANT*/}
                                 <Image src={standingPlant} id="ghStandingPlant"/>
-                            </Col>
+                            {/*</Col>*/}
                         </Row>
                     </Container>
                 </div>

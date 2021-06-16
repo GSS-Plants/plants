@@ -40,13 +40,13 @@ export function GreenhousePlant(props) {
     return(
         <>
             {/*<CardGroup>*/}
-                <Card>
+                <Card className="m-4" id="gHCard">
                 {/*<Card.Body>*/}
                     {/*{plant="plant.plantId"}*/}
                     {/*<Card.Img id="ghCardImg">*/}
                     <div id="ghPlant">{imageFinder(growth)}</div>
                     {/*</Card.Img>*/}
-                        <Card.Title>{plant.plantCommonName}</Card.Title>
+                        <Card.Title id="gHCardTitle">{plant.plantCommonName}</Card.Title>
                 {/*</Card.Body>*/}
                 </Card>
             {/*// </CardGroup>*/}
