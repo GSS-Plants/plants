@@ -1,6 +1,6 @@
 import {Button, Form, InputGroup} from "react-bootstrap/";
 import React from "react";
-import {Container} from "react-bootstrap";
+
 
 
 
@@ -30,7 +30,7 @@ export const SearchBarContent = (props) => {
 
             </form>
             {props.errors.name && <div id="feedback">{props.errors.name}</div>}
-            <Button id="searchB" variant="outline-dark" type="submit">Go</Button>
+            <Button id="searchB" variant="outline-dark" type="submit">Search</Button>
         </>
     )
 };

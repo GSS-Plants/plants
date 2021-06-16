@@ -1,16 +1,18 @@
 import React, {useState} from 'react'
 import "./Styles.css"
 import "./Navbar"
-import vine from "../assets/vine.png";
-import succulent from "../assets/nonessential-succulent.png"
-import tree from "../assets/tree.png"
-import stalk from "../assets/nonessential-stalks.png"
+import Gabi from "../assets/plant.r-gabi.png";
+import Kyer from "../assets/plant.r-kyerstin.png"
+import  Sam from "../assets/plant.r-samuel.png"
+import Simo from "../assets/plant.r-simo.png"
+import git from "../assets/github-icon.png"
+import linkIn from "../assets/linkedin-icon.png"
 import {
     Row,
     Col,
     Jumbotron,
     Card,
-    ListGroup, Container,
+    ListGroup, Container, Image,
 } from 'react-bootstrap'
 import "./Navbar"
 
@@ -29,8 +31,7 @@ export const Home = () => {
                     <Jumbotron id="jumone" className="jumbotron jumbotron-fluid">
 
                         <Container>
-
-                                    <div className="typing-demo">
+                            <div className="typing-demo">
                                         Plant.r
                                     </div>
 
@@ -50,7 +51,7 @@ export const Home = () => {
                     <Card style={{width: '18rem'}} id="cardd">
                         <Card.Img
                             alt="plant photo"
-                            src={succulent}
+                            src={Kyer}
                             width="30"
                             height="400"
                             className="d-inline-block align-top"
@@ -67,6 +68,10 @@ export const Home = () => {
                                 estate agent - I am most excited about my journey as a woman in tech. Also a two-time
                                 bootcamp graduate, I attended Deep Dive Digital Media in 2020 and Fullstack in 2021.
                             </Card.Text>
+                            <Card.Footer className="text-muted">
+                                <a href="https://github.com/adykor"> <Image src={git} className="footerIcons"/> </a>
+                                <a href="#"> <Image src={linkIn} className="footerIcons"/> </a>
+                            </Card.Footer>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
                         </ListGroup>
@@ -78,7 +83,7 @@ export const Home = () => {
                         <Card.Img variant="top"
 
                                   alt="plant photo"
-                                  src={tree}
+                                  src={Sam}
                                   width="30"
                                   height="400"
                                   className="d-inline-block align-top"
@@ -94,7 +99,10 @@ export const Home = () => {
                                 and the people. I learned everything I could from work in a Verizon call center before
                                 signing up for Deep Dive Java + Android in 2020 and Fullstack in 2021.
                             </Card.Text>
-
+                            <Card.Footer className="text-muted">
+                                <a href="https://github.com/semartinez147"> <Image src={git} className="footerIcons"/> </a>
+                                <a href="#"> <Image src={linkIn} className="footerIcons"/> </a>
+                            </Card.Footer>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
                         </ListGroup>
@@ -106,7 +114,7 @@ export const Home = () => {
                         <Card.Img variant="top"
 
                                   alt="plant photo"
-                                  src={stalk}
+                                  src={Simo}
                                   width="30"
                                   height="400"
                                   className="d-inline-block align-top"
@@ -123,6 +131,10 @@ export const Home = () => {
                                 Deep Dive Fullstack Bootcamp 2021 has been a Unique and Challenging experience for me
                                 that I'm glad I signed up for and committed to it during the 10 weeks.
                             </Card.Text>
+                            <Card.Footer className="text-muted">
+                                   <a href="https://github.com/mbouchentouf"> <Image src={git} className="footerIcons"/> </a>
+                                <a href="#"> <Image src={linkIn} className="footerIcons"/> </a>
+                            </Card.Footer>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
                         </ListGroup>
@@ -134,7 +146,7 @@ export const Home = () => {
                         <Card.Img variant="top"
 
                                   alt="plant photo"
-                                  src={vine}
+                                  src={Gabi}
                                   width="30"
                                   height="400"
                                   className="d-inline-block align-top"
@@ -151,6 +163,10 @@ export const Home = () => {
                                 Outside of Web Development I enjoy camping adventures with my two German Shepherds,
                                 reading comics, playing video games and building PCs.
                             </Card.Text>
+                            <Card.Footer className="text-muted">
+                                <a href="https://github.com/GabiHawk90"> <Image src={git} className="footerIcons"/> </a>
+                                <a href="#"> <Image src={linkIn} className="footerIcons"/> </a>
+                            </Card.Footer>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
                         </ListGroup>
