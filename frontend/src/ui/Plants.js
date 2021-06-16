@@ -22,15 +22,9 @@ import {fetchPlantByPlantId} from "../store/plant";
 export const Plants = (props) => {
     const plantId = props.plantId
 
-    const dispatch = useDispatch()
-
     const plant = useSelector((state) => state.plants ? state.plants.filter(plant => plant.plantId === plantId)[0] : [])
     console.log("Plants.js", plant)
 
-    const initialEffects = () => {
-        dispatch(fetchPlantByPlantId(plantId))
-    }
-    React.useEffect(initialEffects, [])
     return (
 
 
