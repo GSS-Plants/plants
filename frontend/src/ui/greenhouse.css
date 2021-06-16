@@ -1,9 +1,17 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');*/
 
+/*PALETTE:*/
+/*#F39F48 - light orange*/
+/*#85A852 - olive green*/
+/*#89CF2F - light green*/
 
-#ghTitle {
-    margin-top: 25px;
-}
+
+
+
+
+/*#ghTitle {*/
+/*    margin-top: 25px;*/
+/*}*/
 
 #greenJumbo {
     margin-top: 0rem;
@@ -11,11 +19,11 @@
     margin-right: 0rem;
     margin-bottom: 5rem;
     height: 75rem;
-    /*bottom: 200px;*/
 }
 
 
 #ghCardCol {
+    margin-left: -600px;
     height: 300px;
     width: 1000px;
     text-align: center;
@@ -24,20 +32,18 @@
     /*background-color: #D1E2C4;*/
     display: inline-block;
     /*margin: 3rem auto 5rem auto;*/
-    border-color: darkorchid;
-    border-style: dashed;
 }
 
 img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
 }
 
 /*CONTAINS GROWTH HABIT IMAGE*/
 #ghPlant {
-    left: 100px;
     height: 150px;
     width: 150px;
+    margin-bottom: 70px;
     /*border-color: darkorchid;*/
     /*border-style: dashed;*/
 }
