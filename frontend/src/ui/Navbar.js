@@ -49,7 +49,6 @@ export const NavBar = () => {
 
                                 <Nav.Link id="navLink" href="/reminder">Reminder</Nav.Link>
                                 <Nav.Link id="navLink"  href="/search">Search</Nav.Link>
-                                <Nav.Link id="navLink"  href="/plants">Plant</Nav.Link>
                                 <Nav.Link id="navLink"  href="/greenhouse">Greenhouse</Nav.Link>
                                 {/*<Nav.Link href="#contact">Contact Team Plants</Nav.Link>*/}
                                 {auth ? (
