@@ -51,7 +51,7 @@ export const Greenhouse = () => {
                     <Container id="ghContainer">
 
                         <Row>
-                            <Col>
+                            <Col md>
                                 <CardColumns id="ghCardCol">
                                     <CardGroup id="ghCardGroup">
                                         {/*<Card id="ghCard">*/}
@@ -75,21 +75,21 @@ export const Greenhouse = () => {
 
             </Jumbotron>
 
-
+<Container>
             <Row>
-                <Col>
+                <Col sm>
                     <div>
                         <CompostModal plants={plants}/>
                     </div>
                 </Col>
 
                 <Col>
-                    <div>
+                    <div sm>
                         <Button className="btn btn-lg" id="ghBtn-editReminders" onClick={() => {history.push('/reminder')}}>edit reminders</Button>
                     </div>
                 </Col>
-
             </Row>
+</Container>
 
         </>
     )
