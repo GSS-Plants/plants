@@ -61,9 +61,9 @@ export const NavBar = () => {
                                     </>
                                 )
                                 }
-                                {currentPath !== '/search' && (
+                                {/*{currentPath !== '/search' && (*/}
                                     <SearchBar className="ml-auto"/>
-                                )}
+                                {/*)}*/}
                             </Nav>
 
                         </Navbar.Collapse>

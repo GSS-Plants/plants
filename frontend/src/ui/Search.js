@@ -23,7 +23,6 @@ export const Search = () => {
         <>
 
             <div id="container">
-                <Container><SearchBar/></Container>
 
         <h1><b>Search Results</b></h1>
                 {
