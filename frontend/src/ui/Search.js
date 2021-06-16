@@ -1,5 +1,5 @@
 import React from "react"
-import {CardColumns} from "react-bootstrap";
+import {CardColumns, Container} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {PlantCard} from "./plantSearch";
 import {fetchPlantsByCommonName} from "../store/plant";
@@ -21,7 +21,7 @@ export const Search = () => {
     return (
         <>
 
-            <div id="container">
+            <Container fluid id="container">
 
 
         <h1><b>Search Results</b></h1>
@@ -35,7 +35,7 @@ export const Search = () => {
 
         </CardColumns>
 
-            </div>
+            </Container>
 </>
 )
 }

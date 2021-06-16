@@ -13,7 +13,7 @@ export const Plants= () => {
     return (
 
 
-        <div id="container">
+        <Container id="container">
 
 
 
@@ -27,7 +27,6 @@ export const Plants= () => {
 
                 <Row>
                     <Col id="butcol" >
-                        <Button id="Pbuttcall" variant="outline-dark">Link</Button>
                         <Button id="Pbuttcall" variant="outline-dark">Add to Greenhouse</Button>
                     </Col>
                 </Row>
@@ -41,11 +40,10 @@ export const Plants= () => {
             </Row>
             <Row>
                 <Col id="butcol" >
-                    <Button id="Pbuttcall" variant="outline-dark">Link</Button>
                     <Button id="Pbuttcall" variant="outline-dark">Add to Greenhouse</Button>
                 </Col>
             </Row>
             <hr/>
-        </div>
+        </Container>
     )
 }

@@ -16,14 +16,14 @@ import {
 } from 'react-bootstrap'
 import "./Navbar"
 
-import {SearchBar} from "./SearchBar";
+
 
 export const Home = () => {
 
 
     return (
 
-        <div id="container">
+        <Container fluid id="container">
 
 
             <Row>
@@ -48,12 +48,12 @@ export const Home = () => {
             </div>
             <Row>
                 <Col id="cardA">
-                    <Card style={{width: '18rem'}} id="cardd">
+                    <Card style={{width: '100%'}} id="cardd">
                         <Card.Img
                             alt="plant photo"
                             src={Kyer}
-                            width="30"
-                            height="400"
+                            width="100%"
+                            height="auto"
                             className="d-inline-block align-top"
                         />
                         <Card.Body>
@@ -79,13 +79,13 @@ export const Home = () => {
                 </Col>
 
                 <Col id="cardA">
-                    <Card style={{width: '18rem'}} id="cardd">
+                    <Card style={{width: '100%'}} id="cardd">
                         <Card.Img variant="top"
 
                                   alt="plant photo"
                                   src={Sam}
-                                  width="30"
-                                  height="400"
+                                  width="100%"
+                                  height="auto"
                                   className="d-inline-block align-top"
                         />
                         <Card.Body>
@@ -110,13 +110,13 @@ export const Home = () => {
                 </Col>
 
                 <Col id="cardA">
-                    <Card style={{width: '18rem'}} id="cardd">
+                    <Card style={{width: '100%'}} id="cardd">
                         <Card.Img variant="top"
 
                                   alt="plant photo"
                                   src={Simo}
-                                  width="30"
-                                  height="400"
+                                  width="100%"
+                                  height="auto"
                                   className="d-inline-block align-top"
                         />
                         <Card.Body>
@@ -142,13 +142,13 @@ export const Home = () => {
                 </Col>
 
                 <Col id="cardA" class="col-md-3 mx-auto mb-5 text-center">
-                    <Card style={{width: '18rem'}} id="cardd">
+                    <Card style={{width: '100%'}} id="cardd">
                         <Card.Img variant="top"
 
                                   alt="plant photo"
                                   src={Gabi}
-                                  width="30"
-                                  height="400"
+                                  width="100%"
+                                  height="auto"
                                   className="d-inline-block align-top"
                         />
                         <Card.Body>
@@ -174,7 +174,7 @@ export const Home = () => {
                 </Col>
             </Row>
 
-        </div>
+        </Container>
     )
 }
 

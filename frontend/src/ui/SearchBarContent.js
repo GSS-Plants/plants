@@ -18,7 +18,7 @@ export const SearchBarContent = (props) => {
                         onChange={handleChange}
                         value={values.searchText}
                         name="searchText"
-                        placeholder='What kind of plants do you have?'
+                        placeholder='Your plant?'
 
 
                     />
