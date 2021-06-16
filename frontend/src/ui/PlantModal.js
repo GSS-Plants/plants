@@ -29,7 +29,7 @@ export const PlantModal = (props) => {
 
             <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Sign In</Modal.Title>
+                    <Modal.Title>Plant Details</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Plants plantId={plantId}/>
