@@ -8,6 +8,7 @@ import nonvascular from "../assets/nonvascular.png"
 import shrub from "../assets/shrub.png"
 import vine from "../assets/vine.png"
 import lichenous from "../assets/lichenous.png"
+import Default from "../assets/nonessential-succulent.png"
 
 export function GreenhousePlant(props) {
     const {plant} = props
@@ -32,6 +33,8 @@ export function GreenhousePlant(props) {
                 return <Image src={vine}/>
             case 'Lichenous':
                 return <Image src={lichenous}/>
+            default:
+                return <Image src={Default}/>
         }
     }
     return(
