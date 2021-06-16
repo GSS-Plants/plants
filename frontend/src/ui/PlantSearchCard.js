@@ -2,19 +2,17 @@ import {Button, Card, Form, InputGroup, ListGroup, ListGroupItem, Nav, Navbar} f
 import React, {useState} from "react";
 import logo from "../assets/logo-filler.png";
 import "./Styles.css"
+import {Formik} from "formik";
+
 import {PlantModal} from "./PlantModal";
-export function PlantCard(props){
+import {AddToGreenhouse} from "./AddToGreenhouse";
+export function PlantSearchCard(props){
 
 const {plant} = props
 
 return(
-    <>
-
-
-
-
-            <Card md={4} sm={10}>
-    <Card.Body className='pb-0'>
+            <Card className='m-4'>
+    <Card.Body >
         <Card.Title><b>{plant.plantCommonName}</b><br/>
         <i className='text-black-50 font-weight-light'>{plant.plantScientificName}</i></Card.Title>
 
@@ -25,10 +23,10 @@ return(
         <ListGroupItem><b>Toxicity:  {plant.plantToxicity}</b></ListGroupItem>
     </ListGroup>
     <Card.Body>
-        <PlantModal  plantId={plant.plantId}/>
+        <PlantModal  plantId={plant.plantId}/><AddToGreenhouse plantId={plant.plantId}/>
     </Card.Body>
 </Card>
 
-    </>)
+    )
 }
 
