@@ -19,6 +19,7 @@ import logo from "../assets/logo-filler.png";
 import "./Navbar"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchPlantByPlantId} from "../store/plant";
+import {AddToGreenhouse} from "./AddToGreenhouse";
 
 export const Plants = (props) => {
     const plantId = props.plantId
@@ -39,21 +40,21 @@ export const Plants = (props) => {
             <Row>
                 <Col>
                     <ListGroup className="text-center">
-                        <ListGroupItem><b>Bloom Period :></b> {plant.plantBloomPeriod}</ListGroupItem>
-                        <ListGroupItem><b>Scientific Name :></b> {plant.plantScientificName}</ListGroupItem>
-                        <ListGroupItem><b>Duration :></b> {plant.plantDuration}</ListGroupItem>
-                        <ListGroupItem><b>Drought Tolerance :></b> {plant.plantDroughtTolerance}</ListGroupItem>
-                        <ListGroupItem><b>Growth Habit :></b> {plant.plantGrowthHabit}</ListGroupItem>
-                        <ListGroupItem><b>Growth Period :></b> {plant.plantGrowthPeriod}</ListGroupItem>
-                        <ListGroupItem><b>Mature Height :></b> {plant.plantMatureHeight}</ListGroupItem>
-                        <ListGroupItem><b>Min Frost Free Days :></b> {plant.plantMinFrostFreeDays}</ListGroupItem>
-                        <ListGroupItem><b>Precipitation Max :></b> {plant.plantPrecipitationMax}</ListGroupItem>
-                        <ListGroupItem><b>Precipitation Min :></b> {plant.plantPrecipitationMin}</ListGroupItem>
-                        <ListGroupItem><b>Root Depth Min :></b> {plant.plantRootDepthMinimum}</ListGroupItem>
-
-                        <ListGroupItem><b>Shade Tolerance :></b> {plant.plantShadeTolerance}</ListGroupItem>
-                        <ListGroupItem><b>Toxicity :></b> {plant.plantToxicity}</ListGroupItem>
+                        <ListGroupItem><b>Scientific Name :</b> {plant.plantScientificName}</ListGroupItem>
+                        <ListGroupItem><b>Bloom Period :</b> {plant.plantBloomPeriod}</ListGroupItem>
+                        <ListGroupItem><b>Duration :</b> {plant.plantDuration}</ListGroupItem>
+                        <ListGroupItem><b>Drought Tolerance :</b> {plant.plantDroughtTolerance}</ListGroupItem>
+                        <ListGroupItem><b>Growth Habit :</b> {plant.plantGrowthHabit}</ListGroupItem>
+                        <ListGroupItem><b>Growth Period :</b> {plant.plantGrowthPeriod}</ListGroupItem>
+                        <ListGroupItem><b>Mature Height :</b> {plant.plantMatureHeight}</ListGroupItem>
+                        <ListGroupItem><b>Min Frost Free Days :</b> {plant.plantMinFrostFreeDays}</ListGroupItem>
+                        <ListGroupItem><b>Precipitation Max :</b> {plant.plantPrecipitationMax}</ListGroupItem>
+                        <ListGroupItem><b>Precipitation Min :</b> {plant.plantPrecipitationMin}</ListGroupItem>
+                        <ListGroupItem><b>Root Depth Min :</b> {plant.plantRootDepthMinimum}</ListGroupItem>
+                        <ListGroupItem><b>Shade Tolerance :</b> {plant.plantShadeTolerance}</ListGroupItem>
+                        <ListGroupItem><b>Toxicity :</b> {plant.plantToxicity}</ListGroupItem>
                     </ListGroup>
+                    <AddToGreenhouse plantId={plant.plantId}/>
                 </Col>
             </Row>
         </div>
