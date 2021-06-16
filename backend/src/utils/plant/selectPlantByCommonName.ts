@@ -11,6 +11,27 @@ export async function selectPlantByCommonName(text: string) {
         await mysqlConnection.release()
 
         //@ts-ignore
+        rows.map(plant => {
+            if(plant.plantBloomPeriod === '') {
+                plant.plantBloomPeriod = 'no data'
+            }
+            if(plant.plantDroughtTolerance === -1) {
+                plant.plantDroughtTolerance = 'no data'
+            }
+            if(plant.plantPrecipitationMax === 0) {
+                plant.plantPrecipitationMax = 'no data'
+            }
+            if(plant.plantPrecipitationMin === 0) {
+                plant.plantPrecipitationMin = 'no data'
+            }
+            if(plant.plantShadeTolerance === -1) {
+                plant.plantShadeTolerance = 'no data'
+            }
+            if(plant.plantToxicity === -1) {
+                plant.plantToxicity = 'no data'
+            }
+        })
+        //@ts-ignore
         return rows
     } catch (e) {
         console.error(e)
