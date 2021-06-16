@@ -93,11 +93,11 @@ export const Greenhouse = () => {
                         <Button className="btn btn-lg" id="ghBtn-compostPlant">compost plant ༼ つ ಥ_ಥ ༽つ</Button>
                     </div>
                 </Col>
-                    <Col>
-                        <div>
-                            <Button className="btn btn-lg" id="ghBtn-addNewPlant">+ new plant</Button>
-                        </div>
-                    </Col>
+                    {/*<Col>*/}
+                    {/*    <div>*/}
+                    {/*        <Button className="btn btn-lg" id="ghBtn-addNewPlant">+ new plant</Button>*/}
+                    {/*    </div>*/}
+                    {/*</Col>*/}
                         <Col>
                             <div>
                                 <Button className="btn btn-lg" id="ghBtn-editReminders">edit reminders</Button>
