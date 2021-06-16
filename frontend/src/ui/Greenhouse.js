@@ -1,26 +1,11 @@
-import React, {useState} from "react"
+import React from "react"
 import "./greenhouse.css"
 import bgimage from "../assets/shelves.png"
 import standingPlant from "../assets/standingPlant.png"
 import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 
 
-import {
-    Button,
-    Card, CardColumns,
-    CardGroup,
-    Col,
-    Container,
-    Form, Image,
-    InputGroup,
-    Jumbotron,
-    Modal,
-    Nav,
-    Navbar,
-    Row
-} from "react-bootstrap";
-
-import logo from "../assets/logo-filler.png";
+import {Button, Card, CardColumns, CardGroup, Col, Container, Image, Jumbotron, Row} from "react-bootstrap";
 
 
 import "./greenhouse-js.js"
@@ -30,12 +15,13 @@ import {GreenhousePlant} from "./GreenhousePlant";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 import plant from "../store/plant";
+import {CompostModal} from "./CompostModal";
 import {useHistory} from "react-router-dom";
-
 
 
 export const Greenhouse = () => {
 
+    const history = useHistory()
 
     const dispatch = useDispatch()
 
@@ -87,26 +73,21 @@ export const Greenhouse = () => {
                 </div>
 
 
-
             </Jumbotron>
 
 
             <Row>
                 <Col>
                     <div>
-                        <Button className="btn btn-lg" id="ghBtn-compostPlant">compost plant ༼ つ ಥ_ಥ ༽つ</Button>
+                        <CompostModal plants={plants}/>
                     </div>
                 </Col>
-                    {/*<Col>*/}
-                    {/*    <div>*/}
-                    {/*        <Button className="btn btn-lg" id="ghBtn-addNewPlant">+ new plant</Button>*/}
-                    {/*    </div>*/}
-                    {/*</Col>*/}
-                        <Col>
-                            <div>
-                                <Button className="btn btn-lg" id="ghBtn-editReminders">edit reminders</Button>
-                            </div>
-                        </Col>
+
+                <Col>
+                    <div>
+                        <Button className="btn btn-lg" id="ghBtn-editReminders" onClick={() => {history.push('/reminder')}}>edit reminders</Button>
+                    </div>
+                </Col>
 
             </Row>
 
