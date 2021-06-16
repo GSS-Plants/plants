@@ -1,4 +1,4 @@
-import {Card, Image, ListGroup, ListGroupItem} from "react-bootstrap";
+import {Card, CardGroup, Image, ListGroup, ListGroupItem} from "react-bootstrap";
 import React from "react";
 import tree from "../assets/tree.png"
 import graminoid from '../assets/logo-filler.png'
@@ -36,12 +36,56 @@ export function GreenhousePlant(props) {
     }
     return(
         <>
-            <Card id="ghCard">
-                <Card.Body>
-                    {imageFinder(growth)}
-                    <Card.Title><b>{plant.plantCommonName}</b></Card.Title>
-                </Card.Body>
-            </Card>
+            {/*<CardGroup>*/}
+                <Card>
+                {/*<Card.Body>*/}
+                    {/*{plant="plant.plantId"}*/}
+                    {/*<Card.Img id="ghCardImg">*/}
+                    <div id="ghPlant">{imageFinder(growth)}</div>
+                    {/*</Card.Img>*/}
+                        <Card.Title>{plant.plantCommonName}</Card.Title>
+                {/*</Card.Body>*/}
+                </Card>
+            {/*// </CardGroup>*/}
+
+
+            {/*<ul>*/}
+            {/*    <li>*/}
+            {/*        {imageFinder(growth)}*/}
+            {/*        <p>{plant.plantCommonName}</p>*/}
+            {/*    </li>*/}
+            {/*</ul>*/}
+
+
+
+            {/*<Card id="ghCard">*/}
+            {/*    <Card.Body id="ghCardBody">*/}
+            {/*        {imageFinder(growth)}*/}
+            {/*        /!*<Card.Title>{plant.plantCommonName}</Card.Title>*!/*/}
+            {/*    </Card.Body>*/}
+            {/*</Card>*/}
+
+
+
+
+            {/*const greenhousePlants = [*/}
+            {/*{*/}
+            {/*    id: 'vine'*/}
+            {/*    plant.plantCommonName: 'Vine'*/}
+            {/*    thumb: '../assets/vine.png'*/}
+            {/*},*/}
+            {/*{*/}
+            {/*    id: 'tree',*/}
+            {/*    name: 'Tree'*/}
+            {/*    thumb: '../assets/tree.png'*/}
+            {/*},*/}
+            {/*]*/}
+
+
+
+
+
+
         </>)
 }
 

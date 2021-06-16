@@ -2,14 +2,84 @@
 
 #greenJumbo {
     margin: 5rem;
-    height: 100rem;
+    height: 75rem;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+#card {
+    height: 300px;
+    width: 200px;
 }
 
 #ghCard {
     /*margin: 10px;*/
     margin: 2rem;
+    /*padding: 5rem;*/
     width: 18rem;
+    height: 16rem;
 }
+
+#ghPlant {
+    height: 150px;
+    width: 150px;
+}
+
+#ghCardImg {
+    height: 100px;
+    width: 100px;
+}
+
+#ghCardBody {
+    text-align: center;
+    width: 173px;
+    height: 250px;
+}
+
+#ghCardCol {
+    text-align: center;
+    /*color: #31352E;*/
+    justify-content: space-evenly;
+    /*background-color: #D1E2C4;*/
+    /*display: inline-block;*/
+    /*margin: 3rem auto 5rem auto;*/
+}
+
+
+
+
+
+/*.container {*/
+/*    background-color: floralwhite;*/
+/*}*/
+
+
+/*#ghCardGroup {*/
+/*    !*margin: 10px;*!*/
+/*    margin: 2rem;*/
+/*    width: 18rem;*/
+/*    height: 16rem;*/
+/*}*/
+
+/*#ghCard {*/
+/*    !*margin: 10px;*!*/
+/*    margin: 2rem;*/
+/*    width: 18rem;*/
+/*    height: 16rem;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
 
 /*.element.style {*/
 /*    background-color: #fff;*/

@@ -46,13 +46,14 @@ export function DragDrop() {
                 return (
                 <Draggable key={id} draggableId={id} index={index}>
             {(provided) => (
+
                 <li {...provided.draggableProps} {...provided.DragHandleProps} ref={provided.innerRef}>
                 <div className="plant-thumb">
                 <img src={thumb} alt={`${name} Thumb`}/>
-                </div>
-                <p>
-            {name}
-                </p>
+                    </div>
+                        <p>
+                        {name}
+                        </p>
                 </li>
                 )}
                 </Draggable>
