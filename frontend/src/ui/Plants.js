@@ -1,51 +1,63 @@
 import React, {useState} from 'react'
-import {Row, Col, Button, Form, Navbar, Image, Container, Nav, InputGroup, Modal,} from 'react-bootstrap'
+import {
+    Row,
+    Col,
+    Button,
+    Form,
+    Navbar,
+    Image,
+    Container,
+    Nav,
+    InputGroup,
+    Modal,
+    ListGroup,
+    ListGroupItem,
+    Badge,
+} from 'react-bootstrap'
 import "./Styles.css"
 import logo from "../assets/logo-filler.png";
 import "./Navbar"
-export const Plants= () => {
+import {useDispatch, useSelector} from "react-redux";
+import {fetchPlantByPlantId} from "../store/plant";
 
+export const Plants = (props) => {
+    const plantId = props.plantId
 
-
-
-
+    const plant = useSelector((state) => state.plants ? state.plants.filter(plant => plant.plantId === plantId)[0] : [])
+    console.log("Plants.js", plant)
 
     return (
 
 
         <div id="container">
-
-
-
-
             <Row>
-                <Col id="Pcol" lg={{span:10,offset:1}}>
-                    <h1>More Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis cumque ducimus ea eligendi exercitationem ipsam molestias quod sequi. Ab architecto asperiores at autem consequuntur dolorum earum eos eum eveniet expedita fugit impedit labore laborum libero maiores maxime necessitatibus neque numquam pariatur praesentium provident quibusdam, quisquam quod repellat totam unde veritatis voluptate! Adipisci commodi cum, delectus, deserunt dicta distinctio dolorem eligendi error esse excepturi exercitationem in, non provident quae quisquam repudiandae velit voluptate voluptatum. Beatae, dicta et eum exercitationem illo illum laborum, maiores molestias natus nihil nostrum qui rem repellat repellendus repudiandae sequi voluptatum? Cumque dolores, eaque ex excepturi laudantium nulla sint ullam veritatis voluptas voluptates. Aspernatur beatae consequatur cumque ducimus, est et eum excepturi fuga incidunt itaque laboriosam libero magnam non numquam officiis saepe sequi sit tempora voluptate voluptatum. Aspernatur, deserunt, reprehenderit? Accusantium amet at commodi consequuntur corporis delectus enim eum incidunt iusto mollitia, nam non nostrum nulla optio pariatur sequi soluta veniam. Consequatur delectus doloremque dolores eum impedit inventore necessitatibus nisi, quibusdam sed sequi. Ab adipisci, aliquam cum doloremque eaque eius eligendi est facere in incidunt ipsam laborum laudantium nihil nisi nostrum officia sapiente temporibus ullam vel voluptate. Amet earum, exercitationem iure maxime modi nemo quia sed voluptatum.</p>
-                </Col>
-            </Row>
-
-                <Row>
-                    <Col id="butcol" >
-                        <Button id="Pbuttcall" variant="outline-dark">Link</Button>
-                        <Button id="Pbuttcall" variant="outline-dark">Add to Greenhouse</Button>
-                    </Col>
-                </Row>
-<hr/>
-
-            <Row>
-                <Col id="Pcol" lg={{span:10,offset:1}}>
-                    <h1>More Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis cumque ducimus ea eligendi exercitationem ipsam molestias quod sequi. Ab architecto asperiores at autem consequuntur dolorum earum eos eum eveniet expedita fugit impedit labore laborum libero maiores maxime necessitatibus neque numquam pariatur praesentium provident quibusdam, quisquam quod repellat totam unde veritatis voluptate! Adipisci commodi cum, delectus, deserunt dicta distinctio dolorem eligendi error esse excepturi exercitationem in, non provident quae quisquam repudiandae velit voluptate voluptatum. Beatae, dicta et eum exercitationem illo illum laborum, maiores molestias natus nihil nostrum qui rem repellat repellendus repudiandae sequi voluptatum? Cumque dolores, eaque ex excepturi laudantium nulla sint ullam veritatis voluptas voluptates. Aspernatur beatae consequatur cumque ducimus, est et eum excepturi fuga incidunt itaque laboriosam libero magnam non numquam officiis saepe sequi sit tempora voluptate voluptatum. Aspernatur, deserunt, reprehenderit? Accusantium amet at commodi consequuntur corporis delectus enim eum incidunt iusto mollitia, nam non nostrum nulla optio pariatur sequi soluta veniam. Consequatur delectus doloremque dolores eum impedit inventore necessitatibus nisi, quibusdam sed sequi. Ab adipisci, aliquam cum doloremque eaque eius eligendi est facere in incidunt ipsam laborum laudantium nihil nisi nostrum officia sapiente temporibus ullam vel voluptate. Amet earum, exercitationem iure maxime modi nemo quia sed voluptatum.</p>
+                <Col id="Pcol" lg={{span:10,offset:1}} className="text-center">
+                    <h1>Hi, My Name Is:</h1>
+                    <h2><i>"{plant.plantCommonName}"</i></h2>
                 </Col>
             </Row>
             <Row>
-                <Col id="butcol" >
-                    <Button id="Pbuttcall" variant="outline-dark">Link</Button>
-                    <Button id="Pbuttcall" variant="outline-dark">Add to Greenhouse</Button>
+                <Col>
+                    <ListGroup className="text-center">
+                        <ListGroupItem><b>Bloom Period :></b> {plant.plantBloomPeriod}</ListGroupItem>
+                        <ListGroupItem><b>Scientific Name :></b> {plant.plantScientificName}</ListGroupItem>
+                        <ListGroupItem><b>Duration :></b> {plant.plantDuration}</ListGroupItem>
+                        <ListGroupItem><b>Drought Tolerance :></b> {plant.plantDroughtTolerance}</ListGroupItem>
+                        <ListGroupItem><b>Growth Habit :></b> {plant.plantGrowthHabit}</ListGroupItem>
+                        <ListGroupItem><b>Growth Period :></b> {plant.plantGrowthPeriod}</ListGroupItem>
+                        <ListGroupItem><b>Mature Height :></b> {plant.plantMatureHeight}</ListGroupItem>
+                        <ListGroupItem><b>Min Frost Free Days :></b> {plant.plantMinFrostFreeDays}</ListGroupItem>
+                        <ListGroupItem><b>Precipitation Max :></b> {plant.plantPrecipitationMax}</ListGroupItem>
+                        <ListGroupItem><b>Precipitation Min :></b> {plant.plantPrecipitationMin}</ListGroupItem>
+                        <ListGroupItem><b>Root Depth Min :></b> {plant.plantRootDepthMinimum}</ListGroupItem>
+
+                        <ListGroupItem><b>Shade Tolerance :></b> {plant.plantShadeTolerance}</ListGroupItem>
+                        <ListGroupItem><b>Toxicity :></b> {plant.plantToxicity}</ListGroupItem>
+                    </ListGroup>
                 </Col>
             </Row>
-            <hr/>
         </div>
-    )
-}
+                            )
+
+                            }
+

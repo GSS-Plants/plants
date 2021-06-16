@@ -1,5 +1,6 @@
 import {Button, Card, Form, InputGroup, ListGroup, ListGroupItem, Nav, Navbar} from "react-bootstrap";
 import React, {useState} from "react";
+import {PlantModal} from "./PlantModal"
 import logo from "../assets/logo-filler.png";
 import "./Styles.css"
 export function PlantCard(props){
@@ -23,7 +24,7 @@ return(
         <ListGroupItem><b>Toxicity:{plant.plantToxicity}</b></ListGroupItem>
     </ListGroup>
     <Card.Body>
-        <Card.Link href="/search">More Details</Card.Link>
+        <PlantModal  plantId={plant.plantId}/>
     </Card.Body>
 </Card>
 

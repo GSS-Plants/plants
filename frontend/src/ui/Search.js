@@ -17,7 +17,7 @@ export const Search = () => {
     // Render our misquotes constant - before we have our data, render the skeleton.
     // After we have our data, render the full object with our data.
     const plants = useSelector((state) => state.plants ? state.plants : [])
-    console.log(plants)
+    //console.log(plants)
     return (
         <>
 

@@ -7,10 +7,12 @@ import {updateProfile} from "../../utils/profile/updateProfile";
 import {selectAllPlants} from "../../utils/plant/selectAllPlants";
 import {selectPlantByCommonName} from "../../utils/plant/selectPlantByCommonName";
 import {selectPlantByScientificName} from "../../utils/plant/selectPlantByScientificName";
+import {selectPlantByPlantId} from "../../utils/plant/selectPlantByPlantId";
 
-export async function getAllPlants(request: Request, response: Response) : Promise<Response> {
+export async function getPlantByPlantId(request: Request, response: Response) : Promise<Response> {
     try {
-        const mySqlResult = await selectAllPlants();
+        const {plantId} = request.params
+        const mySqlResult = await selectPlantByPlantId(plantId);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
