@@ -1,8 +1,9 @@
 import React from "react"
-import {CardColumns} from "react-bootstrap";
+import {CardColumns, CardDeck, CardGroup, Container, Row} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
-import {PlantCard} from "./plantSearch";
+import {PlantSearchCard} from "./PlantSearchCard";
 import {fetchPlantsByCommonName} from "../store/plant";
+import {SearchBar} from "./SearchBar";
 
 export const Search = () => {
 
@@ -21,21 +22,20 @@ export const Search = () => {
     return (
         <>
 
-            <div id="container">
-
+            <Container fluid id="container">
 
         <h1><b>Search Results</b></h1>
                 {
                     plants.length === 0 && (<h2 className='text-center my-4 py-4'>No results to display ...</h2>)
                 }
-                <CardColumns className="CardCol">
+                <Row className="CardCol container-fluid px-1">
             {
-                plants.map(plant => <PlantCard plant={plant} key={plant.plantId}/>)
+                plants.map(plant => <PlantSearchCard plant={plant} key={plant.plantId}/>)
             }
 
-        </CardColumns>
+        </Row>
 
-            </div>
+            </Container>
 </>
 )
 }

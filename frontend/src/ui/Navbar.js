@@ -25,7 +25,7 @@ export const NavBar = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // const currentPath = useLocation().pathname
+    const currentPath = useLocation().pathname
     // console.log(currentPath)
     return (
         <>
@@ -61,7 +61,7 @@ export const NavBar = () => {
                                     </>
                                 )
                                 }
-                                {/*{currentPath !== '/' && (*/}
+                                {/*{currentPath !== '/search' && (*/}
                                     <SearchBar className="ml-auto"/>
                                 {/*)}*/}
                             </Nav>
