@@ -58,7 +58,7 @@ export const Greenhouse = () => {
                        style={{backgroundImage: `url(${bgimage})`, backgroundSize: 'cover'}}>
 
                 <div className="container">
-                    <Container>
+                    <Container id="ghContainer">
 
                         <Row>
                             <Col>
@@ -79,14 +79,32 @@ export const Greenhouse = () => {
                                 <Image src={standingPlant} id="ghStandingPlant"/>
                             </Col>
                         </Row>
-                        <div>
-                            <Button>EDIT REMINDERS</Button>
-                        </div>
                     </Container>
                 </div>
 
+
+
             </Jumbotron>
 
+
+            <Row>
+                <Col>
+                    <div>
+                        <Button className="btn btn-lg" id="ghBtn-compostPlant">compost plant ༼ つ ಥ_ಥ ༽つ</Button>
+                    </div>
+                </Col>
+                    <Col>
+                        <div>
+                            <Button className="btn btn-lg" id="ghBtn-addNewPlant">+ new plant</Button>
+                        </div>
+                    </Col>
+                        <Col>
+                            <div>
+                                <Button className="btn btn-lg" id="ghBtn-editReminders">edit reminders</Button>
+                            </div>
+                        </Col>
+
+            </Row>
 
         </>
     )

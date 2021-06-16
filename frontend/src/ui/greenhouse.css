@@ -14,6 +14,7 @@
     /*bottom: 200px;*/
 }
 
+
 #ghCardCol {
     height: 300px;
     width: 1000px;
@@ -34,39 +35,67 @@ img {
 
 /*CONTAINS GROWTH HABIT IMAGE*/
 #ghPlant {
+    left: 100px;
     height: 150px;
     width: 150px;
     /*border-color: darkorchid;*/
     /*border-style: dashed;*/
-
 }
 
-#card {
-    height: 300px;
-    width: 200px;
+/*BUTTONS*/
+#ghBtn-compostPlant {
+    margin-left: 150px;
+    background-color: darkorchid;
     border-color: darkorchid;
-    border-style: dashed;
 }
 
-
-#ghCard {
-    /*margin: 10px;*/
-    /*padding: 5rem;*/
-    width: 18rem;
-    height: 16rem;
+#ghBtn-addNewPlant {
+    margin-left: -30px;
+    background-color: darkorchid;
     border-color: darkorchid;
-    border-style: dashed;
 }
+
+#ghBtn-editReminders {
+    margin-left: -375px;
+    background-color: darkorchid;
+    border-color: darkorchid;
+}
+/*END BUTTONS*/
+
+
 
 
 #ghStandingPlant {
     position: absolute;
     bottom: -1000px;
-    width: 1000px;
+    width: 1600px;
     height: 1200px;
-    right: -150px;
+    right: -250px;
     /*z-index: 19;*/
 }
+
+
+
+
+/*#card {*/
+/*    height: 300px;*/
+/*    width: 200px;*/
+/*    !*border-color: darkorchid;*!*/
+/*    !*border-style: dashed;*!*/
+/*}*/
+
+
+/*#ghCard {*/
+/*    !*margin: 10px;*!*/
+/*    !*padding: 5rem;*!*/
+/*    width: 18rem;*/
+/*    height: 16rem;*/
+/*    !*border-color: darkorchid;*!*/
+/*    !*border-style: dashed;*!*/
+/*}*/
+
+
+
 
 /*#ghCardImg {*/
 /*    height: 100px;*/
