@@ -7,10 +7,11 @@
 }
 
 #jumone {
+
     text-align: center;
     background-image: url("https://images.unsplash.com/photo-1515472379677-6c0ad8823829?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80");
     background-size: cover;
-    margin: auto;
+    margin-top:1rem;
     height: 15rem;
 
 }
@@ -192,15 +193,33 @@ h1, p{
 }
 .typing-demo {
 
-    color: #aceecf;
-    margin-bottom:  1rem;
-    animation: typing 1s steps(22), blink .3s step-end infinite alternate;
+    text-shadow:1px 1px 10px #071703, 1px 1px 10px #0f6514;
+
+    color: #D1E2C4;
+    width: 15ch;
+    animation: typing 4s steps(25), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: 5em;
+    font-size:100px;
+
+
 }
+
+.wrapper {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 714px) {
+    .typing-demo {
+        font-size: 3em !important;
+    }
+}
+
 
 @keyframes typing {
     from {

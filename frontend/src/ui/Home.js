@@ -31,9 +31,12 @@ export const Home = () => {
                     <Jumbotron id="jumone" className="jumbotron jumbotron-fluid">
 
                         <Container>
-                            <div className="typing-demo">
-                                        Plant.r
-                                    </div>
+
+                            <div className="wrapper">
+                                <div className="typing-demo">
+                                    Plant.r
+                                </div>
+                            </div>
 
                         </Container>
 
