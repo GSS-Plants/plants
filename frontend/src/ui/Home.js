@@ -70,7 +70,7 @@ export const Home = () => {
                             </Card.Text>
                             <Card.Footer className="text-muted">
                                 <a href="https://github.com/adykor"> <Image src={git} className="footerIcons"/> </a>
-                                <a href="#"> <Image src={linkIn} className="footerIcons"/> </a>
+                                <a href="https://www.linkedin.com/in/adykor/"> <Image src={linkIn} className="footerIcons"/> </a>
                             </Card.Footer>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
@@ -101,7 +101,7 @@ export const Home = () => {
                             </Card.Text>
                             <Card.Footer className="text-muted">
                                 <a href="https://github.com/semartinez147"> <Image src={git} className="footerIcons"/> </a>
-                                <a href="#"> <Image src={linkIn} className="footerIcons"/> </a>
+                                <a href="https://www.linkedin.com/in/semartinez147/"> <Image src={linkIn} className="footerIcons"/> </a>
                             </Card.Footer>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
@@ -165,7 +165,7 @@ export const Home = () => {
                             </Card.Text>
                             <Card.Footer className="text-muted">
                                 <a href="https://github.com/GabiHawk90"> <Image src={git} className="footerIcons"/> </a>
-                                <a href="#"> <Image src={linkIn} className="footerIcons"/> </a>
+                                <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"> <Image src={linkIn} className="footerIcons"/> </a>
                             </Card.Footer>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
