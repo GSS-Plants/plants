@@ -1,5 +1,84 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');*/
 
+/*PALETTE:*/
+/*#F39F48 - light orange*/
+/*#85A852 - olive green*/
+/*#89CF2F - light green*/
+
+
+
+/*#ghTitle {*/
+/*    margin-top: 25px;*/
+/*}*/
+
+#greenJumbo {
+    margin-top: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 5rem;
+    height: 75rem;
+}
+
+
+#ghCardCol {
+    margin-left: -600px;
+    height: 300px;
+    width: 1000px;
+    text-align: center;
+    /*color: #31352E;*/
+    justify-content: space-evenly;
+    /*background-color: #D1E2C4;*/
+    display: inline-block;
+    /*margin: 3rem auto 5rem auto;*/
+}
+
+#ghPlant img {
+    height: 200px;
+    width: 200px;
+}
+
+/*CONTAINS GROWTH HABIT IMAGE*/
+#ghPlant {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 70px;
+    /*border-color: darkorchid;*/
+    /*border-style: dashed;*/
+}
+
+/*BUTTONS*/
+#ghBtn-compostPlant {
+    margin-left: 150px;
+    background-color: darkorchid;
+    border-color: darkorchid;
+}
+
+#ghBtn-addNewPlant {
+    margin-left: -30px;
+    background-color: darkorchid;
+    border-color: darkorchid;
+}
+
+#ghBtn-editReminders {
+    margin-left: -375px;
+    background-color: darkorchid;
+    border-color: darkorchid;
+}
+/*END BUTTONS*/
+
+
+
+
+#ghStandingPlant {
+    position: absolute;
+    bottom: -1000px;
+    width: 1600px;
+    height: 1200px;
+    right: -250px;
+    /*z-index: 19;*/
+}
+
+
 
 
 /* !*DRAG & DROP*!*/
