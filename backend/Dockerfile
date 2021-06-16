@@ -1,15 +1,19 @@
 # https://github.com/BretFisher/node-docker-good-defaults/blob/69c923bc646bc96003e9ada55d1ec5ca943a1b19/Dockerfile
-FROM node:14
-ARG NODE_ENV=development
-ENV NODE_ENV $NODE_ENV
-ARG PORT=4200
-ENV PORT $PORT
-EXPOSE $PORT 9229 9230
+
+# Stage 0, "build-stage", based on Node.js, to build and compile the frontend
+FROM node:14 as build-stage
 RUN mkdir /home/node/app
 WORKDIR ./home/node/app
 RUN chown node:node ./
-RUN groupmod -g 1001 node && usermod -u 1001 -g 1001 node
 USER node
-COPY package.json package-lock.json ./
+COPY package*.json ./
+COPY ./ ./
 RUN npm install --no-optional && npm cache clean --force
-CMD ["npm", "run", "dev"]
+RUN npm run build
+
+# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+FROM nginx:1.15
+COPY --from=build-stage /home/node/app/build/ /usr/share/nginx/html
+# Copy the default nginx.conf provided by tiangolo/node-frontend
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+CMD ["nginx", "-g", "daemon off;"]
