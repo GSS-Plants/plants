@@ -8,7 +8,6 @@ export const SearchBarContent = (props) => {
     const {handleSubmit, handleBlur, handleChange, values} = props
     return (
         <>
-
             <form onSubmit={handleSubmit}>
                 <div className='form-group'>
                     <input id="formCon"
@@ -19,18 +18,11 @@ export const SearchBarContent = (props) => {
                         value={values.searchText}
                         name="searchText"
                         placeholder='Your plant?'
-
-
                     />
-
-
-
                 </div>
-
-
             </form>
             {props.errors.name && <div id="feedback">{props.errors.name}</div>}
-            <Button id="searchB" variant="outline-dark" type="submit">Search</Button>
+            <Button id="searchB" variant="outline-dark" type="submit" onClick={handleSubmit}>Search</Button>
         </>
     )
 };

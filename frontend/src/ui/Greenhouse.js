@@ -34,7 +34,6 @@ export const Greenhouse = () => {
     React.useEffect(initialEffects, [])
 
 
-    console.log(plants)
 
     function imageFinder(growth) {
 
@@ -66,7 +65,7 @@ export const Greenhouse = () => {
                             {/*        </CardGroup>*/}
                             {/*    </CardColumns>*/}
                                 {/*STANDING PLANT*/}
-                                <Image src={standingPlant} id="ghStandingPlant"/>
+                                <Image  src={standingPlant} id="ghStandingPlant"/>
                             {/*</Col>*/}
                         </Row>
                     </Container>
@@ -84,7 +83,7 @@ export const Greenhouse = () => {
                 </Col>
 
                 <Col>
-                    <div sm>
+                    <div>
                         <Button className="btn btn-lg" id="ghBtn-editReminders" onClick={() => {history.push('/reminder')}}>edit reminders</Button>
                     </div>
                 </Col>

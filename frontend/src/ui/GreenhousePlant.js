@@ -40,7 +40,7 @@ export function GreenhousePlant(props) {
     return(
         <>
             {/*<CardGroup>*/}
-                <Card className="m-4" id="gHCard">
+                <Card className="m-4 text-center" id="gHCard">
                 {/*<Card.Body>*/}
                     {/*{plant="plant.plantId"}*/}
                     {/*<Card.Img id="ghCardImg">*/}

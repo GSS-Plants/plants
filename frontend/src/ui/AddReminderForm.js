@@ -1,10 +1,8 @@
-import {Button, Col, Form, Row} from "react-bootstrap";
 import React from "react";
 import {useDispatch} from "react-redux";
 import * as Yup from "yup";
 import {httpConfig} from "../utils/httpConfig";
 import {Formik} from "formik";
-import {FormDebugger} from "./sign-in-up/FormDebugger";
 import {AddReminderFormContent} from "./AddReminderFormContent";
 import {fetchRemindersByProfileId} from "../store/reminders";
 
@@ -35,7 +33,6 @@ export const AddReminderForm = () => {
     }
 
     const submitReminder = (values, {resetForm, setStatus}) => {
-        console.log("lemme submit", values)
         httpConfig.post("/apis/reminder/", values)
             .then(reply => {
                 let {message, type} = reply;

@@ -11,11 +11,9 @@ export const PlantModal = (props) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => {
-        console.log("handleClose",show)
         setShow(false);
     };
     const handleShow = () => {
-        console.log("handleShow",show)
         setShow(true);
     };
 

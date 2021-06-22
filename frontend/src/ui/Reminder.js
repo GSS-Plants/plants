@@ -1,9 +1,8 @@
-import React, {useState} from "react"
-import {Button, Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row, Table} from "react-bootstrap";
+import React from "react"
+import {Col, Container, Form, InputGroup, Modal, Nav, Navbar, Row, Table} from "react-bootstrap";
 import "./Styles.css"
 import {Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
 import {fetchRemindersByProfileId} from "../store/reminders";
 import {AddReminderForm} from "./AddReminderForm";
 import {ReminderDeleter} from "./ReminderDeleter";
@@ -20,7 +19,6 @@ export const Reminder = () => {
 
     const deleteReminder = (values, {resetForm, setStatus}) => {
         const deleteId = values.deleteId
-        console.log(deleteId)
         httpConfig.delete(`/apis/reminder/${deleteId}`)
             .then(reply => {
                 let {message, type} = reply;
@@ -64,7 +62,7 @@ export const Reminder = () => {
                                     deleteId: reminder.reminderId
                                 };
                                 return (
-                                    <tr className='align-text-center'>
+                                    <tr className='align-text-center' key={reminder.reminderId}>
                                         <td>{reminder.plantCommonName}</td>
                                         <td>{reminder.reminderStartDate}</td>
                                         <td>{reminder.reminderRecurrence} days</td>

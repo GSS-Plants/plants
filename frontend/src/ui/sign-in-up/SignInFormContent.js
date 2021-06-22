@@ -24,7 +24,6 @@ export const SignInFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="envelope"/>
                             </div>
                         </div>
                         <input
@@ -53,7 +52,6 @@ export const SignInFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="key"/>
                             </div>
                         </div>
                         <input

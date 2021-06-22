@@ -49,11 +49,11 @@ export const Home = () => {
                     can also create a plant profile and add your plant of choice to keep track of when to water.<br/>
                     So go on! find your new friend, and create a reminder so they can live forever!</p>
             </div>
-            <Row>
-                <Col id="cardA">
+            <Row id='cardA'>
+                <Col>
                     <Card style={{width: '100%'}} id="cardd">
                         <Card.Img
-                            alt="plant photo"
+                            alt="Kyerstin's photo"
                             src={Kyer}
                             width="100%"
                             height="auto"
@@ -63,8 +63,8 @@ export const Home = () => {
 
                             <Card.Title>Kyerstin O'Neal</Card.Title>
 
+                            <hr/>
                             <Card.Text>
-                                <hr/>
                                 I am an Air Force brat who’s been living in Albuquerque on and off for about a decade
                                 now. A few of my favorite things: sci-fi, MMA, disruptive technologies, travelling, and
                                 above all, food. Of the multiple careers I’ve had - personal trainer, journalist, real
@@ -81,11 +81,11 @@ export const Home = () => {
                     </Card>
                 </Col>
 
-                <Col id="cardA">
+                <Col>
                     <Card style={{width: '100%'}} id="cardd">
                         <Card.Img variant="top"
 
-                                  alt="plant photo"
+                                  alt="Samuel's photo"
                                   src={Sam}
                                   width="100%"
                                   height="auto"
@@ -93,9 +93,8 @@ export const Home = () => {
                         />
                         <Card.Body>
                             <Card.Title>Samuel Martinez</Card.Title>
-
+                            <hr/>
                             <Card.Text>
-                                <hr/>
                                 I am an Albuquerque native and two-time boot camp graduate. A few of my favorite things:
                                 reading, backpacking, keyboard shortcuts and board games. I got a BA from Whitman
                                 College in Walla Walla, Washington, but had to come back for the mountains, the chile
@@ -112,11 +111,10 @@ export const Home = () => {
                     </Card>
                 </Col>
 
-                <Col id="cardA">
+                <Col>
                     <Card style={{width: '100%'}} id="cardd">
                         <Card.Img variant="top"
-
-                                  alt="plant photo"
+                                  alt="Simo's photo"
                                   src={Simo}
                                   width="100%"
                                   height="auto"
@@ -124,8 +122,8 @@ export const Home = () => {
                         />
                         <Card.Body>
                             <Card.Title>Simo Bouchentouf</Card.Title>
+                            <hr/>
                             <Card.Text>
-                                <hr/>
                                 I'm a Moroccan-American Citizen who immigrated to the US in 2011. Lived in Brooklyn NY,
                                 Fort Lauderdale FL I then moved to Albuquerque NM early 2017. My favorite things
                                 including ; Playing Piano, Music, Rugby, languages, cultures, traveling and
@@ -144,11 +142,10 @@ export const Home = () => {
                     </Card>
                 </Col>
 
-                <Col id="cardA" class="col-md-3 mx-auto mb-5 text-center">
+                <Col className="col-md-3 mx-auto mb-5 text-center">
                     <Card style={{width: '100%'}} id="cardd">
                         <Card.Img variant="top"
-
-                                  alt="plant photo"
+                                  alt="Gabi's photo"
                                   src={Gabi}
                                   width="100%"
                                   height="auto"
@@ -157,8 +154,8 @@ export const Home = () => {
                         <Card.Body>
 
                             <Card.Title>Gabriella Hawkins</Card.Title>
+                            <hr/>
                             <Card.Text>
-                                <hr/>
                                 California born; Albuquerque raised. I have been interested in Web Development for the
                                 last 5 or 6 years. I saw the opportunity to take this bootcamp as a result of the
                                 pandemic, and I am overly excited to begin my career. I am highly skilled and passionate

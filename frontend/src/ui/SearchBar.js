@@ -16,7 +16,6 @@ export const SearchBar = () => {
 
     const doSearch = (values, {resetForm, setStatus}) => {
         const searchText = values.searchText
-        console.log(searchText)
         httpConfig.get(`/apis/plant/search-common-name/${searchText}`)
             .then(reply => {
                     console.log(reply)

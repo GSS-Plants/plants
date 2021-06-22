@@ -21,7 +21,6 @@ export const NavBar = () => {
     };
     const inputs = [];
     useEffect(effects, inputs);
-    console.log("auth",auth)
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);

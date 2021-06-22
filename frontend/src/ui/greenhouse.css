@@ -13,12 +13,10 @@
 
 #greenJumbo {
     background-size: auto;
-    margin-top: 0rem;
-    margin-left: 0rem;
-    margin-right: 0rem;
-    margin-bottom: 5rem;
+    margin: 0 0 5rem;
     height: 75rem;
     overflow: hidden;
+    z-index: 0;
 }
 
 
@@ -32,25 +30,30 @@
     /*background-color: #D1E2C4;*/
     display: inline-block;
     /*margin: 3rem auto 5rem auto;*/
+    z-index: 2;
 }
 
 #ghPlant img {
     height: 200px;
     width: 200px;
+    z-index: 2;
+
 }
 
 /*CONTAINS GROWTH HABIT IMAGE*/
 #ghPlant {
-    height: 150px;
-    width: 150px;
-    margin-bottom: 70px;
+
     /*border-color: darkorchid;*/
     /*border-style: dashed;*/
+    z-index: 2;
+
 }
 
 #gHCard {
     text-align: center;
     top: -20px;
+    z-index: 2;
+
 }
 
 
@@ -63,6 +66,8 @@
     background-color: darkorchid;
     border-color: darkorchid;
     margin: 1rem;
+    z-index: 2;
+
 }
 
 /*#ghBtn-addNewPlant {*/
@@ -76,6 +81,8 @@
     background-color: darkorchid;
     border-color: darkorchid;
     margin: 1rem;
+    z-index: 2;
+
 }
 /*END BUTTONS*/
 
@@ -88,7 +95,7 @@
     width: 1600px;
     height: 1200px;
     right: -5px;
-    /*z-index: 19;*/
+    z-index: 1;
 }
 
 

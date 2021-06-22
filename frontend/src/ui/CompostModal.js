@@ -13,11 +13,9 @@ export const CompostModal = () => {
     const dispatch = useDispatch()
 
     const handleClose = () => {
-        console.log("handleClose", show)
         setShow(false);
     };
     const handleShow = () => {
-        console.log("handleShow", show)
         setShow(true);
     };
     const deletePlant = (values, {resetForm, setStatus}) => {
@@ -62,16 +60,16 @@ export const CompostModal = () => {
 
 const CompostModalContent = (props) => {
     const {
-        status,
         values,
-        errors,
-        touched,
-        dirty,
-        isSubmitting,
         handleChange,
         handleBlur,
         handleSubmit,
-        handleReset,
+        // status,
+        // errors,
+        // touched,
+        // dirty,
+        // isSubmitting,
+        // handleReset,
     } = props;
     const dispatch = useDispatch()
 

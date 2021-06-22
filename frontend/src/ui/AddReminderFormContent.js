@@ -1,5 +1,4 @@
 import {Button, Col, Form, Row} from "react-bootstrap";
-import {FormDebugger} from "./sign-in-up/FormDebugger";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProfilePlantsByProfileId} from "../store/profile-plant";
@@ -10,12 +9,12 @@ export const AddReminderFormContent = (props) => {
         values,
         errors,
         touched,
-        dirty,
-        isSubmitting,
         handleChange,
         handleBlur,
         handleSubmit,
-        handleReset,
+        // dirty,
+        // isSubmitting,
+        // handleReset,
     } = props;
     const dispatch = useDispatch()
 
@@ -25,7 +24,6 @@ export const AddReminderFormContent = (props) => {
     React.useEffect(initialEffects, [])
 
     const plants = useSelector((state) => state.profilePlants ? state.profilePlants : [])
-    console.log(plants)
     return (<>
         <Form id="newReminderContent" onSubmit={handleSubmit} className="justify-content-center">
             <Row><Col className='m-0'><h2>Add A Reminder</h2></Col></Row>

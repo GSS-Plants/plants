@@ -13,7 +13,6 @@ export const AddToGreenhouse = (props) => {
         profilePlantNotes: ''
     }
     const handleSubmit = (values, {resetForm, setStatus}) => {
-        console.log('AddToGreenhouse values: ',values)
         httpConfig.post('/apis/profile-plant/add-plant/', values)
             .then(reply => {
                 let {message, type} = reply;

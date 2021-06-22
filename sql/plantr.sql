@@ -55,16 +55,16 @@ CREATE TABLE profilePlant
     FOREIGN KEY (profilePlantProfileId) REFERENCES profile (profileId),
     PRIMARY KEY (profilePlantId)
 );
-CREATE TABLE reminder
-(
-    reminderId             BINARY(16) NOT NULL,
-    reminderProfilePlantId BINARY(16) NOT NULL,
-    reminderDescription    VARCHAR(255),
-    reminderRecurrence     INT        NOT NULL,
-    reminderStartDate      DATE       NOT NULL,
-    FOREIGN KEY (reminderProfilePlantId) REFERENCES profilePlant (profilePlantId),
-    PRIMARY KEY (reminderId)
-);
+    CREATE TABLE reminder
+    (
+        reminderId             BINARY(16) NOT NULL,
+        reminderProfilePlantId BINARY(16) NOT NULL,
+        reminderDescription    VARCHAR(255),
+        reminderRecurrence     INT        NOT NULL,
+        reminderStartDate      DATE       NOT NULL,
+        FOREIGN KEY (reminderProfilePlantId) REFERENCES profilePlant (profilePlantId),
+        PRIMARY KEY (reminderId)
+    );
 
 -- Create a profile and three plants, then three profilePlants and three reminders.
 /*
