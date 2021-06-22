@@ -8,7 +8,7 @@ import {AddReminderForm} from "./AddReminderForm";
 import {ReminderDeleter} from "./ReminderDeleter";
 import {httpConfig} from "../utils/httpConfig";
 
-
+//TODO: Load something else if not logged in
 export const Reminder = () => {
     const dispatch = useDispatch()
 

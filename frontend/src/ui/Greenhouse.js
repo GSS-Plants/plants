@@ -18,7 +18,7 @@ import plant from "../store/plant";
 import {CompostModal} from "./CompostModal";
 import {useHistory} from "react-router-dom";
 
-
+//TODO: Load something else if not logged in
 export const Greenhouse = () => {
 
     const history = useHistory()
